@@ -1,0 +1,49 @@
+---
+# tasks/update.yml
+
+- name: ocStore | Deploy | Ensure repo files and folders have valid permissions
+  shell: >-
+           {
+             find {{ ocstore_www_root }}/{{ ocstore_repo_dir }} -type d -exec chmod 700 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_repo_dir }} -type f -exec chmod 600 {} +;
+           }
+
+- name: ocStore | Deploy | Ensure admin files and folders have valid permissions
+  shell: >-
+           {
+             chgrp -Rf {{ ocstore_www_owner_group }} {{ ocstore_www_root }}/{{ ocstore_admin_dir }};
+             find {{ ocstore_www_root }}/{{ ocstore_admin_dir }} -type d -exec chmod 750 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_admin_dir }} -type f -exec chmod 640 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_admin_dir }} -type f -name '.htaccess' -exec chmod 644 {} +;
+           }
+
+- name: ocStore | Deploy | Ensure released files and folders have valid permissions
+  shell: >-
+           {
+             chgrp -Rf {{ ocstore_www_owner_group }} {{ ocstore_current_release_dir }};
+             find {{ ocstore_current_release_dir }} -type d -exec chmod 750 {} +;
+             find {{ ocstore_current_release_dir }} -type f -exec chmod 640 {} +;
+             find {{ ocstore_current_release_dir }} -type f -name '.htaccess' -exec chmod 644 {} +;
+           }
+
+- name: ocStore | Deploy | Ensure shared files and folders have valid permissions
+  shell: >-
+           {
+             chgrp -Rf {{ ocstore_www_owner_group }} {{ ocstore_www_root }}/{{ ocstore_shared_dir }}
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }} -type d -exec chmod 750 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }} -type f -exec chmod 640 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image -type d -exec chmod 770 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image -type f -exec chmod 660 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/download -type d -exec chmod 770 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/download -type f -exec chmod 660 {} +;
+             find {{ ocstore_www_root }}/{{ ocstore_shared_dir }} -type f -name '.htaccess' -exec chmod 644 {} +;
+           }
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+
+- name: ocStore | Deploy | Copy current release version into REVISION file
+  copy:
+    content: "{{ ocstore_current_release_version }}"
+    dest: "{{ ocstore_current_release_dir }}/REVISION"
+    group: "{{ ocstore_www_owner_user }}"
+    owner: "{{ ocstore_www_owner_user }}"
+    mode: "600"

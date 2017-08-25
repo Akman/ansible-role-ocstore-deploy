@@ -1,0 +1,23 @@
+---
+# tasks/databases.yml
+
+- name: ocStore | Deploy | Ensure database users are present
+  mysql_user:
+    name: "{{ item.name }}"
+    host: "{{ item.host | default('localhost') }}"
+    password: "{{ item.password }}"
+    priv: "{{ item.priv | default('*.*:USAGE') }}"
+    state: "{{ item.state | default('present') }}"
+    append_privs: "{{ item.append_privs | default('no') }}"
+  with_items: "{{ ocstore_mysql_users }}"
+  no_log: true
+
+- name: ocStore | Deploy | Ensure databases are present
+  mysql_db:
+    name: "{{ item.name }}"
+    collation: "{{ item.collation | default('utf8_general_ci') }}"
+    encoding: "{{ item.encoding | default('utf8') }}"
+    state: present
+  with_items: "{{ ocstore_mysql_databases }}"
+  notify: import schema
+  register: ocstore_databases_state

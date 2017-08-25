@@ -1,0 +1,37 @@
+---
+# tasks/symlink.yml
+
+- name: ocStore | Deploy | Find symlinks for admin folder
+  find:
+    paths: "{{ ocstore_current_release_dir }}"
+    file_type: "link"
+    patterns: "admin*"
+  register: ocstore_admin_symlinks
+
+- name: ocStore | Deploy | Ensure invalid symlinks for admin folder are absent
+  file:
+    state: absent
+    path: "{{ item }}"
+  with_items:
+    - "{{ ocstore_admin_symlinks.files | map(attribute='path') | list | difference([ ocstore_current_release_dir + '/' + ocstore_admin_dirname ]) }}"
+
+- name: ocStore | Deploy | Ensure symlink for admin folder is present
+  file:
+    state: link
+    path: "{{ ocstore_current_release_dir }}/{{ ocstore_admin_dirname }}"
+    src: "{{ ocstore_www_root }}/{{ ocstore_admin_dir }}"
+
+- name: ocStore | Deploy | Ensure symlinks for shared folders and files are present
+  file:
+    state: link
+    path: "{{ ocstore_current_release_dir }}/{{ item.dest }}"
+    src: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
+  with_flattened:
+    - "{{ ocstore_shared_folders }}"
+    - "{{ ocstore_shared_template_files }}"
+
+- name: ocStore | Deploy | Ensure current symlink source is new release
+  file:
+    state: link
+    path: "{{ ocstore_www_root }}/{{ ocstore_current_dir }}"
+    src: "{{ ocstore_current_release_dir }}"

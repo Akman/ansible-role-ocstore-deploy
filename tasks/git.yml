@@ -1,0 +1,56 @@
+---
+# tasks/git.yml
+
+- name: ocStore | Deploy | Update remote repository
+  git:
+    repo: "{{ ocstore_git_repo }}"
+    dest: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}"
+    version: "{{ ocstore_git_branch }}"
+    accept_hostkey: "yes"
+    update: "yes"
+    force: "yes"
+    refspec: "{{ ocstore_git_refspec | default(omit) }}"
+  register: ocstore_git_result
+
+- name: ocStore | Deploy | Sync repo admin subtree to admin folder
+  shell: >-
+           {
+             git ls-files -z --with-tree="{{ ocstore_git_branch }}" | tr '\0' '\n';
+             git submodule foreach --recursive --quiet 'git ls-files -z --with-tree="$sha1" | tr "\0" "\n" | sed "s#^#$path/#"';
+           }
+           | grep "^$prefix"
+           | sed "s#^$prefix/##"
+           | rsync -a --files-from=- "./$prefix/" {{ ocstore_www_root }}/{{ ocstore_admin_dir }}/
+  args:
+    chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
+  environment:
+    prefix: "{{ ocstore_git_tree_admin }}"
+
+- name: ocStore | Deploy | Sync repo public subtree to release folder
+  shell: >-
+           {
+             git ls-files -z --with-tree="{{ ocstore_git_branch }}" | tr '\0' '\n';
+             git submodule foreach --recursive --quiet 'git ls-files -z --with-tree="$sha1" | tr "\0" "\n" | sed "s#^#$path/#"';
+           }
+           | grep "^$prefix"
+           | sed "s#^$prefix/##"
+           | rsync -a --files-from=- "./$prefix/" {{ ocstore_current_release_dir }}/
+  args:
+    chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
+  environment:
+    prefix: "{{ ocstore_git_tree_public }}"
+
+- name: ocStore | Deploy | Sync repo shared subtree to shared folder once
+  shell: >-
+           {
+             git ls-files -z --with-tree="{{ ocstore_git_branch }}" | tr '\0' '\n';
+             git submodule foreach --recursive --quiet 'git ls-files -z --with-tree="$sha1" | tr "\0" "\n" | sed "s#^#$path/#"';
+           }
+           | grep "^$prefix"
+           | sed "s#^$prefix/##"
+           | rsync -a --files-from=- "./$prefix/" {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/
+  args:
+    chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
+  environment:
+    prefix: "{{ ocstore_git_tree_shared }}"
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir

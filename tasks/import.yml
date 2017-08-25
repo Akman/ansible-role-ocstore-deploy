@@ -1,0 +1,23 @@
+---
+# tasks/import.yml
+
+- name: ocStore | Deploy | Ensure database schema script is up to date
+  template: >
+    src="sql/setup.sql.j2"
+    dest="~/setup.sql"
+    mode="644"
+
+- name: ocStore | Deploy | Create database schema
+  mysql_db:
+    name: "{{ item.name }}"
+    state: "import"
+    target: "~/setup.sql"
+  with_items: "{{ ocstore_mysql_databases }}"
+
+- name: ocStore | Deploy | Shred database schema script
+  command: "shred -f ~/setup.sql"
+  
+- name: ocStore | Deploy | Delete database schema script
+  file:
+    path: "~/setup.sql"
+    state: "absent"

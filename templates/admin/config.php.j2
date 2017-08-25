@@ -1,0 +1,37 @@
+<?php
+// HTTP
+define('HTTP_SERVER', 'http://{{ ocstore_hostname }}/{{ ocstore_admin_dirname }}/');
+define('HTTP_CATALOG', 'http://{{ ocstore_hostname }}/');
+
+// HTTPS
+define('HTTPS_SERVER', 'https://{{ ocstore_hostname }}/{{ ocstore_admin_dirname }}/');
+define('HTTPS_CATALOG', 'https://{{ ocstore_hostname }}/');
+
+// DIR
+define('DIR_APPLICATION', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/{{ ocstore_admin_dirname }}/');
+define('DIR_SYSTEM', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/system/');
+define('DIR_DATABASE', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/system/database/');
+define('DIR_LANGUAGE', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/{{ ocstore_admin_dirname }}/language/');
+define('DIR_TEMPLATE', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/{{ ocstore_admin_dirname }}/view/template/');
+define('DIR_CONFIG', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/system/config/');
+define('DIR_IMAGE', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/image/');
+define('DIR_CACHE', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/system/cache/');
+define('DIR_DOWNLOAD', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/download/');
+define('DIR_LOGS', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/system/logs/');
+define('DIR_CATALOG', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/catalog/');
+define('DIR_VQMOD', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/vqmod/');
+
+// BATCHER
+define('DIR_BATCHER', '{{ ocstore_www_root }}/{{ ocstore_current_dir }}/batcher/');
+define('CMD_BATCHER', 'nohup /usr/bin/php %s >/dev/null &');
+
+// DB
+define('DB_DRIVER', 'mysqliz');
+define('DB_HOSTNAME', '{{ ocstore_db_hostname }}');
+define('DB_USERNAME', '{{ ocstore_db_username }}');
+define('DB_PASSWORD', '{{ ocstore_db_password }}');
+define('DB_DATABASE', '{{ ocstore_db_database }}');
+define('DB_PORT', '{{ ocstore_db_port }}');
+define('DB_SOCKET', '{{ ocstore_db_socket }}');
+define('DB_PREFIX', '{{ ocstore_db_prefix }}');
+?>

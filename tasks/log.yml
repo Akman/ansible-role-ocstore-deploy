@@ -1,0 +1,24 @@
+---
+# tasks/log.yml
+
+- name: ocStore | Deploy | Enumerate log files
+  find:
+    paths: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+    file_type: "any"
+    patterns: "{{ item.patterns }}"
+    use_regex: True
+  with_flattened:
+    - "{{ ocstore_shared_log_path }}"
+  register: ocstore_log_files
+  when: ocstore_shared_log_clean is defined and ocstore_shared_log_clean == "yes"
+  no_log: True  
+
+- name: ocStore | Deploy | Delete log files
+  file:
+    path: "{{ item.1.path }}"
+    state: absent
+  with_subelements:
+     - "{{ ocstore_log_files.results }}"
+     - files
+  when: ocstore_shared_log_clean is defined and ocstore_shared_log_clean == "yes"
+  no_log: True

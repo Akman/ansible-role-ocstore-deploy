@@ -1,0 +1,21 @@
+---
+# tasks/vhosts.yml
+
+- name: ocStore | Deploy | Ensure vhost directories are exist
+  file:
+    state: directory
+    path: "{{ item.path }}"
+    owner: "{{ item.owner | default(omit) }}"
+    group: "{{ item.group | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
+  with_items: "{{ ocstore_directories }}"
+
+- name: ocStore | Deploy | Ensure vhost ssl certificates are present
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default(omit) }}"
+    group: "{{ item.group | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
+  no_log: true
+  with_items: "{{ ocstore_certificates }}"
