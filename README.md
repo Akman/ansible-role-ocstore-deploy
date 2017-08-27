@@ -33,7 +33,9 @@ ocstore_admin_login: "admin"
 ocstore_admin_password: "admin"
 ocstore_admin_email: "admin@localhost"
 ocstore_error_filename: "ocstore.log"
+
 ocstore_maintenance: "1"
+ocstore_robots_sitemap_enabled: "yes"
 
 ocstore_php_display_errors: "1"
 ocstore_php_error_reporting: "E_ALL"
@@ -97,14 +99,16 @@ ocstore_shared_stub_files:
   - { mode: "660", dest: "vqmod/logs/vqmod.log" }
 
 ocstore_shared_template_files:
-  - { mode: "640", src: "config.php.j2",             dest: "config.php" }
-  - { mode: "640", src: "php.ini.j2",                dest: "php.ini" }
-  - { mode: "640", src: "batcher/batcher.php.j2",    dest: "batcher/batcher.php" }
+  - { mode: "644", src: ".htaccess.j2", dest: ".htaccess" }
+  - { mode: "640", src: "robots.txt.j2", dest: "robots.txt" }
+  - { mode: "640", src: "humans.txt.j2", dest: "humans.txt" }
+  - { mode: "640", src: "config.php.j2", dest: "config.php" }
+  - { mode: "640", src: "php.ini.j2", dest: "php.ini" }
   - { mode: "640", src: "vqmod/pathReplaces.php.j2", dest: "vqmod/pathReplaces.php" }
 
 ocstore_admin_template_files:
-  - { mode: "640", src: "admin/config.php.j2",       dest: "config.php" }
-  - { mode: "640", src: "admin/php.ini.j2",          dest: "php.ini" }
+  - { mode: "640", src: "admin/config.php.j2", dest: "config.php" }
+  - { mode: "640", src: "admin/php.ini.j2", dest: "php.ini" }
 
 telegram_enabled: "no"
 telegram_token: "botXXXXXX:YYYYYYYYYYYYYYYYY"
@@ -145,7 +149,9 @@ ocstore_admin_login: "admin"
 ocstore_admin_password: "admin"
 ocstore_admin_email: "admin@localhost"
 ocstore_error_filename: "ocstore.log"
+
 ocstore_maintenance: "1"
+ocstore_robots_sitemap_enabled: "yes"
 
 ocstore_php_display_errors: "1"
 ocstore_php_error_reporting: "E_ALL"
@@ -209,14 +215,16 @@ ocstore_shared_stub_files:
   - { mode: "660", dest: "vqmod/logs/vqmod.log" }
 
 ocstore_shared_template_files:
-  - { mode: "640", src: "config.php.j2",             dest: "config.php" }
-  - { mode: "640", src: "php.ini.j2",                dest: "php.ini" }
-  - { mode: "640", src: "batcher/batcher.php.j2",    dest: "batcher/batcher.php" }
+  - { mode: "644", src: ".htaccess.j2", dest: ".htaccess" }
+  - { mode: "640", src: "robots.txt.j2", dest: "robots.txt" }
+  - { mode: "640", src: "humans.txt.j2", dest: "humans.txt" }
+  - { mode: "640", src: "config.php.j2", dest: "config.php" }
+  - { mode: "640", src: "php.ini.j2", dest: "php.ini" }
   - { mode: "640", src: "vqmod/pathReplaces.php.j2", dest: "vqmod/pathReplaces.php" }
 
 ocstore_admin_template_files:
-  - { mode: "640", src: "admin/config.php.j2",       dest: "config.php" }
-  - { mode: "640", src: "admin/php.ini.j2",          dest: "php.ini" }
+  - { mode: "640", src: "admin/config.php.j2", dest: "config.php" }
+  - { mode: "640", src: "admin/php.ini.j2", dest: "php.ini" }
 
 telegram_enabled: "no"
 telegram_token: "botXXXXXX:YYYYYYYYYYYYYYYYY"

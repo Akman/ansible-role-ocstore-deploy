@@ -14,7 +14,7 @@
 
 - name: ocStore | Deploy | Ensure shared copy files are exist in shared folder
   copy: >
-    src="{{ inventory_hostname }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
+    src="{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
     dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
     group="{{ ocstore_www_owner_group }}"
     owner="{{ ocstore_www_owner_user }}"

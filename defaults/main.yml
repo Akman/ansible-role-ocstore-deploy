@@ -31,6 +31,7 @@ telegram_chat_id: "ZZZZZZZZ"
 telegram_enabled: "no"
 
 ocstore_maintenance: "1"
+ocstore_robots_sitemap_enabled: "yes"
 
 ocstore_php_display_errors: "1"
 ocstore_php_error_reporting: "E_ALL"
@@ -75,17 +76,17 @@ ocstore_directories:
     mode: "2750"
 
 ocstore_certificates:
-  - src: "{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.ca-bundle"
+  - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.ca-bundle"
     dest: "/etc/ssl/certs/{{ ocstore_hostname }}.ca-bundle"
     owner: "root"
     group: "root"
     mode: "0644"
-  - src: "{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.crt"
+  - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.crt"
     dest: "/etc/ssl/certs/{{ ocstore_hostname }}.crt"
     owner: "root"
     group: "root"
     mode: "0644"
-  - src: "{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.key"
+  - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.key"
     dest: "/etc/ssl/private/{{ ocstore_hostname }}.key"
     owner: "root"
     group: "root"
@@ -138,13 +139,16 @@ ocstore_shared_stub_files:
   - { mode: "660", dest: "vqmod/logs/vqmod.log" }
 
 ocstore_shared_template_files:
-  - { mode: "640", src: "config.php.j2",             dest: "config.php" }
-  - { mode: "640", src: "php.ini.j2",                dest: "php.ini" }
+  - { mode: "644", src: ".htaccess.j2", dest: ".htaccess" }
+  - { mode: "640", src: "robots.txt.j2", dest: "robots.txt" }
+  - { mode: "640", src: "humans.txt.j2", dest: "humans.txt" }
+  - { mode: "640", src: "config.php.j2", dest: "config.php" }
+  - { mode: "640", src: "php.ini.j2", dest: "php.ini" }
   - { mode: "640", src: "vqmod/pathReplaces.php.j2", dest: "vqmod/pathReplaces.php" }
 
 ocstore_admin_template_files:
-  - { mode: "640", src: "admin/config.php.j2",       dest: "config.php" }
-  - { mode: "640", src: "admin/php.ini.j2",          dest: "php.ini" }
+  - { mode: "640", src: "admin/config.php.j2", dest: "config.php" }
+  - { mode: "640", src: "admin/php.ini.j2", dest: "php.ini" }
 
 ocstore_shared_cache_clean: "yes"
 ocstore_shared_cache_path:

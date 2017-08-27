@@ -1,0 +1,41 @@
+Options +FollowSymlinks
+Options -Indexes
+DirectoryIndex index.php
+
+<FilesMatch "(?i)((\.tpl|\.ini|\.log|\.lic|\.md|(?<!robots)\.txt))">
+  Order deny,allow
+  Deny from all
+</FilesMatch>
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{QUERY_STRING} (eval\() [NC,OR]
+RewriteCond %{QUERY_STRING} (javascript:)(.*)(;) [NC,OR]
+RewriteCond %{QUERY_STRING} (base64_encode)(.*)(\() [NC,OR]
+RewriteCond %{QUERY_STRING} (GLOBALS|REQUEST)(=|\[|%) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)(.*)script(.*)(>|%3) [NC,OR]
+RewriteCond %{QUERY_STRING} (\\|\.\.\.|\.\./|~|`|<|>|\|) [NC,OR]
+RewriteCond %{QUERY_STRING} (boot\.ini|etc/passwd|self/environ) [NC,OR]
+RewriteCond %{QUERY_STRING} (\'|\")(.*)(drop|insert|md5|select|union) [NC]
+RewriteRule .* - [F]
+
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.{{ ocstore_hostname | regex_escape() }}
+RewriteRule ^(.*)$ https://{{ ocstore_hostname | regex_escape() }}/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(ico|gif|jpg|jpeg|png|js|css|woff2|woff|ttf|svg|eot)$
+RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
+
+RewriteRule ^$ - [L]
+RewriteRule ^admin(.*)/$ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /error-not-found [L]
