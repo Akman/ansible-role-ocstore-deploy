@@ -68,51 +68,32 @@ ocstore_git_tree_public: "www/{{ ocstore_public_dir }}"
 ocstore_git_tree_shared: "www/{{ ocstore_shared_dir }}"
 ocstore_git_tree_admin: "www/{{ ocstore_admin_dir }}"
 
-ocstore_shared_stub_folders:
-  - { mode: "750", dest: "batcher" }
-  - { mode: "770", dest: "download" }
-  - { mode: "770", dest: "image" }
-  - { mode: "770", dest: "image/cache" }
-  - { mode: "750", dest: "system" }
-  - { mode: "770", dest: "system/cache" }
-  - { mode: "770", dest: "system/license" }
-  - { mode: "770", dest: "system/logs" }
-  - { mode: "750", dest: "vqmod" }
-  - { mode: "770", dest: "vqmod/cache" }
-  - { mode: "770", dest: "vqmod/cache/vqcache" }
-  - { mode: "770", dest: "vqmod/logs" }
-
 ocstore_shared_folders:
-  - { dest: "download" }
-  - { dest: "image" }
-  - { dest: "system/cache" }
-  - { dest: "system/license" }
-  - { dest: "system/logs" }
-  - { dest: "vqmod/cache" }
-  - { dest: "vqmod/logs" }
+  - { path: "download" }
+  - { path: "image" }
+  - { path: "system/cache" }
+  - { path: "system/license" }
+  - { path: "system/logs" }
+  - { path: "vqmod/cache" }
+  - { path: "vqmod/logs" }
+
+ocstore_shared_files:
+  - { path: "image/favicon.ico", dest: "favicon.ico" }
 
 ocstore_shared_copy_files:
-  - { mode: "660", dest: "system/license/filterpro.lic" }
-
-ocstore_shared_stub_files:
-  - { mode: "660", dest: "system/logs/{{ ocstore_error_filename }}" }
-  - { mode: "660", dest: "vqmod/logs/vqmod.log" }
+  - { path: "system/license/filterpro.lic" }
 
 ocstore_shared_template_files:
-  - { mode: "644", src: ".htaccess.j2", dest: ".htaccess" }
-  - { mode: "640", src: "robots.txt.j2", dest: "robots.txt" }
-  - { mode: "640", src: "humans.txt.j2", dest: "humans.txt" }
-  - { mode: "640", src: "config.php.j2", dest: "config.php" }
-  - { mode: "640", src: "php.ini.j2", dest: "php.ini" }
-  - { mode: "640", src: "vqmod/pathReplaces.php.j2", dest: "vqmod/pathReplaces.php" }
+  - { path: ".htaccess" }
+  - { path: "robots.txt" }
+  - { path: "humans.txt" }
+  - { path: "config.php" }
+  - { path: "php.ini" }
+  - { path: "vqmod/pathReplaces.php" }
 
 ocstore_admin_template_files:
-  - { mode: "640", src: "admin/config.php.j2", dest: "config.php" }
-  - { mode: "640", src: "admin/php.ini.j2", dest: "php.ini" }
-
-telegram_enabled: "no"
-telegram_token: "botXXXXXX:YYYYYYYYYYYYYYYYY"
-telegram_chat_id: "ZZZZZZZZ"
+  - { path: "config.php" }
+  - { path: "php.ini" }
 
 ## Dependencies
 
@@ -184,51 +165,32 @@ ocstore_git_tree_public: "www/{{ ocstore_public_dir }}"
 ocstore_git_tree_shared: "www/{{ ocstore_shared_dir }}"
 ocstore_git_tree_admin: "www/{{ ocstore_admin_dir }}"
 
-ocstore_shared_stub_folders:
-  - { mode: "750", dest: "batcher" }
-  - { mode: "770", dest: "download" }
-  - { mode: "770", dest: "image" }
-  - { mode: "770", dest: "image/cache" }
-  - { mode: "750", dest: "system" }
-  - { mode: "770", dest: "system/cache" }
-  - { mode: "770", dest: "system/license" }
-  - { mode: "770", dest: "system/logs" }
-  - { mode: "750", dest: "vqmod" }
-  - { mode: "770", dest: "vqmod/cache" }
-  - { mode: "770", dest: "vqmod/cache/vqcache" }
-  - { mode: "770", dest: "vqmod/logs" }
-
 ocstore_shared_folders:
-  - { dest: "download" }
-  - { dest: "image" }
-  - { dest: "system/cache" }
-  - { dest: "system/license" }
-  - { dest: "system/logs" }
-  - { dest: "vqmod/cache" }
-  - { dest: "vqmod/logs" }
+  - { path: "download" }
+  - { path: "image" }
+  - { path: "system/cache" }
+  - { path: "system/license" }
+  - { path: "system/logs" }
+  - { path: "vqmod/cache" }
+  - { path: "vqmod/logs" }
+
+ocstore_shared_files:
+  - { path: "image/favicon.ico", dest: "favicon.ico" }
 
 ocstore_shared_copy_files:
-  - { mode: "660", dest: "system/license/filterpro.lic" }
-
-ocstore_shared_stub_files:
-  - { mode: "660", dest: "system/logs/{{ ocstore_error_filename }}" }
-  - { mode: "660", dest: "vqmod/logs/vqmod.log" }
+  - { path: "system/license/filterpro.lic" }
 
 ocstore_shared_template_files:
-  - { mode: "644", src: ".htaccess.j2", dest: ".htaccess" }
-  - { mode: "640", src: "robots.txt.j2", dest: "robots.txt" }
-  - { mode: "640", src: "humans.txt.j2", dest: "humans.txt" }
-  - { mode: "640", src: "config.php.j2", dest: "config.php" }
-  - { mode: "640", src: "php.ini.j2", dest: "php.ini" }
-  - { mode: "640", src: "vqmod/pathReplaces.php.j2", dest: "vqmod/pathReplaces.php" }
+  - { path: ".htaccess" }
+  - { path: "robots.txt" }
+  - { path: "humans.txt" }
+  - { path: "config.php" }
+  - { path: "php.ini" }
+  - { path: "vqmod/pathReplaces.php" }
 
 ocstore_admin_template_files:
-  - { mode: "640", src: "admin/config.php.j2", dest: "config.php" }
-  - { mode: "640", src: "admin/php.ini.j2", dest: "php.ini" }
-
-telegram_enabled: "no"
-telegram_token: "botXXXXXX:YYYYYYYYYYYYYYYYY"
-telegram_chat_id: "ZZZZZZZZ"
+  - { path: "config.php" }
+  - { path: "php.ini" }
 
 ## License
 

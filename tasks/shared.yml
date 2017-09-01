@@ -4,53 +4,35 @@
 - name: ocStore | Deploy | Ensure all shared folders are exist once
   file:
     state: "directory"
-    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
+    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
     group: "{{ ocstore_www_owner_group }}"
     owner: "{{ ocstore_www_owner_user }}"
-    mode: "{{ item.mode }}"
   with_flattened:
-    - "{{ ocstore_shared_stub_folders }}"
-  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+    - "{{ ocstore_shared_folders }}"
 
 - name: ocStore | Deploy | Ensure shared copy files are exist in shared folder
   copy: >
-    src="{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
-    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
+    src="{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
     group="{{ ocstore_www_owner_group }}"
     owner="{{ ocstore_www_owner_user }}"
-    mode="{{ item.mode }}"
   with_flattened:
     - "{{ ocstore_shared_copy_files }}"
-  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
-
-- name: ocStore | Deploy | Ensure shared stub files are exist in shared folder
-  copy: >
-    content=""
-    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
-    group="{{ ocstore_www_owner_group }}"
-    owner="{{ ocstore_www_owner_user }}"
-    mode="{{ item.mode }}"
-    force="no"
-  with_flattened:
-    - "{{ ocstore_shared_stub_files }}"
-  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
 
 - name: ocStore | Deploy | Ensure shared template files are exist in shared folder
   template: >
-    src="{{ item.src }}"
-    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.dest }}"
+    src="{{ item.path }}.j2"
+    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
     group="{{ ocstore_www_owner_group }}"
     owner="{{ ocstore_www_owner_user }}"
-    mode="{{ item.mode }}"
   with_flattened:
     - "{{ ocstore_shared_template_files }}"
 
 - name: ocStore | Deploy | Ensure admin template files are exist in admin folder
   template: >
-    src="{{ item.src }}"
-    dest="{{ ocstore_www_root }}/{{ ocstore_admin_dir }}/{{ item.dest }}"
+    src="admin/{{ item.path }}.j2"
+    dest="{{ ocstore_www_root }}/{{ ocstore_admin_dir }}/{{ item.path }}"
     group="{{ ocstore_www_owner_group }}"
     owner="{{ ocstore_www_owner_user }}"
-    mode="{{ item.mode }}"
   with_flattened:
     - "{{ ocstore_admin_template_files }}"

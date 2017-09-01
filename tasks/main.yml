@@ -19,22 +19,14 @@
 - include: update.yml
   become: yes
   when: ocstore_environment != 'development'
-
+  
 - include: shared.yml
   become: yes
 
 - include: symlink.yml
-
-- include: cache.yml
-  become: yes
-
-- include: log.yml
-  become: yes
 
 - include: cleanup.yml
   when: ocstore_environment != 'development'
 
 - include: restart.yml
   become: yes
-
-- include: notify.yml

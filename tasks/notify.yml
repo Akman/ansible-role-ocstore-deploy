@@ -1,9 +1,0 @@
----
-# tasks/notify.yml
-
-- name: ocStore | Deploy | Notify by Telegram
-  telegram:
-    token: "{{ telegram_token }}"
-    chat_id: "{{ telegram_chat_id }}"
-    msg: "ocStore | Deploy | Finished"
-  when: telegram_token is defined and telegram_chat_id is defined and telegram_enabled is defined and telegram_enabled == "yes"
