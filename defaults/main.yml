@@ -113,8 +113,10 @@ ocstore_shared_folders:
   - { path: "vqmod/cache" }
   - { path: "vqmod/logs" }
 
+# 'dest' can be absolute or relative path with 'ocstore_current_release_dir' as base
 ocstore_shared_files:
-  - { path: "image/favicon.ico", dest: "favicon.ico" }
+  - { path: "image/data/favicon.ico", dest: "favicon.ico" }
+  - { path: "image/data/no_image.jpg", dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
 
 ocstore_shared_copy_files:
   - { path: "system/license/filterpro.lic" }
