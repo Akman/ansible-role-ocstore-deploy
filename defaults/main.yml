@@ -115,6 +115,7 @@ ocstore_shared_folders:
 
 # 'dest' can be absolute or relative path with 'ocstore_current_release_dir' as base
 ocstore_shared_files:
+  - { path: "css/moneymaker-custom.css", dest: "catalog/view/theme/moneymaker/stylesheet/moneymaker-custom.css" }
   - { path: "image/data/favicon.ico", dest: "favicon.ico" }
   - { path: "image/data/no_image.jpg", dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
 
