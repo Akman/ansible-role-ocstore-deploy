@@ -93,6 +93,12 @@ ocstore_shared_template_files:
   - { path: "config.php" }
   - { path: "php.ini" }
   - { path: "vqmod/pathReplaces.php" }
+  
+ocstore_shared_template_common_files:  
+  - { path: "css/.htaccess" }
+  - { path: "css/moneymaker-custom.css" }
+  - { path: "download/.htaccess" }
+  - { path: "image/.htaccess" }
 
 ocstore_admin_template_files:
   - { path: "config.php" }
@@ -193,6 +199,12 @@ ocstore_shared_template_files:
   - { path: "config.php" }
   - { path: "php.ini" }
   - { path: "vqmod/pathReplaces.php" }
+  
+ocstore_shared_template_common_files:  
+  - { path: "css/.htaccess" }
+  - { path: "css/moneymaker-custom.css" }
+  - { path: "download/.htaccess" }
+  - { path: "image/.htaccess" }
 
 ocstore_admin_template_files:
   - { path: "config.php" }
