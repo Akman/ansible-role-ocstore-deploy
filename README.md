@@ -100,6 +100,9 @@ ocstore_shared_template_common_files:
   - { path: "download/.htaccess" }
   - { path: "image/.htaccess" }
 
+ocstore_shared_template_common_stub_files:
+  - { path: "system/logs/{{ ocstore_error_filename}}" }
+
 ocstore_admin_template_files:
   - { path: "config.php" }
   - { path: "php.ini" }
@@ -205,6 +208,9 @@ ocstore_shared_template_common_files:
   - { path: "css/moneymaker-custom.css" }
   - { path: "download/.htaccess" }
   - { path: "image/.htaccess" }
+
+ocstore_shared_template_common_stub_files:
+  - { path: "system/logs/{{ ocstore_error_filename}}" }
 
 ocstore_admin_template_files:
   - { path: "config.php" }

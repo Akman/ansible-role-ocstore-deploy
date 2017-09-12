@@ -38,6 +38,16 @@
     - "{{ ocstore_shared_template_common_files }}"
   when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
 
+- name: ocStore | Deploy | Ensure shared template common stub files are exist in shared folder once
+  copy: >
+    content=""
+    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+    group="{{ ocstore_www_owner_group }}"
+    owner="{{ ocstore_www_owner_user }}"
+  with_flattened:
+    - "{{ ocstore_shared_template_common_stub_files }}"
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+
 - name: ocStore | Deploy | Ensure admin template files are exist in admin folder
   template: >
     src="admin/{{ item.path }}.j2"
