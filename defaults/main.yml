@@ -46,13 +46,9 @@ ocstore_www_root: "/var/www/{{ ocstore_hostname }}"
 ocstore_www_root_owner: deploy-user
 ocstore_www_root_group: apache-user
 
-ocstore_log_root: "/var/log/{{ ocstore_hostname }}"
-ocstore_log_root_owner: deploy-user
-ocstore_log_root_group: apache-user
-
 ocstore_tmp_root: "/var/tmp/{{ ocstore_hostname }}"
 ocstore_tmp_root_owner: deploy-user
-ocstore_tmp_root_group: apache-user
+ocstore_tmp_root_group: deploy-user
 
 ocstore_doc_root: "{{ ocstore_www_root }}/current"
 
@@ -61,14 +57,10 @@ ocstore_directories:
     owner: "{{ ocstore_www_root_owner }}"
     group: "{{ ocstore_www_root_group }}"
     mode: "2750"
-  - path: "{{ ocstore_log_root }}"
-    owner: "{{ ocstore_log_root_owner }}"
-    group: "{{ ocstore_log_root_group }}"
-    mode: "2750"
   - path: "{{ ocstore_tmp_root }}"
     owner: "{{ ocstore_tmp_root_owner }}"
     group: "{{ ocstore_tmp_root_group }}"
-    mode: "2750"
+    mode: "770"
 
 ocstore_certificates:
   - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.ca-bundle"
