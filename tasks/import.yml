@@ -14,10 +14,10 @@
     target: "~/setup.sql"
   with_items: "{{ ocstore_mysql_databases }}"
 
-#- name: ocStore | Deploy | Shred database schema script
-#  command: "shred -f ~/setup.sql"
-#  
-#- name: ocStore | Deploy | Delete database schema script
-#  file:
-#    path: "~/setup.sql"
-#    state: "absent"
+- name: ocStore | Deploy | Shred database schema script
+  command: "shred -f ~/setup.sql"
+  
+- name: ocStore | Deploy | Delete database schema script
+  file:
+    path: "~/setup.sql"
+    state: "absent"
