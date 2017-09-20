@@ -1,32 +1,32 @@
 ---
 # tasks/main.yml
 
-- include: setup.yml
+- import_tasks: setup.yml
 
-- include: vhosts.yml
+- import_tasks: vhosts.yml
   become: yes
 
-- include: databases.yml
+- import_tasks: databases.yml
   become: yes
 
-- include: folders.yml
+- import_tasks: folders.yml
   become: yes
   when: ocstore_environment != 'development'
 
-- include: git.yml
+- import_tasks: git.yml
   when: ocstore_environment != 'development'
 
-- include: update.yml
+- import_tasks: update.yml
   become: yes
   when: ocstore_environment != 'development'
   
-- include: shared.yml
+- import_tasks: shared.yml
   become: yes
 
-- include: symlink.yml
+- import_tasks: symlink.yml
 
-- include: cleanup.yml
+- import_tasks: cleanup.yml
   when: ocstore_environment != 'development'
 
-- include: restart.yml
+- import_tasks: restart.yml
   become: yes

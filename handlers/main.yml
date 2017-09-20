@@ -2,5 +2,5 @@
 # handlers/main.yml
 
 - name: import schema
-  include: tasks/import.yml
+  import_tasks: tasks/import.yml
   become: yes
