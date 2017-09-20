@@ -1,6 +1,3 @@
 ---
 # handlers/main.yml
 
-- name: import schema
-  import_tasks: tasks/import.yml
-  become: yes
