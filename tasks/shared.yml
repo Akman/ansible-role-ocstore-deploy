@@ -1,7 +1,7 @@
 ---
 # tasks/shared.yml
 
-- name: ocStore | Deploy | Ensure all shared folders are exist once
+- name: ocStore | Deploy | Ensure all shared folders are exist
   file:
     state: "directory"
     path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
@@ -39,8 +39,9 @@
   when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
 
 - name: ocStore | Deploy | Ensure shared template common stub files are exist in shared folder once
-  file: >
-    state="touch"
+  copy: >
+    content=""
+    force="no"
     dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
     group="{{ ocstore_www_owner_group }}"
     owner="{{ ocstore_www_owner_user }}"
