@@ -1,6 +1,13 @@
 ---
 # tasks/cleanup.yml
 
+- name: ocStore | Deploy | Count releases
+  shell: ls -1dt {{ ocstore_www_root }}/{{ ocstore_releases_dir }}/* | tail -n +{{ ocstore_keep_releases | int + 1 }}
+  register: ocstore_delete_releases
+  changed_when: false
+  when: ocstore_keep_releases > 0
+
 - name: ocStore | Deploy | Clean up releases
   shell: ls -1dt {{ ocstore_www_root }}/{{ ocstore_releases_dir }}/* | tail -n +{{ ocstore_keep_releases | int + 1 }} | xargs rm -rf
+  changed_when: ocstore_delete_releases.stdout_lines | length
   when: ocstore_keep_releases > 0

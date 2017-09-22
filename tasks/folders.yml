@@ -9,9 +9,8 @@
     owner: "{{ item.owner }}"
     group: "{{ item.group }}"
   with_items:
-    - { mode: "750", path: "{{ ocstore_www_root }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
-    - { mode: "750", path: "{{ ocstore_www_root }}/{{ ocstore_releases_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
-    - { mode: "750", path: "{{ ocstore_current_release_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
+    - { mode: "700", path: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}", group: "{{ ocstore_www_owner_user }}", owner: "{{ ocstore_www_owner_user }}" }
     - { mode: "750", path: "{{ ocstore_www_root }}/{{ ocstore_admin_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
     - { mode: "750", path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
-    - { mode: "700", path: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
+    - { mode: "750", path: "{{ ocstore_www_root }}/{{ ocstore_releases_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
+    - { mode: "750", path: "{{ ocstore_current_release_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }

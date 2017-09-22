@@ -1,12 +1,18 @@
 ---
 # tasks/import.yml
 
+- name: ocStore | Deploy | Ensure database script is up to date
+  template: >
+    src="sql/setup.sql.j2"
+    dest="~/{{ db_item.item.name }}.setup.sql"
+    mode="600"
+
 - block:
     - name: ocStore | Deploy | Import database schema '{{ db_item.item.name }}'
       mysql_db:
         name: "{{ db_item.item.name }}"
         state: "import"
-        target: "~/setup.sql"
+        target: "~/{{ db_item.item.name }}.setup.sql"
   rescue:
     - name: ocStore | Deploy | Ensure database absent '{{ db_item.item.name }}'
       mysql_db:

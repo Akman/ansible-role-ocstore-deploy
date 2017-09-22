@@ -1,10 +1,27 @@
 ---
 # tasks/setup.yml
 
+- name: ocStore | Deploy | Get web server owner group name
+  shell: "ps axo user,group,comm | egrep '(apache|httpd)' | grep -v ^root | uniq | cut -d ' ' -f 2"
+  register: ocstore_www_owner_group
+  changed_when: false
+  become: yes
+
+- name: ocStore | Deploy | Check web server owner group name
+  fail: msg="Could not get web server owner group name!"
+  when: ocstore_www_owner_group.stdout == ''
+
+- name: ocStore | Deploy | Set default web server owner group name
+  set_fact:
+    ocstore_www_owner_group: "{{ ocstore_www_owner_group.stdout }}"
+
+- name: ocStore | Deploy | Set web server owner user name
+  set_fact:
+    ocstore_www_owner_user: "{{ ansible_env.USER }}"
+
 - name: ocStore | Deploy | Set current release version
   set_fact:
     ocstore_current_release_version: "{{ lookup('pipe', 'date -u +%Y%m%d%H%M%SZ') }}"
-  run_once: true
   when: ocstore_current_release_version is not defined
 
 - name: ocStore | Deploy | Set current release folder

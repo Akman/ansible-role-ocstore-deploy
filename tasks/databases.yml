@@ -20,27 +20,10 @@
     append_privs: "{{ item.append_privs | default('no') }}"
   with_items: "{{ ocstore_mysql_users }}"
 
-- name: ocStore | Deploy | Ensure database script is up to date
-  template: >
-    src="sql/setup.sql.j2"
-    dest="~/setup.sql"
-    mode="644"
-  when: ocstore_databases_state.changed
-#  changed_when: False
-
 - name: ocStore | Deploy | Iterate over newly created databases
   include_tasks: import.yml
   when: db_item.changed and not db_item.failed
-  with_items: 
+  with_items:
     - "{{ ocstore_databases_state.results }}"
   loop_control:
     loop_var: db_item
-
-#- name: ocStore | Deploy | Shred database script
-#  command: "shred -f ~/setup.sql"
-#  changed_when: False
-  
-#- name: ocStore | Deploy | Delete database script
-#  file:
-#    path: "~/setup.sql"
-#    state: "absent"

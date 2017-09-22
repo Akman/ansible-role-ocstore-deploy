@@ -25,6 +25,7 @@
     chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
   environment:
     prefix: "{{ ocstore_git_tree_admin }}"
+  changed_when: ocstore_git_result.changed
 
 - name: ocStore | Deploy | Sync repo public subtree to release folder
   shell: >-
@@ -39,6 +40,7 @@
     chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
   environment:
     prefix: "{{ ocstore_git_tree_public }}"
+  changed_when: ocstore_git_result.changed
 
 - name: ocStore | Deploy | Sync repo shared subtree to shared folder once
   shell: >-
@@ -53,4 +55,5 @@
     chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
   environment:
     prefix: "{{ ocstore_git_tree_shared }}"
+  changed_when: ocstore_git_result.changed
   when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
