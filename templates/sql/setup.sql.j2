@@ -16070,7 +16070,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}setting` (
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=599 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=600 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}setting`
@@ -16235,7 +16235,7 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (154,0,'moneymaker','mmr_quickorder_fields','a:2:{i:1;a:3:{s:6:\"status\";s:1:\"1\";s:5:\"label\";a:1:{i:1;s:15:\"Ваше имя\";}s:8:\"required\";s:1:\"1\";}i:2;a:3:{s:6:\"status\";s:1:\"1\";s:5:\"label\";a:1:{i:1;s:34:\"Ваш номер телефона\";}s:8:\"required\";s:1:\"1\";}}',1),
 (155,0,'moneymaker','mmr_callback_enabled','1',0),
 (156,0,'moneymaker','mmr_callback_mail_language','1',0),
-(157,0,'moneymaker','mmr_callback_fields','a:2:{i:1;a:3:{s:6:\"status\";s:1:\"1\";s:5:\"label\";a:1:{i:1;s:24:\"Как Вас зовут\";}s:8:\"required\";s:1:\"1\";}i:2;a:3:{s:6:\"status\";s:1:\"1\";s:5:\"label\";a:1:{i:1;s:34:\"Ваш номер телефона\";}s:8:\"required\";s:1:\"1\";}}',1),
+(157,0,'moneymaker','mmr_callback_fields','a:2:{i:1;a:3:{s:6:\"status\";s:1:\"1\";s:5:\"label\";a:1:{i:1;s:15:\"Ваше имя\";}s:8:\"required\";s:1:\"1\";}i:2;a:3:{s:6:\"status\";s:1:\"1\";s:5:\"label\";a:1:{i:1;s:34:\"Ваш номер телефона\";}s:8:\"required\";s:1:\"1\";}}',1),
 (158,0,'moneymaker','mmr_stickers_enabled','1',0),
 (159,0,'moneymaker','mmr_stickers_size_small','2',0),
 (160,0,'moneymaker','mmr_stickers_size_large','2.5',0),
@@ -16676,7 +16676,8 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (595,0,'moneymaker','mmr_expected_order_enabled','1',0),
 (596,0,'moneymaker','mmr_expected_caption','a:1:{i:1;s:143:\"Ожидаемая дата передачи в службу доставки: &lt;span style=&quot;font-weight: bold;&quot;&gt;%s&lt;/span&gt;\";}',1),
 (597,0,'moneymaker','mmr_expected_format','a:1:{i:1;s:6:\"d MMMM\";}',1),
-(598,0,'moneymaker','mmr_expected_strategy','next monday',0);
+(598,0,'moneymaker','mmr_expected_strategy','next day',0),
+(599,0,'moneymaker','mmr_contacts_links','a:1:{i:1;a:6:{s:4:\"text\";a:1:{i:1;s:30:\"Связаться с нами\";}s:9:\"link_mode\";s:1:\"1\";s:7:\"link_id\";s:1:\"0\";s:8:\"link_url\";s:12:\"/contact-us/\";s:9:\"icon_mode\";s:1:\"1\";s:4:\"icon\";s:8:\"envelope\";}}',1);
 
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}setting` ENABLE KEYS */;
 UNLOCK TABLES;
