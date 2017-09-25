@@ -16070,7 +16070,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}setting` (
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=593 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=599 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}setting`
@@ -16670,7 +16670,13 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (589,0,'moneymaker','mmr_subscribe_form_name','a:1:{i:1;s:15:\"Ваше имя\";}',1),
 (590,0,'moneymaker','mmr_subscribe_form_email','a:1:{i:1;s:42:\"Ваша электронная почта\";}',1),
 (591,0,'moneymaker','mmr_subscribe_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1),
-(592,0,'moneymaker','mmr_callback_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1);
+(592,0,'moneymaker','mmr_callback_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1),
+(593,0,'moneymaker','mmr_expected_enabled','1',0),
+(594,0,'moneymaker','mmr_expected_product_enabled','1',0),
+(595,0,'moneymaker','mmr_expected_order_enabled','1',0),
+(596,0,'moneymaker','mmr_expected_caption','a:1:{i:1;s:143:\"Ожидаемая дата передачи в службу доставки: &lt;span style=&quot;font-weight: bold;&quot;&gt;%s&lt;/span&gt;\";}',1),
+(597,0,'moneymaker','mmr_expected_format','a:1:{i:1;s:6:\"d MMMM\";}',1),
+(598,0,'moneymaker','mmr_expected_strategy','next monday',0);
 
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}setting` ENABLE KEYS */;
 UNLOCK TABLES;
