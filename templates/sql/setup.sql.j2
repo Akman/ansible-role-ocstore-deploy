@@ -16070,7 +16070,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}setting` (
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=584 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=593 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}setting`
@@ -16661,7 +16661,17 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (580,0,'rpcod2','rpcod2_order_status','2',0),
 (581,0,'rpcod2','rpcod2_status','0',0),
 (582,0,'rpcod2','stay','0',0),
-(583,0,'rpcod2','rpcod2_stop_for_avia','0',0);
+(583,0,'rpcod2','rpcod2_stop_for_avia','0',0),
+(584,0,'moneymaker','mmr_subscribe_enabled','1',0),
+(585,0,'moneymaker','mmr_subscribe_caption','a:1:{i:1;s:42:\"ПОДПИСАТЬСЯ НА НОВОСТИ\";}',1),
+(586,0,'moneymaker','mmr_subscribe_placeholder','a:1:{i:1;s:33:\"Электронная почта\";}',1),
+(587,0,'moneymaker','mmr_subscribe_description','a:1:{i:1;s:140:\"&lt;br/&gt;Узнавайте первыми о новостях и закрытых распродажах&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;\";}',1),
+(588,0,'moneymaker','mmr_subscribe_form_caption','a:1:{i:1;s:25:\"Наша рассылка\";}',1),
+(589,0,'moneymaker','mmr_subscribe_form_name','a:1:{i:1;s:15:\"Ваше имя\";}',1),
+(590,0,'moneymaker','mmr_subscribe_form_email','a:1:{i:1;s:42:\"Ваша электронная почта\";}',1),
+(591,0,'moneymaker','mmr_subscribe_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1),
+(592,0,'moneymaker','mmr_callback_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1);
+
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
