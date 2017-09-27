@@ -17,5 +17,4 @@
     owner: "{{ item.owner | default(omit) }}"
     group: "{{ item.group | default(omit) }}"
     mode: "{{ item.mode | default(omit) }}"
-  no_log: true
   with_items: "{{ ocstore_certificates }}"
