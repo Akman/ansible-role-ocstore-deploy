@@ -1,13 +1,10 @@
 -- -----------------------------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_CLIENT = utf8 */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET CHARACTER_SET_RESULTS = utf8 */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT, CHARACTER_SET_CLIENT = utf8 */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS, CHARACTER_SET_RESULTS = utf8 */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40101 SET NAMES utf8 COLLATE utf8_general_ci */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE, TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
@@ -36,7 +33,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}address` (
   `zone_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`address_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}address`
@@ -63,7 +60,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}address_simple_fields` (
   `address_id` int(11) NOT NULL,
   `metadata` text,
   PRIMARY KEY (`address_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}address_simple_fields`
@@ -112,7 +109,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}affiliate` (
   `approved` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}affiliate`
@@ -136,7 +133,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}affiliate_transaction` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}affiliate_transaction`
@@ -162,7 +159,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}agoo_signer` (
   KEY `id` (`id`),
   KEY `customer_id` (`customer_id`),
   KEY `date` (`date`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}agoo_signer`
@@ -192,7 +189,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute` (
   `attribute_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`attribute_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}attribute`
@@ -218,7 +215,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`attribute_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}attribute_description`
@@ -243,7 +240,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`attribute_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}attribute_group`
@@ -265,7 +262,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_group_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`attribute_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}attribute_group_description`
@@ -287,7 +284,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` (
   `language_id` int(11) NOT NULL,
   `tooltip` text NOT NULL,
   PRIMARY KEY (`attribute_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}attribute_group_tooltip`
@@ -309,7 +306,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_tooltip` (
   `language_id` int(11) NOT NULL,
   `tooltip` text NOT NULL,
   PRIMARY KEY (`attribute_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}attribute_tooltip`
@@ -331,7 +328,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}banner` (
   `name` varchar(64) NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`banner_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}banner`
@@ -359,7 +356,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}banner_image` (
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}banner_image`
@@ -391,7 +388,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}banner_image_description` (
   `banner_id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
   PRIMARY KEY (`banner_image_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}banner_image_description`
@@ -423,7 +420,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}batch` (
   `route` varchar(255) NOT NULL DEFAULT '',
   `args` text NOT NULL,
   PRIMARY KEY (`batch_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}batch`
@@ -450,12 +447,12 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog` (
   `status` tinyint(1) NOT NULL,
   `index_page` varchar(255) DEFAULT NULL,
   `customer_group_id` int(2) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`blog_id`),
   KEY `sort_order` (`sort_order`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}blog`
@@ -477,7 +474,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog_access` (
   `customer_group_id` int(11) NOT NULL,
   KEY `blog_id` (`blog_id`),
   KEY `customer_group_id` (`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}blog_access`
@@ -505,7 +502,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog_description` (
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`blog_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}blog_description`
@@ -529,7 +526,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`blog_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}blog_to_layout`
@@ -549,7 +546,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog_to_store` (
   `blog_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`blog_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}blog_to_store`
@@ -574,10 +571,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}category` (
   `column` int(3) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}category`
@@ -615,7 +612,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_description` (
   `seo_h1` varchar(255) NOT NULL,
   PRIMARY KEY (`category_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}category_description`
@@ -646,7 +643,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}category_filter`
@@ -667,7 +664,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_path` (
   `path_id` int(11) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`path_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}category_path`
@@ -703,7 +700,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}category_to_layout`
@@ -723,7 +720,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}category_to_store`
@@ -764,15 +761,15 @@ CREATE TABLE `{{ ocstore_db_prefix }}comment` (
   `language_id` int(11) NOT NULL DEFAULT '1',
   `type_id` int(11) NOT NULL DEFAULT '1',
   `cmswidget` int(11) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`comment_id`),
   KEY `record_id` (`record_id`),
   KEY `rating_mark` (`rating_mark`),
   KEY `customer_id` (`customer_id`),
   KEY `rating` (`rating`),
   KEY `type_id` (`type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}comment`
@@ -781,15 +778,15 @@ CREATE TABLE `{{ ocstore_db_prefix }}comment` (
 LOCK TABLES `{{ ocstore_db_prefix }}comment` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}comment` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}comment` VALUES
-(1,1,0,1,'Наталья Николаевна Позднякова','Магазин - супер! Реальные оптовые цены на весь ассортимент! Спасибо, так держать!',5,0,'0000',1,1,1,1,'2017-05-31 19:31:11','0000-00-00 00:00:00'),
-(2,2,0,1,'Наталья Николаевна Позднякова','Все правильно, только я использую не шампунь &quot;два в одном&quot;, а отдельно шампунь и отдельно кондиционер. И сушить надо бережно, лучше феном не пользоваться, а намотать на голову полотенце и дать влаге впитаться.\r\nПолезная статья, пишите еще :)',5,0,'0000',1,1,1,1,'2017-05-31 20:39:55','0000-00-00 00:00:00'),
-(3,1,0,5,'Илья Александрович Поздняков','Молодцы! Только здесь можно купить в розницу средства в расфасовке по 500 мл и 1500 мл для салонов.\r\nУдачи, буду вашим постоянным клиентом :)',5,0,'0001',1,1,1,1,'2017-06-01 14:54:18','0000-00-00 00:00:00'),
-(4,1,1,5,'Илья Александрович Поздняков','Да, реально оптовые!\r\nИ фасовки как для салонов.',5,0,'00000000',1,1,1,1,'2017-06-01 14:55:10','0000-00-00 00:00:00'),
-(5,2,0,5,'Илья Александрович Поздняков','Мыть голову надо как минимум один раз в два дня, а то перхоть появляется. У меня волосы жирные.',4,0,'0001',1,1,1,1,'2017-06-01 14:56:51','0000-00-00 00:00:00'),
-(6,2,2,5,'Илья Александрович Поздняков','Я тоже кондиционер плюс шампунь использую, два в одном - это для лохов :)',5,1,'00000000',1,1,1,1,'2017-06-01 14:57:39','0000-00-00 00:00:00'),
-(7,1,0,6,'Лев Александрович Капитман','Классный магазин, постоянно здесь заказываю. Отправляют быстро, на следующий день как правило. Если до двух килограмм отправляют бандеролью первого класса, доходит до Воронежа за неделю. В общем рекомендую.',5,0,'0002',1,1,1,1,'2017-06-01 15:10:47','0000-00-00 00:00:00'),
-(8,2,6,6,'Лев Александрович Капитман','Сам ты лох, если волосы здоровые, то все это не надо.',5,1,'000000000000',1,1,1,1,'2017-06-01 15:12:03','0000-00-00 00:00:00'),
-(9,2,0,6,'Лев Александрович Капитман','Лоховская статья, проф средства - это для профессионального использования, то есть для тех кто этим деньги зарабатывает. Не будет же салон шампунь в потреб таре покупать, они тогда разорятся.',5,1,'0002',1,1,1,1,'2017-06-01 15:13:26','0000-00-00 00:00:00');
+(1,1,0,1,'Наталья Николаевна Позднякова','Магазин - супер! Реальные оптовые цены на весь ассортимент! Спасибо, так держать!',5,0,'0000',1,1,1,1,'2017-05-31 19:31:11',CURRENT_TIMESTAMP),
+(2,2,0,1,'Наталья Николаевна Позднякова','Все правильно, только я использую не шампунь &quot;два в одном&quot;, а отдельно шампунь и отдельно кондиционер. И сушить надо бережно, лучше феном не пользоваться, а намотать на голову полотенце и дать влаге впитаться.\r\nПолезная статья, пишите еще :)',5,0,'0000',1,1,1,1,'2017-05-31 20:39:55',CURRENT_TIMESTAMP),
+(3,1,0,5,'Илья Александрович Поздняков','Молодцы! Только здесь можно купить в розницу средства в расфасовке по 500 мл и 1500 мл для салонов.\r\nУдачи, буду вашим постоянным клиентом :)',5,0,'0001',1,1,1,1,'2017-06-01 14:54:18',CURRENT_TIMESTAMP),
+(4,1,1,5,'Илья Александрович Поздняков','Да, реально оптовые!\r\nИ фасовки как для салонов.',5,0,'00000000',1,1,1,1,'2017-06-01 14:55:10',CURRENT_TIMESTAMP),
+(5,2,0,5,'Илья Александрович Поздняков','Мыть голову надо как минимум один раз в два дня, а то перхоть появляется. У меня волосы жирные.',4,0,'0001',1,1,1,1,'2017-06-01 14:56:51',CURRENT_TIMESTAMP),
+(6,2,2,5,'Илья Александрович Поздняков','Я тоже кондиционер плюс шампунь использую, два в одном - это для лохов :)',5,1,'00000000',1,1,1,1,'2017-06-01 14:57:39',CURRENT_TIMESTAMP),
+(7,1,0,6,'Лев Александрович Капитман','Классный магазин, постоянно здесь заказываю. Отправляют быстро, на следующий день как правило. Если до двух килограмм отправляют бандеролью первого класса, доходит до Воронежа за неделю. В общем рекомендую.',5,0,'0002',1,1,1,1,'2017-06-01 15:10:47',CURRENT_TIMESTAMP),
+(8,2,6,6,'Лев Александрович Капитман','Сам ты лох, если волосы здоровые, то все это не надо.',5,1,'000000000000',1,1,1,1,'2017-06-01 15:12:03',CURRENT_TIMESTAMP),
+(9,2,0,6,'Лев Александрович Капитман','Лоховская статья, проф средства - это для профессионального использования, то есть для тех кто этим деньги зарабатывает. Не будет же салон шампунь в потреб таре покупать, они тогда разорятся.',5,1,'0002',1,1,1,1,'2017-06-01 15:13:26',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -807,7 +804,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}country` (
   `postcode_required` tinyint(1) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`country_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=177 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=177 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}country`
@@ -839,9 +836,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon` (
   `uses_total` int(11) NOT NULL,
   `uses_customer` varchar(11) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`coupon_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}coupon`
@@ -861,7 +858,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_id`,`category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}coupon_category`
@@ -885,7 +882,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon_history` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`coupon_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}coupon_history`
@@ -906,7 +903,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon_product` (
   `coupon_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}coupon_product`
@@ -931,9 +928,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}currency` (
   `decimal_place` char(1) NOT NULL,
   `value` float(15,8) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`currency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}currency`
@@ -960,7 +957,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field` (
   `position` int(3) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`custom_field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}custom_field`
@@ -981,7 +978,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}custom_field_description`
@@ -1001,7 +998,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}custom_field_to_customer_group`
@@ -1022,7 +1019,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_value` (
   `custom_field_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}custom_field_value`
@@ -1044,7 +1041,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_value_description` (
   `custom_field_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}custom_field_value_description`
@@ -1080,9 +1077,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer` (
   `status` tinyint(1) NOT NULL,
   `approved` tinyint(1) NOT NULL,
   `token` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer`
@@ -1107,7 +1104,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_ban_ip` (
   `ip` varchar(40) NOT NULL,
   PRIMARY KEY (`customer_ban_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_ban_ip`
@@ -1131,7 +1128,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_field` (
   `value` text NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_field`
@@ -1156,7 +1153,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_group` (
   `tax_id_required` int(1) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_group`
@@ -1179,7 +1176,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_group_description` (
   `name` varchar(32) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`customer_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_group_description`
@@ -1203,7 +1200,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_history`
@@ -1226,7 +1223,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_ip` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_ip_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_ip`
@@ -1254,7 +1251,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_online` (
   `referer` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`ip`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_online`
@@ -1278,9 +1275,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_reward` (
   `order_id` int(11) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
   `points` int(8) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`customer_reward_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_reward`
@@ -1301,7 +1298,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_simple_fields` (
   `metadata` text,
   `accept_policy` text,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_simple_fields`
@@ -1326,7 +1323,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_transaction` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`customer_transaction_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_transaction`
@@ -1347,9 +1344,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}download` (
   `filename` varchar(128) NOT NULL,
   `mask` varchar(128) NOT NULL,
   `remaining` int(11) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}download`
@@ -1370,7 +1367,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}download_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`download_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}download_description`
@@ -1391,7 +1388,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=461 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=461 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}extension`
@@ -1456,7 +1453,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}fields` (
   `field_status` tinyint(1) NOT NULL DEFAULT '1',
   `field_public` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}fields`
@@ -1480,7 +1477,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}fields_description` (
   `field_value` text NOT NULL,
   `field` longtext NOT NULL,
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}fields_description`
@@ -1501,7 +1498,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter` (
   `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filter`
@@ -1523,7 +1520,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_description` (
   `filter_group_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filter_description`
@@ -1543,7 +1540,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filter_group`
@@ -1564,7 +1561,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`filter_group_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filter_group_description`
@@ -1584,7 +1581,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filterpro_seo` (
   `url` varchar(255) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`url`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filterpro_seo`
@@ -1604,10 +1601,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`geo_zone_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}geo_zone`
@@ -1616,7 +1613,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}geo_zone` (
 LOCK TABLES `{{ ocstore_db_prefix }}geo_zone` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}geo_zone` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}geo_zone` VALUES
-(1,'Калининградская область','Калининград и область','0000-00-00 00:00:00','2017-05-24 01:01:38'),
+(1,'Калининградская область','Калининград и область',CURRENT_TIMESTAMP,'2017-05-24 01:01:38'),
 (2,'Остальные регионы','Остальные регионы России','2017-05-25 17:42:42','2017-05-24 01:01:38');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}geo_zone` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1632,7 +1629,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}information` (
   `sort_order` int(3) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`information_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}information`
@@ -1668,7 +1665,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}information_description` (
   `seo_title` varchar(255) NOT NULL,
   `seo_h1` varchar(255) NOT NULL,
   PRIMARY KEY (`information_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}information_description`
@@ -1699,7 +1696,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}information_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}information_to_layout`
@@ -1719,7 +1716,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}information_to_store`
@@ -1757,7 +1754,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}language` (
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}language`
@@ -1779,7 +1776,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}layout`
@@ -1818,7 +1815,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}layout_route`
@@ -1854,7 +1851,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
   PRIMARY KEY (`length_class_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}length_class`
@@ -1880,7 +1877,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}length_class_description` (
   `title` varchar(32) NOT NULL,
   `unit` varchar(4) NOT NULL,
   PRIMARY KEY (`length_class_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}length_class_description`
@@ -1907,7 +1904,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}manufacturer` (
   `sort_order` int(3) NOT NULL,
   `category_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`manufacturer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}manufacturer`
@@ -1935,7 +1932,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}manufacturer_description` (
   `seo_title` varchar(255) NOT NULL,
   `seo_h1` varchar(255) NOT NULL,
   PRIMARY KEY (`manufacturer_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}manufacturer_description`
@@ -1958,7 +1955,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`manufacturer_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}manufacturer_to_store`
@@ -1982,7 +1979,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option` (
   `type` varchar(32) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option`
@@ -2006,7 +2003,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option_description`
@@ -2030,7 +2027,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_tooltip` (
   `language_id` int(11) NOT NULL,
   `tooltip` text NOT NULL,
   PRIMARY KEY (`option_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option_tooltip`
@@ -2055,7 +2052,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_value` (
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option_value`
@@ -2084,7 +2081,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_value_description` (
   `option_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`option_value_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option_value_description`
@@ -2169,7 +2166,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order` (
   PRIMARY KEY (`order_id`),
   KEY `order_status_id` (`order_status_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order`
@@ -2215,7 +2212,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_download` (
   `mask` varchar(128) NOT NULL,
   `remaining` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`order_download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_download`
@@ -2239,7 +2236,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_field` (
   `value` text NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_field`
@@ -2308,9 +2305,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_fraud` (
   `queries_remaining` int(11) NOT NULL,
   `maxmind_id` varchar(8) NOT NULL,
   `error` text NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_fraud`
@@ -2332,9 +2329,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_history` (
   `order_status_id` int(5) NOT NULL,
   `notify` tinyint(1) NOT NULL DEFAULT '0',
   `comment` text NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_history`
@@ -2364,7 +2361,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_option` (
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL,
   PRIMARY KEY (`order_option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=525 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=525 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_option`
@@ -2427,7 +2424,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_product` (
   PRIMARY KEY (`order_product_id`),
   KEY `order_id` (`order_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=705 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=705 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_product`
@@ -2490,7 +2487,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_simple_fields` (
   `metadata` text,
   `accept_policy` text,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_simple_fields`
@@ -2514,7 +2511,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_status` (
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`order_status_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_status`
@@ -2552,7 +2549,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=697 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=697 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_total`
@@ -2643,7 +2640,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_voucher` (
   `message` text NOT NULL,
   `amount` decimal(15,4) NOT NULL,
   PRIMARY KEY (`order_voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}order_voucher`
@@ -2674,7 +2671,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}poip_main_option_settings` (
   `img_select` tinyint(1) NOT NULL,
   `img_cart` tinyint(1) NOT NULL,
   KEY `option_id` (`option_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}poip_main_option_settings`
@@ -2702,7 +2699,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}poip_option_image` (
   KEY `product_id` (`product_id`),
   KEY `product_option_id` (`product_option_id`),
   KEY `product_option_value_id` (`product_option_value_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}poip_option_image`
@@ -2744,7 +2741,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}poip_option_settings` (
   `img_cart` tinyint(1) NOT NULL,
   KEY `product_id` (`product_id`),
   KEY `product_option_id` (`product_option_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}poip_option_settings`
@@ -2794,14 +2791,14 @@ CREATE TABLE `{{ ocstore_db_prefix }}product` (
   `minimum` int(11) NOT NULL DEFAULT '1',
   `sort_order` int(11) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '0',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `viewed` int(5) NOT NULL DEFAULT '0',
   `status_lock` tinyint(1) NOT NULL DEFAULT '0',
   `quantity_lock` tinyint(1) NOT NULL DEFAULT '0',
   `price_lock` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product`
@@ -2830,7 +2827,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_attribute` (
   `text` text NOT NULL,
   PRIMARY KEY (`product_id`,`attribute_id`,`language_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_attribute`
@@ -2877,7 +2874,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_description` (
   `tag` text NOT NULL,
   PRIMARY KEY (`product_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_description`
@@ -2910,7 +2907,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_discount` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_discount_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_discount`
@@ -2932,7 +2929,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_filter`
@@ -2954,7 +2951,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_image`
@@ -2977,7 +2974,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_option` (
   `option_value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_option`
@@ -3021,7 +3018,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_option_value` (
   PRIMARY KEY (`product_option_value_id`),
   KEY `option_value_id` (`option_value_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_option_value`
@@ -3050,7 +3047,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`related_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_related`
@@ -3093,7 +3090,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_reward`
@@ -3125,7 +3122,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_special`
@@ -3150,7 +3147,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_category` (
   `main_category` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`,`category_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_to_category`
@@ -3189,7 +3186,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_to_download`
@@ -3210,7 +3207,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_to_layout`
@@ -3230,7 +3227,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_to_store`
@@ -3260,7 +3257,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}rate_comment` (
   PRIMARY KEY (`rate_id`),
   KEY `comment_id` (`comment_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}rate_comment`
@@ -3286,7 +3283,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}rate_review` (
   PRIMARY KEY (`rate_id`),
   KEY `review_id` (`review_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}rate_review`
@@ -3316,14 +3313,14 @@ CREATE TABLE `{{ ocstore_db_prefix }}record` (
   `comment_status` tinyint(1) NOT NULL,
   `comment_status_reg` tinyint(1) NOT NULL,
   `comment_status_now` tinyint(1) NOT NULL,
-  `date_available` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_available` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_end` datetime NOT NULL DEFAULT '2033-03-03 00:00:00',
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `viewed` int(5) NOT NULL DEFAULT '0',
   PRIMARY KEY (`record_id`),
   KEY `blog_main` (`blog_main`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record`
@@ -3348,7 +3345,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_access` (
   `customer_group_id` int(11) NOT NULL,
   KEY `record_id` (`record_id`),
   KEY `customer_group_id` (`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_access`
@@ -3383,7 +3380,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_attribute` (
   `language_id` int(11) NOT NULL,
   `text` text NOT NULL,
   PRIMARY KEY (`record_id`,`attribute_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_attribute`
@@ -3411,7 +3408,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_description` (
   `meta_keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`record_id`,`language_id`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_description`
@@ -3438,7 +3435,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_image` (
   `options` text NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`record_image_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_image`
@@ -3463,7 +3460,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_product_related` (
   `record_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`record_id`,`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_product_related`
@@ -3485,7 +3482,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_related` (
   `pointer` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   KEY `pointer` (`pointer_id`,`pointer`),
   KEY `related` (`related_id`,`pointer`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_related`
@@ -3521,7 +3518,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_tag` (
   KEY `record_id` (`record_id`),
   KEY `language_id` (`language_id`),
   KEY `tag` (`tag`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_tag`
@@ -3541,7 +3538,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_to_blog` (
   `record_id` int(11) NOT NULL,
   `blog_id` int(11) NOT NULL,
   PRIMARY KEY (`record_id`,`blog_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_to_blog`
@@ -3565,7 +3562,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_to_download` (
   `record_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
   PRIMARY KEY (`record_id`,`download_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_to_download`
@@ -3586,7 +3583,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_to_layout` (
   `store_id` int(11) NOT NULL,
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`record_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_to_layout`
@@ -3606,7 +3603,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_to_store` (
   `record_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`record_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}record_to_store`
@@ -3647,7 +3644,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}return` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`return_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}return`
@@ -3674,7 +3671,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}return_action` (
   `language_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`return_action_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}return_action`
@@ -3702,7 +3699,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}return_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`return_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}return_history`
@@ -3723,7 +3720,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}return_reason` (
   `language_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`return_reason_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}return_reason`
@@ -3749,7 +3746,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}return_status` (
   `language_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`return_status_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}return_status`
@@ -3783,15 +3780,15 @@ CREATE TABLE `{{ ocstore_db_prefix }}review` (
   `language_id` int(11) NOT NULL DEFAULT '1',
   `type_id` int(11) NOT NULL DEFAULT '1',
   `cmswidget` int(11) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`review_id`),
   KEY `product_id` (`product_id`),
   KEY `customer_id` (`customer_id`),
   KEY `rating_mark` (`rating_mark`),
   KEY `rating` (`rating`),
   KEY `type_id` (`type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}review`
@@ -3800,8 +3797,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}review` (
 LOCK TABLES `{{ ocstore_db_prefix }}review` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}review` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}review` VALUES
-(1,1,0,0,1,'Наталья Николаевна Позднякова','Шампунь просто чудо, цвет остается как был, не изменяется. Волосы просто сияют, рекомендую!',5,0,1,1,1,2,'2017-05-31 15:53:58','0000-00-00 00:00:00'),
-(2,1,0,1,6,'Лев Александрович Капитман','Шампунь - бомба, особенно круто, что есть фасовка по полтора литра. Спасибо. Цена - супер!',5,0,1,1,1,2,'2017-06-01 15:16:29','0000-00-00 00:00:00');
+(1,1,0,0,1,'Наталья Николаевна Позднякова','Шампунь просто чудо, цвет остается как был, не изменяется. Волосы просто сияют, рекомендую!',5,0,1,1,1,2,'2017-05-31 15:53:58',CURRENT_TIMESTAMP),
+(2,1,0,1,6,'Лев Александрович Капитман','Шампунь - бомба, особенно круто, что есть фасовка по полтора литра. Спасибо. Цена - супер!',5,0,1,1,1,2,'2017-06-01 15:16:29',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3816,7 +3813,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}review_fields` (
   `mark` varchar(255) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
   KEY `review_id` (`review_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}review_fields`
@@ -3839,7 +3836,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_adds` (
   `data` text NOT NULL,
   `sort_order` int(11) NOT NULL,
   PRIMARY KEY (`adds_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_adds`
@@ -3863,7 +3860,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_cache` (
   `response_data` text NOT NULL,
   `cdate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_cache`
@@ -3889,7 +3886,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_city2city` (
   `to_code` varchar(300) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19713 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19713 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_city2city`
@@ -4812,7 +4809,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_config` (
   `values` text NOT NULL,
   `is_editable` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=281 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=281 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_config`
@@ -4848,7 +4845,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_countries` (
   `country_name` varchar(300) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=953 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=953 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_countries`
@@ -5109,7 +5106,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_current_methods` (
   `data` text NOT NULL,
   `sort_order` int(11) NOT NULL,
   PRIMARY KEY (`code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_current_methods`
@@ -5136,7 +5133,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_delivery_types` (
   `content` varchar(300) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=397 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=397 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_delivery_types`
@@ -5179,7 +5176,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_filters` (
   `data` text NOT NULL,
   `sort_order` int(11) NOT NULL,
   PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_filters`
@@ -5205,7 +5202,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_formuls` (
   `param_key` varchar(300) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15907 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15907 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_formuls`
@@ -5959,7 +5956,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_options` (
   `condition` varchar(300) NOT NULL,
   `comment` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1725 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1725 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_options`
@@ -6066,7 +6063,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_regions` (
   `capital` varchar(300) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_regions`
@@ -6177,7 +6174,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_regions2regions` (
   `magistral` int(11) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=158973 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=158973 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_regions2regions`
@@ -13430,7 +13427,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_remote` (
   `limit_type` varchar(10) NOT NULL,
   `is_ems` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=55573 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=55573 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_remote`
@@ -15998,7 +15995,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}russianpost2_services` (
   `area_type` varchar(300) NOT NULL,
   `data` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1035 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1035 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}russianpost2_services`
@@ -16070,7 +16067,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}setting` (
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=601 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=601 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}setting`
@@ -16698,7 +16695,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}simple_cart` (
   `products` text,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`simple_cart_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}simple_cart`
@@ -16719,7 +16716,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}stock_status` (
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`stock_status_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}stock_status`
@@ -16746,7 +16743,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}store` (
   `url` varchar(255) NOT NULL,
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}store`
@@ -16768,7 +16765,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}subscription` (
   `email` varchar(96) NOT NULL,
   PRIMARY KEY (`subscription_id`),
   KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}subscription`
@@ -16802,7 +16799,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier` (
   `down_threshold` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `fine_price` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`supplier_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier`
@@ -16824,7 +16821,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_attribute` (
   `attribute_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`supplier_attribute_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_attribute`
@@ -16845,7 +16842,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_description` (
   `language_id` int(11) NOT NULL DEFAULT '0',
   `description` text NOT NULL,
   PRIMARY KEY (`supplier_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_description`
@@ -16865,7 +16862,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_clon` (
   `batch_id` int(11) NOT NULL,
   `supplier_product_id` int(11) NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_clon`
@@ -16886,7 +16883,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_refresh` (
   `supplier_id` int(11) NOT NULL,
   `iterator_state` text NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_refresh`
@@ -16912,7 +16909,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_refresh_product` (
   `error` tinyint(1) NOT NULL,
   `quantity` int(11) NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_id`,`supplier_product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_refresh_product`
@@ -16932,7 +16929,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_sync` (
   `batch_id` int(11) NOT NULL,
   `supplier_product_id` int(11) NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_sync`
@@ -16954,7 +16951,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_manufacturer` (
   `manufacturer_id` int(11) NOT NULL DEFAULT '0',
   `url` text NOT NULL,
   PRIMARY KEY (`supplier_manufacturer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_manufacturer`
@@ -16977,7 +16974,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_manufacturer_image` (
   `url` text NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`supplier_manufacturer_image_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_manufacturer_image`
@@ -17000,7 +16997,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_option` (
   `type` varchar(32) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`supplier_option_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_option`
@@ -17024,7 +17021,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_option_value` (
   `image` varchar(255) NOT NULL,
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`supplier_option_value_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_option_value`
@@ -17047,7 +17044,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_option_value_image` (
   `url` text NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`supplier_option_value_image_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_option_value_image`
@@ -17080,7 +17077,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_product` (
   `active` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`supplier_product_id`),
   KEY `product` (`product_id`,`product_option_value_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_product`
@@ -17103,7 +17100,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_product_image` (
   `url` text NOT NULL,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`supplier_product_image_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_product_image`
@@ -17123,7 +17120,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_to_store` (
   `supplier_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`supplier_id`,`store_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}supplier_to_store`
@@ -17143,10 +17140,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`tax_class_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}tax_class`
@@ -17168,10 +17165,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_rate` (
   `name` varchar(32) NOT NULL,
   `rate` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `type` char(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`tax_rate_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}tax_rate`
@@ -17191,7 +17188,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}tax_rate_to_customer_group`
@@ -17214,7 +17211,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_rule` (
   `based` varchar(10) NOT NULL,
   `priority` int(5) NOT NULL DEFAULT '1',
   PRIMARY KEY (`tax_rule_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}tax_rule`
@@ -17236,7 +17233,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}url_alias` (
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`(64))
-) ENGINE=MyISAM AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}url_alias`
@@ -17337,7 +17334,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}url_alias_blog` (
   KEY `language_id` (`language_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}url_alias_blog`
@@ -17371,9 +17368,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}user` (
   `code` varchar(40) NOT NULL,
   `ip` varchar(40) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}user`
@@ -17397,7 +17394,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}user_group` (
   `name` varchar(64) NOT NULL,
   `permission` text NOT NULL,
   PRIMARY KEY (`user_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}user_group`
@@ -17427,9 +17424,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher` (
   `message` text NOT NULL,
   `amount` decimal(15,4) NOT NULL,
   `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`voucher_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}voucher`
@@ -17452,7 +17449,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher_history` (
   `amount` decimal(15,4) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`voucher_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}voucher_history`
@@ -17472,7 +17469,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}voucher_theme`
@@ -17493,7 +17490,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher_theme_description` (
   `language_id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`,`language_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}voucher_theme_description`
@@ -17513,7 +17510,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
   PRIMARY KEY (`weight_class_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}weight_class`
@@ -17538,7 +17535,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}weight_class_description` (
   `title` varchar(32) NOT NULL,
   `unit` varchar(4) NOT NULL,
   PRIMARY KEY (`weight_class_id`,`language_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}weight_class_description`
@@ -17564,7 +17561,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}zone` (
   `code` varchar(32) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`zone_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}zone`
@@ -17671,10 +17668,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}zone_to_geo_zone` (
   `country_id` int(11) NOT NULL,
   `zone_id` int(11) NOT NULL DEFAULT '0',
   `geo_zone_id` int(11) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`zone_to_geo_zone_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=171 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}zone_to_geo_zone`
@@ -17683,91 +17680,91 @@ CREATE TABLE `{{ ocstore_db_prefix }}zone_to_geo_zone` (
 LOCK TABLES `{{ ocstore_db_prefix }}zone_to_geo_zone` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}zone_to_geo_zone` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}zone_to_geo_zone` VALUES
-(170,176,92,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(169,176,91,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(168,176,89,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(167,176,87,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(166,176,86,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(165,176,83,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(164,176,79,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(163,176,78,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(162,176,77,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(161,176,76,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(160,176,75,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(159,176,74,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(158,176,73,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(157,176,72,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(156,176,71,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(155,176,70,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(154,176,69,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(153,176,68,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(152,176,67,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(151,176,66,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(150,176,65,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(149,176,64,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(148,176,63,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(147,176,62,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(146,176,61,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(145,176,60,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(144,176,59,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(143,176,58,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(142,176,57,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(141,176,56,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(140,176,55,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(139,176,54,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(138,176,53,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(137,176,52,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(136,176,51,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(135,176,50,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(134,176,49,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(39,176,39,1,'2017-05-24 01:01:38','0000-00-00 00:00:00'),
-(133,176,48,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(132,176,47,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(131,176,46,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(130,176,45,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(129,176,44,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(128,176,43,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(127,176,42,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(126,176,41,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(125,176,40,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(124,176,38,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(123,176,37,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(122,176,36,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(121,176,35,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(120,176,34,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(119,176,33,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(118,176,32,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(117,176,31,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(116,176,30,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(115,176,29,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(114,176,28,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(113,176,27,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(112,176,26,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(111,176,25,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(110,176,24,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(109,176,23,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(108,176,22,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(107,176,21,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(106,176,20,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(105,176,19,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(104,176,18,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(103,176,17,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(102,176,16,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(101,176,15,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(100,176,14,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(99,176,13,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(98,176,12,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(97,176,11,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(96,176,10,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(95,176,9,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(94,176,8,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(93,176,7,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(92,176,6,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(91,176,5,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(90,176,4,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(89,176,3,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(88,176,2,2,'2017-05-25 17:42:42','0000-00-00 00:00:00'),
-(87,176,1,2,'2017-05-25 17:42:42','0000-00-00 00:00:00');
+(170,176,92,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(169,176,91,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(168,176,89,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(167,176,87,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(166,176,86,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(165,176,83,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(164,176,79,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(163,176,78,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(162,176,77,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(161,176,76,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(160,176,75,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(159,176,74,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(158,176,73,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(157,176,72,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(156,176,71,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(155,176,70,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(154,176,69,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(153,176,68,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(152,176,67,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(151,176,66,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(150,176,65,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(149,176,64,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(148,176,63,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(147,176,62,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(146,176,61,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(145,176,60,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(144,176,59,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(143,176,58,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(142,176,57,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(141,176,56,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(140,176,55,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(139,176,54,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(138,176,53,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(137,176,52,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(136,176,51,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(135,176,50,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(134,176,49,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(39,176,39,1,'2017-05-24 01:01:38',CURRENT_TIMESTAMP),
+(133,176,48,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(132,176,47,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(131,176,46,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(130,176,45,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(129,176,44,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(128,176,43,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(127,176,42,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(126,176,41,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(125,176,40,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(124,176,38,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(123,176,37,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(122,176,36,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(121,176,35,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(120,176,34,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(119,176,33,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(118,176,32,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(117,176,31,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(116,176,30,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(115,176,29,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(114,176,28,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(113,176,27,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(112,176,26,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(111,176,25,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(110,176,24,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(109,176,23,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(108,176,22,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(107,176,21,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(106,176,20,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(105,176,19,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(104,176,18,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(103,176,17,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(102,176,16,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(101,176,15,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(100,176,14,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(99,176,13,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(98,176,12,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(97,176,11,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(96,176,10,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(95,176,9,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(94,176,8,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(93,176,7,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(92,176,6,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(91,176,5,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(90,176,4,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(89,176,3,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(88,176,2,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP),
+(87,176,1,2,'2017-05-25 17:42:42',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}zone_to_geo_zone` ENABLE KEYS */;
 UNLOCK TABLES;
 
