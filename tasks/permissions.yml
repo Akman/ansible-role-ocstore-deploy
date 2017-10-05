@@ -1,0 +1,70 @@
+---
+# tasks/permissions.yml
+
+- name: ocStore | Deploy | Build command list for setup repo and release folders owner and group
+  set_fact:
+    ocstore_permissions_cmd: >
+      chown -Rf {{ ocstore_www_owner_user }}:{{ ocstore_www_owner_user }} {{ ocstore_www_root }}/{{ ocstore_repo_dir }};
+      chown -Rf {{ ocstore_www_owner_user }}:{{ ocstore_www_owner_group }} {{ ocstore_current_release_dir }};
+
+- name: ocStore | Deploy | Ensure repo and release folders have valid owner and group
+  shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+chown ', ';chown ') | trim }}"
+  changed_when: false
+
+- name: ocStore | Deploy | Build command list for setup repo folders and files permissions
+  set_fact:
+    ocstore_permissions_cmd: >
+      {% for item in ocstore_repo_permissions %}
+        {% if item.name is defined %}
+          find {{ ocstore_www_root }}/{{ ocstore_repo_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -name {{ item.name | quote }} -exec chmod {{ item.mode }} {} +;
+        {% else %}
+          find {{ ocstore_www_root }}/{{ ocstore_repo_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -exec chmod {{ item.mode }} {} +;
+        {% endif %}
+      {% endfor %}
+  
+- name: ocStore | Deploy | Ensure repo folders and files have valid permissions
+  shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+find ', ';find ') | trim }}"
+  changed_when: false
+
+- name: ocStore | Deploy | Build command list for setup release folders and files permissions
+  set_fact:
+    ocstore_permissions_cmd: >
+      {% for item in ocstore_release_permissions %}
+        {% if item.name is defined %}
+          find {{ ocstore_current_release_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -name {{ item.name | quote }} -exec chmod {{ item.mode }} {} +;
+        {% else %}
+          find {{ ocstore_current_release_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -exec chmod {{ item.mode }} {} +;
+        {% endif %}
+      {% endfor %}
+  
+- name: ocStore | Deploy | Ensure release folders and files have valid permissions
+  shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+find ', ';find ') | trim }}"
+  changed_when: false
+
+- name: ocStore | Deploy | Build command list for setup shared folder owner and group
+  set_fact:
+    ocstore_permissions_cmd: >
+      chown -Rf {{ ocstore_www_owner_user }}:{{ ocstore_www_owner_group }} {{ ocstore_www_root }}/{{ ocstore_shared_dir }};
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+
+- name: ocStore | Deploy | Ensure shared folder have valid owner and group
+  shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+chown ', ';chown ') | trim }}"
+  changed_when: false
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+  
+- name: ocStore | Deploy | Build command list for setup shared folder and files permissions
+  set_fact:
+    ocstore_permissions_cmd: >
+      {% for item in ocstore_shared_permissions %}
+        {% if item.name is defined %}
+          find {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -name {{ item.name | quote }} -exec chmod {{ item.mode }} {} +;
+        {% else %}
+          find {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -exec chmod {{ item.mode }} {} +;
+        {% endif %}
+      {% endfor %}
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+
+- name: ocStore | Deploy | Ensure shared folders and files have valid permissions
+  shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+find ', ';find ') | trim }}"
+  changed_when: false
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir

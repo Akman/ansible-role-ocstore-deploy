@@ -19,17 +19,7 @@
   set_fact:
     ocstore_www_owner_user: "{{ ansible_env.USER }}"
 
-- name: ocStore | Deploy | Set current release version
+- name: ocStore | Deploy | Set current release folder (development)
   set_fact:
-    ocstore_current_release_version: "{{ lookup('pipe', 'date -u +%Y%m%d%H%M%SZ') }}"
-  when: ocstore_current_release_version is not defined
-
-- name: ocStore | Deploy | Set current release folder
-  set_fact:
-    ocstore_current_release_dir: "{{ ocstore_www_root }}/{{ ocstore_public_dir if ocstore_environment == 'development' else ocstore_releases_dir + '/' + ocstore_current_release_version }}"
-  when: ocstore_current_release_dir is not defined
-
-- name: ocStore | Deploy | Get shared folder stat
-  stat:
-    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}"
-  register: ocstore_shared_path
+    ocstore_current_release_dir: "{{ ocstore_www_root }}/{{ ocstore_public_dir }}"
+  when: ocstore_environment == 'development'

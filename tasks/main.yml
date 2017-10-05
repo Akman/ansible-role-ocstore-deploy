@@ -16,17 +16,16 @@
 - import_tasks: git.yml
   when: ocstore_environment != 'development'
 
-- import_tasks: update.yml
-  become: yes
-  when: ocstore_environment != 'development'
-  
-- import_tasks: shared.yml
+- import_tasks: templates.yml
   become: yes
 
-- import_tasks: symlink.yml
+- import_tasks: symlinks.yml
+
+- import_tasks: permissions.yml
+  when: ocstore_environment != 'development'
+  become: yes
+
+- import_tasks: release.yml
 
 - import_tasks: cleanup.yml
   when: ocstore_environment != 'development'
-
-- import_tasks: restart.yml
-  become: yes
