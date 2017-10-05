@@ -21,5 +21,10 @@
 
 - name: ocStore | Deploy | Set current release folder (development)
   set_fact:
-    ocstore_current_release_dir: "{{ ocstore_www_root }}/{{ ocstore_public_dir }}"
+    ocstore_current_release_dir: "{{ ocstore_www_root }}"
   when: ocstore_environment == 'development'
+
+- name: ocStore | Deploy | Get shared folder stat
+  stat:
+    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}"
+  register: ocstore_shared_path

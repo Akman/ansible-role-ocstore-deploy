@@ -1,11 +1,6 @@
 ---
 # tasks/folders.yml
 
-- name: ocStore | Deploy | Get shared folder stat
-  stat:
-    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}"
-  register: ocstore_shared_path
-
 - name: ocStore | Deploy | Ensure all deploy folders are exist
   file:
     state: directory

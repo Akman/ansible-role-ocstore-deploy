@@ -3,12 +3,15 @@
 
 - name: ocStore | Deploy | Ensure current symlink source is new release
   file:
-    state: link
+    state: "link"
     path: "{{ ocstore_www_root }}/{{ ocstore_current_dir }}"
     src: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}"
 
-- name: ocStore | Deploy | Restart php-fpm service
+- name: ocStore | Deploy | Restart services
   service:
-    name: php7.0-fpm
-    state: restarted
-  become: yes
+    name: "{{ item }}"
+    state: "restarted"
+  with_items:
+    - "php7.0-fpm"
+    - "apache2"
+  become: "yes"
