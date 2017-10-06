@@ -97,20 +97,17 @@ ocstore_git_tree_public: "www/{{ ocstore_public_dir }}"
 ocstore_git_tree_shared: "www/{{ ocstore_shared_dir }}"
 ocstore_git_tree_admin: "www/{{ ocstore_admin_dir }}"
 
-ocstore_shared_folders:
-  - { path: "download" }
-  - { path: "image" }
-#  - { path: "system/cache" }
-  - { path: "system/license" }
-  - { path: "system/logs" }
-#  - { path: "vqmod/cache" }
-  - { path: "vqmod/logs" }
-
-# 'dest' can be absolute or relative path with 'ocstore_current_release_dir' as base
-ocstore_shared_files:
+# 'path' is relative always with 'ocstore_shared_dir' as base
+# 'dest' can be 1) absolute 2) relative with 'ocstore_current_release_dir' as base
+ocstore_shared_symlinks:
+  - { path: "download",                  dest: "download" }
+  - { path: "system/logs",               dest: "system/logs" }
+  - { path: "vqmod/logs",                dest: "vqmod/logs" }
   - { path: "css/moneymaker-custom.css", dest: "catalog/view/theme/moneymaker/stylesheet/moneymaker-custom.css" }
-  - { path: "image/data/favicon.ico", dest: "favicon.ico" }
-  - { path: "image/data/no_image.jpg", dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
+  - { path: "css/custom.css",            dest: "catalog/view/theme/moneymaker/stylesheet/custom.css" }
+  - { path: "image",                     dest: "image" }
+  - { path: "image/data/favicon.ico",    dest: "favicon.ico" }
+  - { path: "image/data/no_image.jpg",   dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
 
 ocstore_release_copy_files:
   - { path: "system/license/filterpro.lic", mode: "660" }
@@ -125,14 +122,14 @@ ocstore_public_template_files:
   - { path: "php.ini" }
   - { path: "vqmod/pathReplaces.php" }
   
-ocstore_shared_template_common_files:  
+ocstore_shared_template_files:  
   - { path: "css/.htaccess" }
-  - { path: "css/moneymaker-custom.css" }
   - { path: "download/.htaccess" }
   - { path: "image/.htaccess" }
 
-ocstore_shared_template_common_stub_files:
+ocstore_shared_stub_files:
   - { path: "system/logs/{{ ocstore_error_filename}}" }
+  - { path: "vqmod/logs/vqmod.log" }
 
 ocstore_admin_template_files:
   - { path: "config.php" }

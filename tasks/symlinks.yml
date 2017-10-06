@@ -21,18 +21,10 @@
     path: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/{{ ocstore_admin_dirname }}"
     src: "{{ ocstore_current_release_dir }}/{{ ocstore_admin_dir }}"
 
-- name: ocStore | Deploy | Ensure symlinks for shared folders are present
-  file:
-    state: link
-    path: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/{{ item.path }}"
-    src: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
-  with_flattened:
-    - "{{ ocstore_shared_folders }}"
-
-- name: ocStore | Deploy | Ensure symlinks for shared files are present
+- name: ocStore | Deploy | Ensure symlinks for shared files and folders are present
   file:
     state: link
     path: "{{ (item.dest[:1] == '/') | ternary(item.dest,ocstore_current_release_dir+'/'+ocstore_public_dir+'/'+item.dest) }}"
     src: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
   with_flattened:
-    - "{{ ocstore_shared_files }}"
+    - "{{ ocstore_shared_symlinks }}"

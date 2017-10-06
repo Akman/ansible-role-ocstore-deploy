@@ -19,6 +19,9 @@
 - import_tasks: templates.yml
   become: yes
 
+- import_tasks: files.yml
+  become: yes
+
 - import_tasks: symlinks.yml
 
 - import_tasks: permissions.yml
