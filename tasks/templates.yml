@@ -19,10 +19,20 @@
   with_flattened:
     - "{{ ocstore_public_template_files }}"
 
-- name: ocStore | Deploy | Ensure template files are exist in shared folder
+- name: ocStore | Deploy | Ensure shared subfolders for template files are exist in current release
+  file:
+    state: directory
+    path: "{{ (ocstore_current_release_dir + '/' + ocstore_shared_dir + '/' + item.path) | dirname }}"
+    mode: "750"
+    group: "{{ ocstore_www_owner_group }}"
+    owner: "{{ ocstore_www_owner_user }}"
+  with_flattened:
+    - "{{ ocstore_shared_template_files }}"
+
+- name: ocStore | Deploy | Ensure template files are exist in current release shared folder
   template: >
     src="{{ item.path }}.j2"
-    dest="{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+    dest="{{ ocstore_current_release_dir }}/{{ ocstore_shared_dir }}/{{ item.path }}"
     group="{{ ocstore_www_owner_group }}"
     owner="{{ ocstore_www_owner_user }}"
   with_flattened:

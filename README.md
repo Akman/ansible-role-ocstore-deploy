@@ -84,8 +84,6 @@ ocstore_shared_symlinks:
 ocstore_release_copy_files:
   - { path: "system/license/filterpro.lic", mode: "660" }
 
-ocstore_shared_copy_files: []
-
 ocstore_public_template_files:
   - { path: ".htaccess" }
   - { path: "robots.txt" }
@@ -100,8 +98,8 @@ ocstore_shared_template_files:
   - { path: "image/.htaccess" }
 
 ocstore_shared_stub_files:
-  - { path: "system/logs/{{ ocstore_error_filename}}" }
-  - { path: "vqmod/logs/vqmod.log" }
+  - { path: "system/logs/{{ ocstore_error_filename}}", mode: "660" }
+  - { path: "vqmod/logs/vqmod.log", mode: "660" }
 
 ocstore_admin_template_files:
   - { path: "config.php" }
@@ -193,8 +191,6 @@ ocstore_shared_symlinks:
 ocstore_release_copy_files:
   - { path: "system/license/filterpro.lic", mode: "660" }
 
-ocstore_shared_copy_files: []
-
 ocstore_public_template_files:
   - { path: ".htaccess" }
   - { path: "robots.txt" }
@@ -209,8 +205,8 @@ ocstore_shared_template_files:
   - { path: "image/.htaccess" }
 
 ocstore_shared_stub_files:
-  - { path: "system/logs/{{ ocstore_error_filename}}" }
-  - { path: "vqmod/logs/vqmod.log" }
+  - { path: "system/logs/{{ ocstore_error_filename}}", mode: "660" }
+  - { path: "vqmod/logs/vqmod.log", mode: "660" }
 
 ocstore_admin_template_files:
   - { path: "config.php" }

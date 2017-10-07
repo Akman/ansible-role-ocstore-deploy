@@ -21,6 +21,15 @@
     path: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/{{ ocstore_admin_dirname }}"
     src: "{{ ocstore_current_release_dir }}/{{ ocstore_admin_dir }}"
 
+- name: ocStore | Deploy | Ensure symlinks for shared template files are present
+  file:
+    state: link
+    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+    src: "{{ ocstore_current_release_dir }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+  with_flattened:
+    - "{{ ocstore_shared_template_files }}"
+  when: ocstore_environment != 'development'
+
 - name: ocStore | Deploy | Ensure symlinks for shared files and folders are present
   file:
     state: link

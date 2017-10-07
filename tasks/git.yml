@@ -31,6 +31,7 @@
     - "{{ ocstore_current_release_dir }}"
     - "{{ ocstore_current_release_dir }}/{{ ocstore_admin_dir }}"
     - "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}"
+    - "{{ ocstore_current_release_dir }}/{{ ocstore_shared_dir }}"
   become: yes
 
 - name: ocStore | Deploy | Copy current release version into REVISION file
@@ -70,7 +71,7 @@
   environment:
     prefix: "{{ ocstore_git_tree_public }}"
 
-- name: ocStore | Deploy | Sync repo shared subtree to shared folder once
+- name: ocStore | Deploy | Sync repo shared subtree to shared folder if not exists
   shell: >-
            {
              git ls-files -z --with-tree="{{ ocstore_git_branch }}" | tr '\0' '\n';

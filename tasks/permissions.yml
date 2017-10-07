@@ -36,7 +36,7 @@
           find {{ ocstore_current_release_dir }}/{{ item.path }} -type {{ (item.type == "file") | ternary('f','d') }} -exec chmod {{ item.mode }} {} +;
         {% endif %}
       {% endfor %}
-  
+
 - name: ocStore | Deploy | Ensure release folders and files have valid permissions
   shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+find ', ';find ') | trim }}"
   changed_when: false
