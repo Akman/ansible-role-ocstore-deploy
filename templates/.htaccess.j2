@@ -1,3 +1,6 @@
+Options -Indexes +FollowSymLinks
+DirectoryIndex index.php
+
 <FilesMatch "(?i)((\.tpl|\.ini|\.log|\.lic|\.md|(?<!robots)\.txt))">
   Order deny,allow
   Deny from all
@@ -27,6 +30,7 @@ RewriteRule ^index\.html$ / [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
 RewriteCond %{REQUEST_URI} !\.(ico|gif|jpg|jpeg|png|js|css|woff2|woff|ttf|svg|eot)$
 RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
 
