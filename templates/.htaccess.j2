@@ -19,8 +19,8 @@ RewriteCond %{QUERY_STRING} (boot\.ini|etc/passwd|self/environ) [NC,OR]
 RewriteCond %{QUERY_STRING} (\'|\")(.*)(drop|insert|md5|select|union) [NC]
 RewriteRule .* - [F]
 
-RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} ^www\.{{ ocstore_hostname | regex_escape() }}$
+RewriteCond %{HTTPS} !=on [NC,OR]
+RewriteCond %{HTTP_HOST} ^www\.{{ ocstore_hostname | regex_escape() }}$ [NC]
 RewriteRule ^(.*)$ https://{{ ocstore_hostname | regex_escape() }}/$1 [R=301,L]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
@@ -38,6 +38,7 @@ RewriteRule ^$ - [L]
 
 RewriteRule ^admin(.*)/$ - [L]
 
+RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
 RewriteCond %{REQUEST_FILENAME} \.php$
 RewriteRule ^(.*)$ /error-not-found [L]
