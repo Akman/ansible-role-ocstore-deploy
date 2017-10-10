@@ -51,7 +51,7 @@
            }
            | grep "^$prefix"
            | sed "s#^$prefix/##"
-           | rsync -a --files-from=- "./$prefix/" {{ ocstore_current_release_dir }}/{{ ocstore_admin_dir }}/
+           | rsync -a --exclude index.html --files-from=- "./$prefix/" {{ ocstore_current_release_dir }}/{{ ocstore_admin_dir }}/
   args:
     chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
   environment:
@@ -65,7 +65,7 @@
            }
            | grep "^$prefix"
            | sed "s#^$prefix/##"
-           | rsync -a --files-from=- "./$prefix/" {{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/
+           | rsync -a --exclude index.html --files-from=- "./$prefix/" {{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/
   args:
     chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
   environment:
@@ -79,7 +79,7 @@
            }
            | grep "^$prefix"
            | sed "s#^$prefix/##"
-           | rsync -a --files-from=- "./$prefix/" {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/
+           | rsync -a --exclude index.html --files-from=- "./$prefix/" {{ ocstore_www_root }}/{{ ocstore_shared_dir }}/
   args:
     chdir: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}/"
   environment:
