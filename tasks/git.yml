@@ -71,6 +71,18 @@
   environment:
     prefix: "{{ ocstore_git_tree_public }}"
 
+- name: ocStore | Deploy | Ensure system and vqmod cache folders are exist in current release public folder
+  file:
+    state: directory
+    path: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/{{ item.path }}"
+    mode: "770"
+    group: "{{ ocstore_www_owner_group }}"
+    owner: "{{ ocstore_www_owner_user }}"
+  with_flattened:
+    - "{{ ocstore_vqmod_cache }}"
+    - "{{ ocstore_system_cache }}"
+  become: yes
+
 - name: ocStore | Deploy | Sync repo shared subtree to shared folder if not exists
   shell: >-
            {
@@ -85,3 +97,14 @@
   environment:
     prefix: "{{ ocstore_git_tree_shared }}"
   when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+
+- name: ocStore | Deploy | Ensure image cache folder exists in common shared folder
+  file:
+    state: directory
+    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/{{ item.path }}"
+    mode: "770"
+    group: "{{ ocstore_www_owner_group }}"
+    owner: "{{ ocstore_www_owner_user }}"
+  with_flattened:
+    - "{{ ocstore_image_cache }}"
+  become: yes
