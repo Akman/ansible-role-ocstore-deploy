@@ -12,6 +12,16 @@
   with_flattened:
     - "{{ ocstore_shared_stub_files }}"
 
+- name: ocStore | Deploy | Ensure folders are exist in current release
+  file:
+    state: directory
+    path: "{{ ocstore_current_release_dir + '/' + item.path | dirname }}"
+    mode: "750"
+    group: "{{ ocstore_www_owner_group }}"
+    owner: "{{ ocstore_www_owner_user }}"
+  with_flattened:
+    - "{{ ocstore_release_copy_files }}"
+    
 - name: ocStore | Deploy | Ensure files are exist in current release admin and public folders
   copy: >
     src="{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/files/{{ item.path }}"
