@@ -16067,7 +16067,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}setting` (
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=601 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=604 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}setting`
@@ -16675,7 +16675,10 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (597,0,'moneymaker','mmr_expected_format','a:1:{i:1;s:6:\"d MMMM\";}',1),
 (598,0,'moneymaker','mmr_expected_strategy','next day',0),
 (599,0,'moneymaker','mmr_contacts_links','a:1:{i:1;a:6:{s:4:\"text\";a:1:{i:1;s:30:\"Связаться с нами\";}s:9:\"link_mode\";s:1:\"1\";s:7:\"link_id\";s:1:\"0\";s:8:\"link_url\";s:12:\"/contact-us/\";s:9:\"icon_mode\";s:1:\"1\";s:4:\"icon\";s:8:\"envelope\";}}',1),
-(600,0,'moneymaker','mmr_quickorder_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1);
+(600,0,'moneymaker','mmr_quickorder_form_policy','a:1:{i:1;s:375:\"Я ознакомлен(а) с &lt;a class=&quot;akman-colorbox&quot; href=&quot;/user-agreement&quot; target=&quot;_blank&quot;&gt;&quot;Политикой конфиденциальности (обработки персональных данных)&quot;&lt;/a&gt; и даю своё согласие на обработку моих персональных данных\";}',1),
+(601,0,'moneymaker','mmr_footer_others_enabled','1',0),
+(602,0,'moneymaker','mmr_footer_others_caption','a:1:{i:1;s:31:"СКАЧАТЬ КАТАЛОГИ";}',0),
+(603,0,'moneymaker','mmr_footer_others_body','a:1:{i:1;s:520:"&lt;a href=&quot;/download/policy.pdf&quot; target=&quot;_blank&quot; title=&quot;Скачать каталог косметики&quot;&gt;&lt;i class=&quot;fa fa-1x fa-file-pdf-o&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;Косметика&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;/download/policy.pdf&quot; target=&quot;_blank&quot; title=&quot;Скачать каталог аксессуаров&quot;&gt;&lt;i class=&quot;fa fa-1x fa-file-pdf-o&quot;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;Аксессуары&lt;/a&gt;";}',0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
