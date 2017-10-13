@@ -58,6 +58,8 @@ Disallow: /*?poip_ov=
 Disallow: /*&poip_ov=
 Disallow: /*?tracking=
 Disallow: /*&tracking=
+Disallow: /*?mode=
+Disallow: /*&mode=
 {{ ocstore_robots_sitemap_enabled | bool | ternary('','#') }}Sitemap: https://{{ ocstore_hostname }}/feed-sitemap/
 
 User-agent: Yandex
@@ -118,5 +120,7 @@ Disallow: /*?poip_ov=
 Disallow: /*&poip_ov=
 Disallow: /*?tracking=
 Disallow: /*&tracking=
+Disallow: /*?mode=
+Disallow: /*&mode=
 {{ ocstore_robots_sitemap_enabled | bool | ternary('','#') }}Sitemap: https://{{ ocstore_hostname }}/feed-sitemap/
-Clean-param: tracking&poip_ov
+Clean-param: tracking&poip_ov&mode&search&limit&order&sort&route
