@@ -13,7 +13,7 @@
         state: "import"
         target: "~/{{ db_item.item.name }}.setup.sql"
   rescue:
-    - name: ocStore | Deploy | Ensure database absent '{{ db_item.item.name }}'
+    - name: ocStore | Deploy | Ensure database '{{ db_item.item.name }}' is absent
       mysql_db:
         name: "{{ db_item.item.name }}"
         state: "absent"

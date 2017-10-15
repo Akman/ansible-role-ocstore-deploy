@@ -13,22 +13,33 @@
   become: yes
   when: ocstore_environment != 'development'
 
-- import_tasks: git.yml
-  when: ocstore_environment != 'development'
+- block:
 
-- import_tasks: templates.yml
-  become: yes
+    - import_tasks: git.yml
+      when: ocstore_environment != 'development'
+    
+    - import_tasks: templates.yml
+      become: yes
+    
+    - import_tasks: files.yml
+      become: yes
+    
+    - import_tasks: symlinks.yml
+    
+    - import_tasks: permissions.yml
+      when: ocstore_environment != 'development'
+      become: yes
+    
+    - import_tasks: release.yml
+    
+  rescue:
 
-- import_tasks: files.yml
-  become: yes
+    - import_tasks: rescue.yml
+      when: ocstore_environment != 'development'
+      become: yes
 
-- import_tasks: symlinks.yml
+  always:
 
-- import_tasks: permissions.yml
-  when: ocstore_environment != 'development'
-  become: yes
-
-- import_tasks: release.yml
-
-- import_tasks: cleanup.yml
-  when: ocstore_environment != 'development'
+    - import_tasks: cleanup.yml
+      become: yes
+      when: ocstore_environment != 'development'

@@ -1,0 +1,14 @@
+---
+# tasks/rescue.yml
+
+- name: ocStore | Deploy | Ensure common shared folder is absent if it have created yet
+  file:
+    state: "absent"
+    path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}"
+  when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
+
+- name: ocStore | Deploy | Ensure current release folder is absent
+  file:
+    state: "absent"
+    path: "{{ ocstore_current_release_dir }}"
+  when: ocstore_current_release_dir is defined

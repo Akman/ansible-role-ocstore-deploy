@@ -6,12 +6,3 @@
     state: "link"
     path: "{{ ocstore_www_root }}/{{ ocstore_current_dir }}"
     src: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}"
-
-- name: ocStore | Deploy | Restart services
-  service:
-    name: "{{ item }}"
-    state: "restarted"
-  with_items:
-    - "php7.0-fpm"
-    - "apache2"
-  become: "yes"
