@@ -1,6 +1,16 @@
 ---
 # tasks/release.yml
 
+- name: ocStore | Deploy | Create empty REVISION file for development environment only
+  copy:
+    content: ""
+    dest: "{{ ocstore_current_release_dir }}/REVISION"
+    mode: "600"
+    group: "{{ ocstore_www_owner_user }}"
+    owner: "{{ ocstore_www_owner_user }}"
+  become: yes
+  when: ocstore_environment == 'development'
+
 - name: ocStore | Deploy | Ensure current symlink source is new release
   file:
     state: "link"
