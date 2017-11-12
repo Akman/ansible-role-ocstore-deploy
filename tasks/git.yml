@@ -36,7 +36,7 @@
 
 - name: ocStore | Deploy | Copy current release version into REVISION file
   copy:
-    content: "{{ ocstore_git_result.after }}"
+    content: "+{{ ocstore_git_result.after }}"
     dest: "{{ ocstore_current_release_dir }}/REVISION"
     mode: "600"
     group: "{{ ocstore_www_owner_user }}"
