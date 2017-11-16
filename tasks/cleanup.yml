@@ -1,14 +1,14 @@
 ---
 # tasks/cleanup.yml
 
-- name: ocStore | Deploy | Restart services
-  service:
-    name: "{{ item }}"
-    state: "restarted"
-  with_items:
-    - "php7.0-fpm"
-    - "apache2"
-  become: "yes"
+#- name: ocStore | Deploy | Restart services
+#  service:
+#    name: "{{ item }}"
+#    state: "restarted"
+#  with_items:
+#    - "php7.0-fpm"
+#    - "apache2"
+#  become: "yes"
 
 - name: ocStore | Deploy | Count releases
   shell: ls -1dt {{ ocstore_www_root }}/{{ ocstore_releases_dir }}/* | tail -n +{{ ocstore_keep_releases | int + 1 }}
