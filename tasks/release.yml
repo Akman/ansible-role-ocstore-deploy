@@ -5,8 +5,8 @@
   copy:
     content: ""
     dest: "{{ ocstore_current_release_dir }}/REVISION"
-    mode: "600"
-    group: "{{ ocstore_www_owner_user }}"
+    mode: "660"
+    group: "{{ ocstore_www_owner_group }}"
     owner: "{{ ocstore_www_owner_user }}"
   become: yes
   when: ocstore_environment == 'development'
