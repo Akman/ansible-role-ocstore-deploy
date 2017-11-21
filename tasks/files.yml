@@ -1,6 +1,16 @@
 ---
 # tasks/files.yml
 
+- name: ocStore | Deploy | Ensure folders for stub files are exist in shared folder
+  file:
+    state: directory
+    path: "{{ (ocstore_www_root + '/' + ocstore_shared_dir + '/' + item.path) | dirname }}"
+    mode: "750"
+    group: "{{ ocstore_www_owner_group }}"
+    owner: "{{ ocstore_www_owner_user }}"
+  with_flattened:
+    - "{{ ocstore_shared_stub_files }}"
+
 - name: ocStore | Deploy | Ensure stub files are exist in shared folder
   copy: >
     content=""
