@@ -5,7 +5,7 @@
   file:
     state: directory
     path: "{{ (ocstore_www_root + '/' + ocstore_shared_dir + '/' + item.path) | dirname }}"
-    mode: "750"
+    mode: "770"
     group: "{{ ocstore_www_owner_group }}"
     owner: "{{ ocstore_www_owner_user }}"
   with_flattened:
