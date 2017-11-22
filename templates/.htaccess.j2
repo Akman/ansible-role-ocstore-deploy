@@ -1,7 +1,7 @@
 Options -Indexes +FollowSymLinks
 DirectoryIndex index.php index.html
 
-<FilesMatch "(?i)((\.tpl|\.ini|\.log|\.lic|\.md|(?<!robots)\.txt))">
+<FilesMatch "(?i)((\.tpl|\.ini|\.log|\.lic|\.md|(?<!(robots|humans))\.txt))">
   Order deny,allow
   Deny from all
 </FilesMatch>
