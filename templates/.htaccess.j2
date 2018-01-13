@@ -36,6 +36,10 @@ RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
 RewriteRule ^$ - [L]
 RewriteRule ^admin(.*)/$ - [L]
 
+{% if ocstore_environment == 'development' %}
+RewriteRule ^test/$ - [L]
+{% endif %}
+
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
 RewriteCond %{REQUEST_FILENAME} \.php$
 RewriteRule ^(.*)$ /error-not-found [L,PT]
