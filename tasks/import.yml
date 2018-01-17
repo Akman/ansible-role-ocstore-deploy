@@ -2,16 +2,24 @@
 # tasks/import.yml
 
 - block:
+    - name: ocStore | Deploy | Set list of sql scripts for import
+      set_fact:
+        ocstore_sql_scripts:
+          - "setup"
+          - "russianpost"
+          - "fias"
     - name: ocStore | Deploy | Ensure database schema is up to date '{{ db_item.item.name }}'
       template: >
         src="sql/setup.sql.j2"
-        dest="~/{{ db_item.item.name }}.setup.sql"
+        dest="~/{{ db_item.item.name }}.{{ item }}.sql"
         mode="600"
+      with_items: "{{ ocstore_sql_scripts }}"
     - name: ocStore | Deploy | Import database schema '{{ db_item.item.name }}'
       mysql_db:
         name: "{{ db_item.item.name }}"
         state: "import"
-        target: "~/{{ db_item.item.name }}.setup.sql"
+        target: "~/{{ db_item.item.name }}.{{ item }}.sql"
+      with_items: "{{ ocstore_sql_scripts }}"
   rescue:
     - name: ocStore | Deploy | Ensure database '{{ db_item.item.name }}' is absent
       mysql_db:
