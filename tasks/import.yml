@@ -10,7 +10,7 @@
           - "fias"
     - name: ocStore | Deploy | Ensure database schema is up to date '{{ db_item.item.name }}'
       template: >
-        src="sql/setup.sql.j2"
+        src="sql/{{ item }}.sql.j2"
         dest="~/{{ db_item.item.name }}.{{ item }}.sql"
         mode="600"
       with_items: "{{ ocstore_sql_scripts }}"
