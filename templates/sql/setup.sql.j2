@@ -63,15 +63,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}address_simple_fields` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}address_simple_fields`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}address_simple_fields` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}address_simple_fields` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}address_simple_fields` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}affiliate`
 --
 
@@ -112,15 +103,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}affiliate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}affiliate`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}affiliate` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}affiliate` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}affiliate` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}affiliate_transaction`
 --
 
@@ -134,15 +116,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}affiliate_transaction` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`affiliate_transaction_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}affiliate_transaction`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}affiliate_transaction` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}affiliate_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}affiliate_transaction` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}agoo_signer`
@@ -168,14 +141,14 @@ CREATE TABLE `{{ ocstore_db_prefix }}agoo_signer` (
 LOCK TABLES `{{ ocstore_db_prefix }}agoo_signer` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}agoo_signer` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}agoo_signer` VALUES
-(2,'review_id',6,'lion.kapitman@gmail.com','2017-06-01 15:16:29'),
-(3,'comment_id',5,'drseal@list.ru','2017-06-01 14:54:18'),
-(4,'comment_id',5,'drseal@list.ru','2017-06-01 14:55:10'),
-(5,'comment_id',5,'drseal@list.ru','2017-06-01 14:56:51'),
-(6,'comment_id',5,'drseal@list.ru','2017-06-01 14:57:39'),
-(7,'comment_id',6,'lion.kapitman@gmail.com','2017-06-01 15:10:47'),
-(8,'comment_id',6,'lion.kapitman@gmail.com','2017-06-01 15:12:03'),
-(9,'comment_id',6,'lion.kapitman@gmail.com','2017-06-01 15:13:26');
+(2,'review_id',6,'lion.kapitman@gmail.com',CURRENT_TIMESTAMP),
+(3,'comment_id',5,'drseal@list.ru',CURRENT_TIMESTAMP),
+(4,'comment_id',5,'drseal@list.ru',CURRENT_TIMESTAMP),
+(5,'comment_id',5,'drseal@list.ru',CURRENT_TIMESTAMP),
+(6,'comment_id',5,'drseal@list.ru',CURRENT_TIMESTAMP),
+(7,'comment_id',6,'lion.kapitman@gmail.com',CURRENT_TIMESTAMP),
+(8,'comment_id',6,'lion.kapitman@gmail.com',CURRENT_TIMESTAMP),
+(9,'comment_id',6,'lion.kapitman@gmail.com',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}agoo_signer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -423,15 +396,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}batch` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}batch`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}batch` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}batch` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}batch` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}blog`
 --
 
@@ -461,8 +425,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog` (
 LOCK TABLES `{{ ocstore_db_prefix }}blog` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}blog` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}blog` VALUES
-(1,'','a:70:{s:12:\"title_status\";s:1:\"1\";s:14:\"title_position\";s:5:\"after\";s:25:\"category_big_image_status\";s:1:\"0\";s:30:\"image_category_adaptive_resize\";s:1:\"0\";s:8:\"blog_big\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:28:\"subcategory_big_image_status\";s:1:\"0\";s:16:\"blog_subcategory\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:12:\"image_status\";s:1:\"1\";s:10:\"blog_small\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:19:\"blog_small_colorbox\";s:1:\"0\";s:21:\"image_adaptive_resize\";s:1:\"1\";s:10:\"thumb_view\";s:1:\"1\";s:11:\"thumb_image\";a:2:{s:5:\"width\";s:3:\"798\";s:6:\"height\";s:3:\"532\";}s:11:\"images_view\";s:1:\"0\";s:22:\"images_adaptive_resize\";s:1:\"0\";s:6:\"images\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:13:\"images_number\";s:0:\"\";s:18:\"images_number_hide\";s:1:\"0\";s:15:\"images_position\";s:1:\"1\";s:20:\"image_gallery_status\";s:1:\"1\";s:29:\"image_gallery_adaptive_resize\";s:1:\"1\";s:13:\"gallery_image\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:20:\"image_product_status\";s:1:\"1\";s:29:\"image_product_adaptive_resize\";s:1:\"0\";s:13:\"product_image\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:19:\"image_record_status\";s:1:\"1\";s:28:\"image_record_adaptive_resize\";s:1:\"1\";s:12:\"record_image\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:16:\"blog_num_records\";s:0:\"\";s:16:\"count_categories\";s:1:\"0\";s:12:\"records_more\";s:1:\"0\";s:8:\"first100\";s:1:\"0\";s:14:\"first100_image\";s:1:\"0\";s:21:\"record_image_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:15:\"images_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:17:\"blog_num_comments\";s:0:\"\";s:13:\"blog_num_desc\";s:0:\"\";s:19:\"blog_num_desc_words\";s:0:\"\";s:18:\"blog_num_desc_pred\";s:0:\"\";s:13:\"blog_template\";s:0:\"\";s:19:\"block_records_width\";s:0:\"\";s:20:\"blog_template_record\";s:0:\"\";s:21:\"blog_template_comment\";s:0:\"\";s:26:\"blog_template_comment_stat\";s:0:\"\";s:5:\"order\";s:6:\"latest\";s:8:\"order_ad\";s:4:\"desc\";s:12:\"status_order\";s:1:\"1\";s:17:\"status_pagination\";s:1:\"1\";s:15:\"category_status\";s:1:\"1\";s:11:\"next_status\";s:1:\"1\";s:15:\"status_continue\";s:1:\"0\";s:13:\"author_status\";s:1:\"0\";s:20:\"author_record_status\";s:1:\"0\";s:9:\"view_date\";s:1:\"1\";s:10:\"view_share\";s:1:\"1\";s:13:\"view_comments\";s:1:\"1\";s:11:\"view_viewed\";s:1:\"1\";s:11:\"view_rating\";s:1:\"1\";s:8:\"view_rss\";s:1:\"0\";s:12:\"view_captcha\";s:1:\"1\";s:13:\"visual_editor\";s:1:\"1\";s:7:\"bbwidth\";s:0:\"\";s:16:\"end_url_category\";s:1:\"/\";s:12:\"blog_devider\";s:1:\"0\";s:15:\"blog_short_path\";s:1:\"1\";s:24:\"blog_short_path_category\";s:1:\"1\";s:7:\"further\";a:1:{i:1;s:0:\"\";}s:8:\"reserved\";s:0:\"\";s:23:\"attribute_groups_status\";s:1:\"0\";s:16:\"description_full\";s:1:\"0\";}',0,0,0,0,1,'index,follow',0,'2017-05-31 16:28:03','2017-10-24 13:43:10'),
-(2,'','a:70:{s:12:\"title_status\";s:1:\"1\";s:14:\"title_position\";s:5:\"after\";s:25:\"category_big_image_status\";s:1:\"0\";s:30:\"image_category_adaptive_resize\";s:1:\"0\";s:8:\"blog_big\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:28:\"subcategory_big_image_status\";s:1:\"0\";s:16:\"blog_subcategory\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:12:\"image_status\";s:1:\"1\";s:10:\"blog_small\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:19:\"blog_small_colorbox\";s:1:\"0\";s:21:\"image_adaptive_resize\";s:1:\"1\";s:10:\"thumb_view\";s:1:\"0\";s:11:\"thumb_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:11:\"images_view\";s:1:\"0\";s:22:\"images_adaptive_resize\";s:1:\"0\";s:6:\"images\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:13:\"images_number\";s:0:\"\";s:18:\"images_number_hide\";s:1:\"0\";s:15:\"images_position\";s:1:\"1\";s:20:\"image_gallery_status\";s:1:\"0\";s:29:\"image_gallery_adaptive_resize\";s:1:\"0\";s:13:\"gallery_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:20:\"image_product_status\";s:1:\"0\";s:29:\"image_product_adaptive_resize\";s:1:\"0\";s:13:\"product_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:19:\"image_record_status\";s:1:\"0\";s:28:\"image_record_adaptive_resize\";s:1:\"0\";s:12:\"record_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:16:\"blog_num_records\";s:0:\"\";s:16:\"count_categories\";s:1:\"0\";s:12:\"records_more\";s:1:\"0\";s:8:\"first100\";s:1:\"0\";s:14:\"first100_image\";s:1:\"0\";s:21:\"record_image_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:15:\"images_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:17:\"blog_num_comments\";s:0:\"\";s:13:\"blog_num_desc\";s:0:\"\";s:19:\"blog_num_desc_words\";s:0:\"\";s:18:\"blog_num_desc_pred\";s:0:\"\";s:13:\"blog_template\";s:0:\"\";s:19:\"block_records_width\";s:0:\"\";s:20:\"blog_template_record\";s:0:\"\";s:21:\"blog_template_comment\";s:0:\"\";s:26:\"blog_template_comment_stat\";s:0:\"\";s:5:\"order\";s:6:\"latest\";s:8:\"order_ad\";s:4:\"desc\";s:12:\"status_order\";s:1:\"0\";s:17:\"status_pagination\";s:1:\"0\";s:15:\"category_status\";s:1:\"0\";s:11:\"next_status\";s:1:\"0\";s:15:\"status_continue\";s:1:\"0\";s:13:\"author_status\";s:1:\"0\";s:20:\"author_record_status\";s:1:\"0\";s:9:\"view_date\";s:1:\"0\";s:10:\"view_share\";s:1:\"0\";s:13:\"view_comments\";s:1:\"1\";s:11:\"view_viewed\";s:1:\"1\";s:11:\"view_rating\";s:1:\"0\";s:8:\"view_rss\";s:1:\"0\";s:12:\"view_captcha\";s:1:\"1\";s:13:\"visual_editor\";s:1:\"1\";s:7:\"bbwidth\";s:0:\"\";s:16:\"end_url_category\";s:1:\"/\";s:12:\"blog_devider\";s:1:\"0\";s:15:\"blog_short_path\";s:1:\"1\";s:24:\"blog_short_path_category\";s:1:\"1\";s:7:\"further\";a:1:{i:1;s:0:\"\";}s:8:\"reserved\";s:0:\"\";s:23:\"attribute_groups_status\";s:1:\"0\";s:16:\"description_full\";s:1:\"0\";}',0,0,0,1,1,'index,follow',0,'2017-05-31 19:26:39','2017-10-24 13:40:29');
+(1,'','a:70:{s:12:\"title_status\";s:1:\"1\";s:14:\"title_position\";s:5:\"after\";s:25:\"category_big_image_status\";s:1:\"0\";s:30:\"image_category_adaptive_resize\";s:1:\"0\";s:8:\"blog_big\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:28:\"subcategory_big_image_status\";s:1:\"0\";s:16:\"blog_subcategory\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:12:\"image_status\";s:1:\"1\";s:10:\"blog_small\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:19:\"blog_small_colorbox\";s:1:\"0\";s:21:\"image_adaptive_resize\";s:1:\"1\";s:10:\"thumb_view\";s:1:\"1\";s:11:\"thumb_image\";a:2:{s:5:\"width\";s:3:\"798\";s:6:\"height\";s:3:\"532\";}s:11:\"images_view\";s:1:\"0\";s:22:\"images_adaptive_resize\";s:1:\"0\";s:6:\"images\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:13:\"images_number\";s:0:\"\";s:18:\"images_number_hide\";s:1:\"0\";s:15:\"images_position\";s:1:\"1\";s:20:\"image_gallery_status\";s:1:\"1\";s:29:\"image_gallery_adaptive_resize\";s:1:\"1\";s:13:\"gallery_image\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:20:\"image_product_status\";s:1:\"1\";s:29:\"image_product_adaptive_resize\";s:1:\"0\";s:13:\"product_image\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:19:\"image_record_status\";s:1:\"1\";s:28:\"image_record_adaptive_resize\";s:1:\"1\";s:12:\"record_image\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:16:\"blog_num_records\";s:0:\"\";s:16:\"count_categories\";s:1:\"0\";s:12:\"records_more\";s:1:\"0\";s:8:\"first100\";s:1:\"0\";s:14:\"first100_image\";s:1:\"0\";s:21:\"record_image_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:15:\"images_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:17:\"blog_num_comments\";s:0:\"\";s:13:\"blog_num_desc\";s:0:\"\";s:19:\"blog_num_desc_words\";s:0:\"\";s:18:\"blog_num_desc_pred\";s:0:\"\";s:13:\"blog_template\";s:0:\"\";s:19:\"block_records_width\";s:0:\"\";s:20:\"blog_template_record\";s:0:\"\";s:21:\"blog_template_comment\";s:0:\"\";s:26:\"blog_template_comment_stat\";s:0:\"\";s:5:\"order\";s:6:\"latest\";s:8:\"order_ad\";s:4:\"desc\";s:12:\"status_order\";s:1:\"1\";s:17:\"status_pagination\";s:1:\"1\";s:15:\"category_status\";s:1:\"1\";s:11:\"next_status\";s:1:\"1\";s:15:\"status_continue\";s:1:\"0\";s:13:\"author_status\";s:1:\"0\";s:20:\"author_record_status\";s:1:\"0\";s:9:\"view_date\";s:1:\"1\";s:10:\"view_share\";s:1:\"1\";s:13:\"view_comments\";s:1:\"1\";s:11:\"view_viewed\";s:1:\"1\";s:11:\"view_rating\";s:1:\"1\";s:8:\"view_rss\";s:1:\"0\";s:12:\"view_captcha\";s:1:\"1\";s:13:\"visual_editor\";s:1:\"1\";s:7:\"bbwidth\";s:0:\"\";s:16:\"end_url_category\";s:1:\"/\";s:12:\"blog_devider\";s:1:\"0\";s:15:\"blog_short_path\";s:1:\"1\";s:24:\"blog_short_path_category\";s:1:\"1\";s:7:\"further\";a:1:{i:1;s:0:\"\";}s:8:\"reserved\";s:0:\"\";s:23:\"attribute_groups_status\";s:1:\"0\";s:16:\"description_full\";s:1:\"0\";}',0,0,0,0,1,'index,follow',0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(2,'','a:70:{s:12:\"title_status\";s:1:\"1\";s:14:\"title_position\";s:5:\"after\";s:25:\"category_big_image_status\";s:1:\"0\";s:30:\"image_category_adaptive_resize\";s:1:\"0\";s:8:\"blog_big\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:28:\"subcategory_big_image_status\";s:1:\"0\";s:16:\"blog_subcategory\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:12:\"image_status\";s:1:\"1\";s:10:\"blog_small\";a:2:{s:5:\"width\";s:3:\"354\";s:6:\"height\";s:3:\"236\";}s:19:\"blog_small_colorbox\";s:1:\"0\";s:21:\"image_adaptive_resize\";s:1:\"1\";s:10:\"thumb_view\";s:1:\"0\";s:11:\"thumb_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:11:\"images_view\";s:1:\"0\";s:22:\"images_adaptive_resize\";s:1:\"0\";s:6:\"images\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:13:\"images_number\";s:0:\"\";s:18:\"images_number_hide\";s:1:\"0\";s:15:\"images_position\";s:1:\"1\";s:20:\"image_gallery_status\";s:1:\"0\";s:29:\"image_gallery_adaptive_resize\";s:1:\"0\";s:13:\"gallery_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:20:\"image_product_status\";s:1:\"0\";s:29:\"image_product_adaptive_resize\";s:1:\"0\";s:13:\"product_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:19:\"image_record_status\";s:1:\"0\";s:28:\"image_record_adaptive_resize\";s:1:\"0\";s:12:\"record_image\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:16:\"blog_num_records\";s:0:\"\";s:16:\"count_categories\";s:1:\"0\";s:12:\"records_more\";s:1:\"0\";s:8:\"first100\";s:1:\"0\";s:14:\"first100_image\";s:1:\"0\";s:21:\"record_image_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:15:\"images_first100\";a:2:{s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}s:17:\"blog_num_comments\";s:0:\"\";s:13:\"blog_num_desc\";s:0:\"\";s:19:\"blog_num_desc_words\";s:0:\"\";s:18:\"blog_num_desc_pred\";s:0:\"\";s:13:\"blog_template\";s:0:\"\";s:19:\"block_records_width\";s:0:\"\";s:20:\"blog_template_record\";s:0:\"\";s:21:\"blog_template_comment\";s:0:\"\";s:26:\"blog_template_comment_stat\";s:0:\"\";s:5:\"order\";s:6:\"latest\";s:8:\"order_ad\";s:4:\"desc\";s:12:\"status_order\";s:1:\"0\";s:17:\"status_pagination\";s:1:\"0\";s:15:\"category_status\";s:1:\"0\";s:11:\"next_status\";s:1:\"0\";s:15:\"status_continue\";s:1:\"0\";s:13:\"author_status\";s:1:\"0\";s:20:\"author_record_status\";s:1:\"0\";s:9:\"view_date\";s:1:\"0\";s:10:\"view_share\";s:1:\"0\";s:13:\"view_comments\";s:1:\"1\";s:11:\"view_viewed\";s:1:\"1\";s:11:\"view_rating\";s:1:\"0\";s:8:\"view_rss\";s:1:\"0\";s:12:\"view_captcha\";s:1:\"1\";s:13:\"visual_editor\";s:1:\"1\";s:7:\"bbwidth\";s:0:\"\";s:16:\"end_url_category\";s:1:\"/\";s:12:\"blog_devider\";s:1:\"0\";s:15:\"blog_short_path\";s:1:\"1\";s:24:\"blog_short_path_category\";s:1:\"1\";s:7:\"further\";a:1:{i:1;s:0:\"\";}s:8:\"reserved\";s:0:\"\";s:23:\"attribute_groups_status\";s:1:\"0\";s:16:\"description_full\";s:1:\"0\";}',0,0,0,1,1,'index,follow',0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}blog` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -531,15 +495,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}blog_to_layout` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}blog_to_layout`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}blog_to_layout` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}blog_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}blog_to_layout` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}blog_to_store`
 --
 
@@ -585,16 +540,16 @@ CREATE TABLE `{{ ocstore_db_prefix }}category` (
 LOCK TABLES `{{ ocstore_db_prefix }}category` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}category` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}category` VALUES
-(1,'data/manufacturers/loreal-professionnel.jpg',0,0,1,100,1,'2017-05-24 02:49:06','2017-05-24 02:50:34'),
-(2,'data/manufacturers/tangle-teezer.jpg',0,0,1,200,1,'2017-05-24 02:49:45','2017-05-24 02:50:47'),
-(3,'data/series/loreal-professionnel-mythic-oil.jpg',1,0,1,101,1,'2017-05-24 02:51:51','2017-05-24 02:51:51'),
-(4,'data/series/loreal-professionnel-vitamino-color-a-ox.jpg',1,0,1,102,1,'2017-05-24 02:52:34','2017-05-24 02:52:34'),
-(5,'',0,0,1,1000,1,'2017-05-24 02:53:31','2017-05-24 02:53:31'),
-(6,'',0,1,1,1100,1,'2017-05-24 02:54:22','2017-05-24 02:54:22'),
-(7,'',0,1,1,1200,1,'2017-05-24 02:55:06','2017-05-24 02:58:06'),
-(8,'',0,1,1,1300,1,'2017-05-24 02:55:41','2017-05-24 02:55:41'),
-(9,'',6,0,1,1110,1,'2017-05-24 02:56:29','2017-05-27 16:27:33'),
-(10,'',6,0,1,1120,1,'2017-05-24 02:57:07','2017-05-27 16:27:41');
+(1,'data/manufacturers/loreal-professionnel.jpg',0,0,1,100,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(2,'data/manufacturers/tangle-teezer.jpg',0,0,1,200,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(3,'data/series/loreal-professionnel-mythic-oil.jpg',1,0,1,101,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(4,'data/series/loreal-professionnel-vitamino-color-a-ox.jpg',1,0,1,102,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(5,'',0,0,1,1000,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(6,'',0,1,1,1100,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(7,'',0,1,1,1200,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(8,'',0,1,1,1300,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(9,'',6,0,1,1110,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(10,'',6,0,1,1120,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -648,15 +603,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_filter` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}category_filter`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}category_filter` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}category_filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}category_filter` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}category_path`
 --
 
@@ -703,15 +649,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}category_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}category_to_layout`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}category_to_layout` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}category_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}category_to_layout` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}category_to_store`
@@ -780,15 +717,15 @@ CREATE TABLE `{{ ocstore_db_prefix }}comment` (
 LOCK TABLES `{{ ocstore_db_prefix }}comment` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}comment` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}comment` VALUES
-(1,1,0,1,'Наталья Николаевна Позднякова','Магазин - супер! Реальные оптовые цены на весь ассортимент! Спасибо, так держать!',5,0,'0000',1,1,1,1,'2017-05-31 19:31:11',CURRENT_TIMESTAMP),
-(2,2,0,1,'Наталья Николаевна Позднякова','Все правильно, только я использую не шампунь &quot;два в одном&quot;, а отдельно шампунь и отдельно кондиционер. И сушить надо бережно, лучше феном не пользоваться, а намотать на голову полотенце и дать влаге впитаться.\r\nПолезная статья, пишите еще :)',5,0,'0000',1,1,1,1,'2017-05-31 20:39:55',CURRENT_TIMESTAMP),
-(3,1,0,5,'Илья Александрович Поздняков','Молодцы! Только здесь можно купить в розницу средства в расфасовке по 500 мл и 1500 мл для салонов.\r\nУдачи, буду вашим постоянным клиентом :)',5,0,'0001',1,1,1,1,'2017-06-01 14:54:18',CURRENT_TIMESTAMP),
-(4,1,1,5,'Илья Александрович Поздняков','Да, реально оптовые!\r\nИ фасовки как для салонов.',5,0,'00000000',1,1,1,1,'2017-06-01 14:55:10',CURRENT_TIMESTAMP),
-(5,2,0,5,'Илья Александрович Поздняков','Мыть голову надо как минимум один раз в два дня, а то перхоть появляется. У меня волосы жирные.',4,0,'0001',1,1,1,1,'2017-06-01 14:56:51',CURRENT_TIMESTAMP),
-(6,2,2,5,'Илья Александрович Поздняков','Я тоже кондиционер плюс шампунь использую, два в одном - это для лохов :)',5,1,'00000000',1,1,1,1,'2017-06-01 14:57:39',CURRENT_TIMESTAMP),
-(7,1,0,6,'Лев Александрович Капитман','Классный магазин, постоянно здесь заказываю. Отправляют быстро, на следующий день как правило. Если до двух килограмм отправляют бандеролью первого класса, доходит до Воронежа за неделю. В общем рекомендую.',5,0,'0002',1,1,1,1,'2017-06-01 15:10:47',CURRENT_TIMESTAMP),
-(8,2,6,6,'Лев Александрович Капитман','Сам ты лох, если волосы здоровые, то все это не надо.',5,1,'000000000000',1,1,1,1,'2017-06-01 15:12:03',CURRENT_TIMESTAMP),
-(9,2,0,6,'Лев Александрович Капитман','Лоховская статья, проф средства - это для профессионального использования, то есть для тех кто этим деньги зарабатывает. Не будет же салон шампунь в потреб таре покупать, они тогда разорятся.',5,1,'0002',1,1,1,1,'2017-06-01 15:13:26',CURRENT_TIMESTAMP);
+(1,1,0,1,'Наталья Николаевна Позднякова','Магазин - супер! Реальные оптовые цены на весь ассортимент! Спасибо, так держать!',5,0,'0000',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(2,2,0,1,'Наталья Николаевна Позднякова','Все правильно, только я использую не шампунь &quot;два в одном&quot;, а отдельно шампунь и отдельно кондиционер. И сушить надо бережно, лучше феном не пользоваться, а намотать на голову полотенце и дать влаге впитаться.\r\nПолезная статья, пишите еще :)',5,0,'0000',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(3,1,0,5,'Илья Александрович Поздняков','Молодцы! Только здесь можно купить в розницу средства в расфасовке по 500 мл и 1500 мл для салонов.\r\nУдачи, буду вашим постоянным клиентом :)',5,0,'0001',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(4,1,1,5,'Илья Александрович Поздняков','Да, реально оптовые!\r\nИ фасовки как для салонов.',5,0,'00000000',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(5,2,0,5,'Илья Александрович Поздняков','Мыть голову надо как минимум один раз в два дня, а то перхоть появляется. У меня волосы жирные.',4,0,'0001',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(6,2,2,5,'Илья Александрович Поздняков','Я тоже кондиционер плюс шампунь использую, два в одном - это для лохов :)',5,1,'00000000',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(7,1,0,6,'Лев Александрович Капитман','Классный магазин, постоянно здесь заказываю. Отправляют быстро, на следующий день как правило. Если до двух килограмм отправляют бандеролью первого класса, доходит до Воронежа за неделю. В общем рекомендую.',5,0,'0002',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(8,2,6,6,'Лев Александрович Капитман','Сам ты лох, если волосы здоровые, то все это не надо.',5,1,'000000000000',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(9,2,0,6,'Лев Александрович Капитман','Лоховская статья, проф средства - это для профессионального использования, то есть для тех кто этим деньги зарабатывает. Не будет же салон шампунь в потреб таре покупать, они тогда разорятся.',5,1,'0002',1,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1083,15 +1020,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}coupon`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}coupon` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}coupon_category`
 --
 
@@ -1101,15 +1029,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon_category` (
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_id`,`category_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}coupon_category`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}coupon_category` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon_category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon_category` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}coupon_history`
@@ -1127,15 +1046,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}coupon_history`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}coupon_history` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}coupon_product`
 --
 
@@ -1146,15 +1056,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}coupon_product` (
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`coupon_product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}coupon_product`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}coupon_product` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}coupon_product` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}currency`
@@ -1181,7 +1082,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}currency` (
 LOCK TABLES `{{ ocstore_db_prefix }}currency` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}currency` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}currency` VALUES
-(1,'Рубль','RUB','','&lt;span class=&quot;rouble&quot;&gt;Р&lt;/span&gt;','2',1.00000000,1,'2017-05-24 01:01:38');
+(1,'Рубль','RUB','','&lt;span class=&quot;rouble&quot;&gt;Р&lt;/span&gt;','2',1.00000000,1,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}currency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1202,15 +1103,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}custom_field`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}custom_field` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}custom_field_description`
 --
 
@@ -1223,15 +1115,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}custom_field_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}custom_field_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}custom_field_to_customer_group`
 --
 
@@ -1241,15 +1124,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_to_customer_group` (
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`custom_field_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}custom_field_to_customer_group`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}custom_field_to_customer_group` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_to_customer_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_to_customer_group` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}custom_field_value`
@@ -1264,15 +1138,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_value` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}custom_field_value`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}custom_field_value` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_value` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_value` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}custom_field_value_description`
 --
 
@@ -1284,15 +1149,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}custom_field_value_description` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`custom_field_value_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}custom_field_value_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}custom_field_value_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_value_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}custom_field_value_description` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}customer`
@@ -1330,9 +1186,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer` (
 LOCK TABLES `{{ ocstore_db_prefix }}customer` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}customer` VALUES
-(1,0,'Наталья Николаевна','Позднякова','data/avatars/300/1_9eebf20c4a.jpg','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','435099b201a966ad060f23326309e1f0400166b7','0f0624303','a:0:{}','a:1:{i:0;s:1:\"1\";}',1,1,1,'192.168.1.33',1,1,'','2017-05-24 03:45:45'),
-(5,0,'Илья Александрович','Поздняков','data/avatars/300/5_12fb265fe2.jpg','drseal@list.ru','+7 (921) 261-87-24','','9a8a59522a3f1afd35296c5fe81423f1cc6daf78','1aaabef70','a:0:{}','',1,8,1,'192.168.33.1',1,1,'','2017-06-01 14:48:24'),
-(6,0,'Лев Александрович','Капитман','data/avatars/300/6_lion-780780.jpg','lion.kapitman@gmail.com','+7 (921) 264-36-16','','fb743100fefc4ec412612f3584c360bfddf196a9','a4da2cb0f','a:0:{}','',1,9,1,'192.168.33.1',1,1,'','2017-06-01 15:07:07');
+(1,0,'Наталья Николаевна','Позднякова','data/avatars/300/1_9eebf20c4a.jpg','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','435099b201a966ad060f23326309e1f0400166b7','0f0624303','a:0:{}','a:1:{i:0;s:1:\"1\";}',1,1,1,'192.168.1.33',1,1,'',CURRENT_TIMESTAMP),
+(5,0,'Илья Александрович','Поздняков','data/avatars/300/5_12fb265fe2.jpg','drseal@list.ru','+7 (921) 261-87-24','','9a8a59522a3f1afd35296c5fe81423f1cc6daf78','1aaabef70','a:0:{}','',1,8,1,'192.168.33.1',1,1,'',CURRENT_TIMESTAMP),
+(6,0,'Лев Александрович','Капитман','data/avatars/300/6_lion-780780.jpg','lion.kapitman@gmail.com','+7 (921) 264-36-16','','fb743100fefc4ec412612f3584c360bfddf196a9','a4da2cb0f','a:0:{}','',1,9,1,'192.168.33.1',1,1,'',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1349,15 +1205,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_ban_ip` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}customer_ban_ip`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}customer_ban_ip` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_ban_ip` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_ban_ip` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}customer_field`
 --
 
@@ -1371,15 +1218,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_field` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}customer_field`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}customer_field` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_field` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}customer_group`
@@ -1445,15 +1283,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}customer_history`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}customer_history` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}customer_ip`
 --
 
@@ -1474,10 +1303,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_ip` (
 LOCK TABLES `{{ ocstore_db_prefix }}customer_ip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_ip` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}customer_ip` VALUES
-(1,1,'192.168.33.1','2017-05-24 03:45:45'),
-(4,5,'192.168.33.1','2017-06-01 14:48:24'),
-(5,6,'192.168.33.1','2017-06-01 15:07:08'),
-(6,1,'192.168.1.33','2017-06-11 04:00:17');
+(1,1,'192.168.33.1',CURRENT_TIMESTAMP),
+(4,5,'192.168.33.1',CURRENT_TIMESTAMP),
+(5,6,'192.168.33.1',CURRENT_TIMESTAMP),
+(6,1,'192.168.1.33',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_ip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1502,7 +1331,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_online` (
 LOCK TABLES `{{ ocstore_db_prefix }}customer_online` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_online` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}customer_online` VALUES
-('192.168.1.33',0,'https://{{ ocstore_hostname }}/','','2017-01-01 00:00:00');
+('192.168.1.33',0,'https://{{ ocstore_hostname }}/','',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_online` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1520,15 +1349,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_reward` (
   `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`customer_reward_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}customer_reward`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}customer_reward` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_reward` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_reward` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}customer_simple_fields`
@@ -1568,15 +1388,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_transaction` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}customer_transaction`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}customer_transaction` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_transaction` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}download`
 --
 
@@ -1591,15 +1402,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}download`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}download` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}download` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}download_description`
 --
 
@@ -1610,15 +1412,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}download_description` (
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`download_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}download_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}download_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}download_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}download_description` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}extension`
@@ -1702,15 +1495,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}fields` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}fields`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}fields` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}fields` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}fields` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}fields_description`
 --
 
@@ -1726,15 +1510,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}fields_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}fields_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}fields_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}fields_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}fields_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}filter`
 --
 
@@ -1745,15 +1520,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}filter`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}filter` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}filter_description`
@@ -1769,15 +1535,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}filter_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}filter_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}filter_group`
 --
 
@@ -1787,15 +1544,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}filter_group`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}filter_group` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}filter_group_description`
@@ -1810,15 +1558,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}filter_group_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}filter_group_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}filterpro_seo`
 --
 
@@ -1828,15 +1567,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}filterpro_seo` (
   `data` text NOT NULL,
   PRIMARY KEY (`url`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}filterpro_seo`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}filterpro_seo` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filterpro_seo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filterpro_seo` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}geo_zone`
@@ -1859,8 +1589,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}geo_zone` (
 LOCK TABLES `{{ ocstore_db_prefix }}geo_zone` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}geo_zone` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}geo_zone` VALUES
-(1,'Калининградская область','Калининград и область',CURRENT_TIMESTAMP,'2017-05-24 01:01:38'),
-(2,'Остальные регионы','Остальные регионы России','2017-05-25 17:42:42','2017-05-24 01:01:38');
+(1,'Калининградская область','Калининград и область',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(2,'Остальные регионы','Остальные регионы России',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}geo_zone` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1943,15 +1673,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}information_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`information_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}information_to_layout`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}information_to_layout` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}information_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}information_to_layout` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}information_to_store`
@@ -2416,37 +2137,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order` (
   PRIMARY KEY (`order_id`),
   KEY `order_status_id` (`order_status_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}order` VALUES
-(18,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',1499.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-29 20:25:52','2017-05-29 20:25:52'),
-(2,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7(921)711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Доставка курьером по Калининграду','courier_city.courier','',2439.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-24 17:22:49','2017-05-24 17:22:49'),
-(3,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7(921)711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Самовывоз из пункта выдачи заказов','pickups.pickup','',5577.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-24 17:27:32','2017-05-24 17:27:32'),
-(4,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7(921)711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Оплата на карту Сбербанка','payaftercheck','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Самовывоз из пункта выдачи заказов','pickups.pickup','',5577.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 11:48:12','2017-05-25 11:48:12'),
-(5,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7(921)711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Самовывоз из пункта выдачи заказов','pickups.pickup','',3579.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 11:55:02','2017-05-25 11:55:02'),
-(6,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7(921)711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Самовывоз из пункта выдачи заказов','pickups.pickup','',4178.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 12:03:59','2017-05-25 12:03:59'),
-(7,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7(921)711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'','Самовывоз из пункта выдачи заказов','pickups.pickup','',4178.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 12:09:20','2017-05-25 12:09:20'),
-(8,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711 63 24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при получении заказа','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Доставка курьером по Калининграду','courier_city.courier','',3038.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 14:57:41','2017-05-25 14:57:41'),
-(9,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',3,1,'Иван Тимофеевич','Пупкин','akman@kanet.ru','+7 (921) 711-24-00','','Иван Тимофеевич','Пупкин','','','','ул Зеленая 30-4','','Саратов','','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата на карту Сбербанка','payaftercheck','Иван Тимофеевич','Пупкин','','ул Зеленая 30-4','','Саратов','','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов','pickups.pickup','',1190.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 15:26:10','2017-05-25 15:26:10'),
-(10,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711 63 24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при получении заказа','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',3887.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 18:12:29','2017-05-25 18:12:29'),
-(11,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711 63 24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата на карту Сбербанка','payaftercheck','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Доставка курьером по Калининграду и пригородам','courier_city.courier','',4037.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 20:20:52','2017-05-25 20:20:52'),
-(12,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711 63 24','','Наталья Николаевна','Позднякова','','','','ул Аксакова 1','','Воронеж','394031','Российская Федерация',176,'Воронежская обл',36,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата на карту Сбербанка','payaftercheck','Наталья Николаевна','Позднякова','','ул Аксакова 1','','Воронеж','394031','Российская Федерация',176,'Воронежская обл',36,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Отправка ценной бандеролью первого класса в Воронеж, ориентировочное время доставки: 5 дн.','russianpost2.rp1','',5689.5285,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-25 20:41:38','2017-05-25 20:41:38'),
-(17,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',1499.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-29 20:21:54','2017-05-29 20:21:54'),
-(15,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',1090.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-26 13:52:38','2017-05-26 13:52:38'),
-(16,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','https://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',1090.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.33.1','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-05-27 14:21:02','2017-05-27 14:21:02'),
-(31,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','http://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Аксакова 1','','Воронеж','394031','Российская Федерация',176,'Воронежская обл',36,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата на карту Сбербанка','payaftercheck','Наталья Николаевна','Позднякова','','ул Аксакова 1','','Воронеж','394031','Российская Федерация',176,'Воронежская обл',36,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Отправка ценной посылкой в Воронеж, ориентировочное время доставки: 6 дн.','russianpost2.rp2','',1449.7611,2,0,0.0000,1,1,'RUB',1.00000000,'192.168.1.33','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-06-11 04:08:17','2017-06-11 04:08:19'),
-(32,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','http://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',1190.0000,1,0,0.0000,1,1,'RUB',1.00000000,'192.168.1.33','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-06-11 05:36:09','2017-06-11 05:36:13'),
-(33,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','http://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата на карту Сбербанка','payaftercheck','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',11900.0000,2,0,0.0000,1,1,'RUB',1.00000000,'192.168.1.33','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-06-11 11:25:31','2017-06-11 11:25:34'),
-(34,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','http://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',1290.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.1.33','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-07-17 18:55:39','2017-07-17 18:55:39'),
-(35,0,'СФ-2017-00',0,'{{ ocstore_hostname }}','http://{{ ocstore_hostname }}/',1,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','Наталья Николаевна','Позднякова','','','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Оплата при доставке','cod','Наталья Николаевна','Позднякова','','ул Гавриленко 17','','Калининград','236019','Российская Федерация',176,'Калининградская обл',39,'{lastname}\n{firstname}\n{postcode}\n{zone}\n{address_2}\n{city}\n{address_1}','Самовывоз из пункта выдачи заказов в Калининграде','pickups.pickup','',3670.0000,0,0,0.0000,1,1,'RUB',1.00000000,'192.168.1.33','','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36','ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4','2017-07-17 18:58:08','2017-07-17 18:58:08');
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order` ENABLE KEYS */;
-UNLOCK TABLES;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}order_download`
@@ -2465,15 +2156,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}order_download`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_download` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_download` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}order_field`
 --
 
@@ -2487,15 +2169,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_field` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_id`,`custom_field_id`,`custom_field_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order_field`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_field` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_field` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_field` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}order_fraud`
@@ -2560,15 +2233,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_fraud` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}order_fraud`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_fraud` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_fraud` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_fraud` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}order_history`
 --
 
@@ -2581,20 +2245,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_history` (
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_history_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order_history`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_history` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_history` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}order_history` VALUES
-(24,31,2,1,'Здравствуйте, Наталья Николаевна!\r\n\r\nВаш заказ сформирован.\r\n\r\nЗаказ № 31 от 11.06.2017\r\n\r\nПокупатель: Наталья Николаевна Позднякова\r\nСумма: 1449.76 рублей\r\n\r\nВ ближайшее время наш менеджер проверит наличие товаров на складе и отправит Вам инструкцию по оплате Вашего заказа.','2017-06-11 04:08:19'),
-(25,32,1,1,'','2017-06-11 05:36:13'),
-(26,33,2,1,'Здравствуйте, Наталья Николаевна!\r\n\r\nВаш заказ сформирован.\r\n\r\nЗаказ № 33 от 11.06.2017\r\n\r\nПокупатель: Наталья Николаевна Позднякова\r\nСумма: 11900.00 рублей\r\n\r\nВ ближайшее время наш менеджер проверит наличие товаров на складе и отправит Вам инструкцию по оплате Вашего заказа.','2017-06-11 11:25:34');
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_history` ENABLE KEYS */;
-UNLOCK TABLES;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}order_option`
@@ -2611,48 +2262,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_option` (
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL,
   PRIMARY KEY (`order_option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=525 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order_option`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_option` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_option` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}order_option` VALUES
-(502,18,642,1,2,'Объём','500 мл','image'),
-(4,2,4,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(5,2,5,1,1,'Объём','250 мл','image'),
-(8,3,8,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(9,3,9,1,1,'Объём','250 мл','image'),
-(21,4,21,1,1,'Объём','250 мл','image'),
-(20,4,20,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(26,5,26,1,1,'Объём','250 мл','image'),
-(27,5,27,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(36,6,36,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(34,6,34,2,4,'Объём','250 мл','image'),
-(35,6,35,1,1,'Объём','250 мл','image'),
-(45,7,45,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(43,7,43,1,1,'Объём','250 мл','image'),
-(44,7,44,2,4,'Объём','250 мл','image'),
-(66,8,66,2,4,'Объём','250 мл','image'),
-(65,8,65,1,1,'Объём','250 мл','image'),
-(64,8,64,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(279,10,352,2,4,'Объём','250 мл','image'),
-(278,10,351,1,1,'Объём','250 мл','image'),
-(277,10,350,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(402,11,516,1,1,'Объём','250 мл','image'),
-(401,11,515,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(400,11,513,2,4,'Объём','250 мл','image'),
-(426,12,546,1,1,'Объём','250 мл','image'),
-(425,12,545,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(424,12,543,2,4,'Объём','250 мл','image'),
-(423,12,542,4,7,'Объём','200 мл','image'),
-(501,17,641,1,2,'Объём','500 мл','image'),
-(523,34,702,5,8,'Цвет','Чёрный - Пурпурный','image'),
-(524,35,704,5,8,'Цвет','Чёрный - Пурпурный','image');
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_option` ENABLE KEYS */;
-UNLOCK TABLES;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}order_product`
@@ -2674,58 +2284,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_product` (
   PRIMARY KEY (`order_product_id`),
   KEY `order_id` (`order_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=705 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order_product`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_product` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_product` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}order_product` VALUES
-(642,18,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-500',1,1499.0000,1499.0000,0.0000,0,''),
-(5,2,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(4,2,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,''),
-(9,3,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',3,999.0000,2997.0000,0.0000,0,''),
-(8,3,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',2,1290.0000,2580.0000,0.0000,0,''),
-(21,4,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',3,999.0000,2997.0000,0.0000,0,''),
-(20,4,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',2,1290.0000,2580.0000,0.0000,0,''),
-(27,5,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',2,1290.0000,2580.0000,0.0000,0,''),
-(26,5,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(36,6,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',2,1290.0000,2580.0000,0.0000,0,''),
-(35,6,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(34,6,2,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','L-002-250',1,599.0000,599.0000,0.0000,0,''),
-(45,7,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',2,1290.0000,2580.0000,0.0000,0,''),
-(44,7,2,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','L-002-250',1,599.0000,599.0000,0.0000,0,''),
-(43,7,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(68,9,6,'Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,1190.0000,1190.0000,0.0000,0,''),
-(65,8,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(66,8,2,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','L-002-250',1,599.0000,599.0000,0.0000,0,''),
-(64,8,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,''),
-(514,11,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001',1,999.0000,999.0000,0.0000,0,''),
-(352,10,2,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','L-002-250',1,599.0000,599.0000,0.0000,0,''),
-(351,10,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(350,10,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,''),
-(349,10,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001',1,999.0000,999.0000,0.0000,0,''),
-(516,11,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(515,11,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,''),
-(513,11,2,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','L-002-250',1,599.0000,599.0000,0.0000,0,''),
-(545,12,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,''),
-(546,12,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-250',1,999.0000,999.0000,0.0000,0,''),
-(544,12,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001',1,999.0000,999.0000,0.0000,0,''),
-(543,12,2,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','L-002-250',1,599.0000,599.0000,0.0000,0,''),
-(542,12,4,'Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-003-200',1,1090.0000,1090.0000,0.0000,0,''),
-(638,15,4,'Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-003',1,1090.0000,1090.0000,0.0000,0,''),
-(639,16,4,'Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-003',1,1090.0000,1090.0000,0.0000,0,''),
-(641,17,1,'Шампунь для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','L-001-500',1,1499.0000,1499.0000,0.0000,0,''),
-(692,31,6,'Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,1190.0000,1190.0000,0.0000,0,''),
-(693,32,6,'Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,1190.0000,1190.0000,0.0000,0,''),
-(701,33,6,'Расческа для волос Tangle Teezer Salon Elite Black','T-002',10,1190.0000,11900.0000,0.0000,0,''),
-(702,34,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,''),
-(703,35,6,'Расческа для волос Tangle Teezer Salon Elite Black','T-002',2,1190.0000,2380.0000,0.0000,0,''),
-(704,35,5,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','T-001-black-purple',1,1290.0000,1290.0000,0.0000,0,'');
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_product` ENABLE KEYS */;
-UNLOCK TABLES;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}order_simple_fields`
@@ -2810,77 +2369,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_total` (
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`order_total_id`),
   KEY `idx_orders_total_orders_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=697 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order_total`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_total` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_total` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}order_total` VALUES
-(512,18,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(511,18,'sub_total','Сумма','1 499.00<span class=\"rouble\">Р</span>',1499.0000,1),
-(8,2,'shipping','Доставка курьером по Калининграду','150.00<span class=\"rouble\">Р</span>',150.0000,3),
-(7,2,'sub_total','Сумма','2 289.00<span class=\"rouble\">Р</span>',2289.0000,1),
-(9,2,'total','Итого','2 439.00<span class=\"rouble\">Р</span>',2439.0000,9),
-(14,3,'shipping','Самовывоз из пункта выдачи заказов','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(13,3,'sub_total','Сумма','5 577.00<span class=\"rouble\">Р</span>',5577.0000,1),
-(15,3,'total','Итого','5 577.00<span class=\"rouble\">Р</span>',5577.0000,9),
-(33,4,'total','Итого','5 577.00<span class=\"rouble\">Р</span>',5577.0000,9),
-(32,4,'shipping','Самовывоз из пункта выдачи заказов','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(31,4,'sub_total','Сумма','5 577.00<span class=\"rouble\">Р</span>',5577.0000,1),
-(41,5,'shipping','Самовывоз из пункта выдачи заказов','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(42,5,'total','Итого','3 579.00<span class=\"rouble\">Р</span>',3579.0000,9),
-(40,5,'sub_total','Сумма','3 579.00<span class=\"rouble\">Р</span>',3579.0000,1),
-(50,6,'shipping','Самовывоз из пункта выдачи заказов','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(51,6,'total','Итого','4 178.00<span class=\"rouble\">Р</span>',4178.0000,9),
-(49,6,'sub_total','Сумма','4 178.00<span class=\"rouble\">Р</span>',4178.0000,1),
-(59,7,'shipping','Самовывоз из пункта выдачи заказов','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(60,7,'total','Итого','4 178.00<span class=\"rouble\">Р</span>',4178.0000,9),
-(58,7,'sub_total','Сумма','4 178.00<span class=\"rouble\">Р</span>',4178.0000,1),
-(81,8,'total','Итого','3 038.00<span class=\"rouble\">Р</span>',3038.0000,9),
-(80,8,'shipping','Доставка курьером по Калининграду','150.00<span class=\"rouble\">Р</span>',150.0000,3),
-(79,8,'sub_total','Сумма','2 888.00<span class=\"rouble\">Р</span>',2888.0000,1),
-(86,9,'shipping','Самовывоз из пункта выдачи заказов','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(85,9,'sub_total','Сумма','1 190.00<span class=\"rouble\">Р</span>',1190.0000,1),
-(87,9,'total','Итого','1 190.00<span class=\"rouble\">Р</span>',1190.0000,9),
-(300,10,'total','Итого','3 887.00<span class=\"rouble\">Р</span>',3887.0000,9),
-(441,12,'total','Итого','5 689.53<span class=\"rouble\">Р</span>',5689.5285,9),
-(299,10,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(298,10,'sub_total','Сумма','3 887.00<span class=\"rouble\">Р</span>',3887.0000,1),
-(422,11,'shipping','Доставка курьером по Калининграду и пригородам','150.00<span class=\"rouble\">Р</span>',150.0000,3),
-(423,11,'total','Итого','4 037.00<span class=\"rouble\">Р</span>',4037.0000,9),
-(421,11,'sub_total','Сумма','3 887.00<span class=\"rouble\">Р</span>',3887.0000,1),
-(439,12,'sub_total','Сумма','4 977.00<span class=\"rouble\">Р</span>',4977.0000,1),
-(440,12,'shipping','Отправка ценной бандеролью первого класса в Воронеж, ориентировочное время доставки: 5 дн.','712.53<span class=\"rouble\">Р</span>',712.5285,3),
-(510,17,'total','Итого','1 499.00<span class=\"rouble\">Р</span>',1499.0000,9),
-(509,17,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(508,17,'sub_total','Сумма','1 499.00<span class=\"rouble\">Р</span>',1499.0000,1),
-(499,15,'sub_total','Сумма','1 090.00<span class=\"rouble\">Р</span>',1090.0000,1),
-(500,15,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(501,15,'total','Итого','1 090.00<span class=\"rouble\">Р</span>',1090.0000,9),
-(502,16,'sub_total','Сумма','1 090.00<span class=\"rouble\">Р</span>',1090.0000,1),
-(503,16,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(504,16,'total','Итого','1 090.00<span class=\"rouble\">Р</span>',1090.0000,9),
-(513,18,'total','Итого','1 499.00<span class=\"rouble\">Р</span>',1499.0000,9),
-(663,31,'total','Итого','1 449.76<span class=\"rouble\">Р</span>',1449.7611,9),
-(662,31,'shipping','Отправка ценной посылкой в Воронеж, ориентировочное время доставки: 6 дн.','259.76<span class=\"rouble\">Р</span>',259.7611,3),
-(661,31,'sub_total','Сумма','1 190.00<span class=\"rouble\">Р</span>',1190.0000,1),
-(664,32,'sub_total','Сумма','1 190.00<span class=\"rouble\">Р</span>',1190.0000,1),
-(665,32,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(666,32,'total','Итого','1 190.00<span class=\"rouble\">Р</span>',1190.0000,9),
-(690,33,'total','Итого','11 900.00<span class=\"rouble\">Р</span>',11900.0000,9),
-(689,33,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(688,33,'sub_total','Сумма','11 900.00<span class=\"rouble\">Р</span>',11900.0000,1),
-(691,34,'sub_total','Сумма','1 290.00<span class=\"rouble\">Р</span>',1290.0000,1),
-(692,34,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(693,34,'total','Итого','1 290.00<span class=\"rouble\">Р</span>',1290.0000,9),
-(694,35,'sub_total','Сумма','3 670.00<span class=\"rouble\">Р</span>',3670.0000,1),
-(695,35,'shipping','Самовывоз из пункта выдачи заказов в Калининграде','0.00<span class=\"rouble\">Р</span>',0.0000,3),
-(696,35,'total','Итого','3 670.00<span class=\"rouble\">Р</span>',3670.0000,9);
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_total` ENABLE KEYS */;
-UNLOCK TABLES;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}order_voucher`
@@ -2902,15 +2391,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}order_voucher` (
   `amount` decimal(15,4) NOT NULL,
   PRIMARY KEY (`order_voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}order_voucher`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}order_voucher` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_voucher` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}order_voucher` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}poip_main_option_settings`
@@ -3076,11 +2556,11 @@ CREATE TABLE `{{ ocstore_db_prefix }}product` (
 LOCK TABLES `{{ ocstore_db_prefix }}product` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product` VALUES
-(1,'L-001','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250-500-1500ml.jpg',1,1,1599.0000,0,0,'2017-05-23',250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,'2017-05-24 03:26:38','2017-07-22 20:27:28',248,0,0,0),
-(2,'L-002','','','','','','','',9999,5,'data/products/loreal-professionnel-mythic-oil-shampoo-250ml.jpg',1,1,599.0000,0,0,'2017-05-23',250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,'2017-05-24 03:30:51','2017-05-24 11:17:20',16,0,0,0),
-(5,'T-001','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black-red.jpg',2,1,1290.0000,0,0,'2017-05-23',88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,'2017-05-24 03:39:15','2017-05-24 11:14:06',11,0,0,0),
-(4,'L-003','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-mask.jpg',1,1,1390.0000,0,0,'2017-05-23',200.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,'2017-05-24 03:34:34','2017-05-24 11:16:56',56,0,0,0),
-(6,'T-002','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black.jpg',2,1,1190.0000,0,0,'2017-05-23',88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,'2017-05-24 03:42:37','2017-06-11 05:40:27',24,0,0,0);
+(1,'L-001','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250-500-1500ml.jpg',1,1,1599.0000,0,0,CURRENT_DATE,250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,248,0,0,0),
+(2,'L-002','','','','','','','',9999,5,'data/products/loreal-professionnel-mythic-oil-shampoo-250ml.jpg',1,1,599.0000,0,0,CURRENT_DATE,250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,16,0,0,0),
+(5,'T-001','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black-red.jpg',2,1,1290.0000,0,0,CURRENT_DATE,88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,11,0,0,0),
+(4,'L-003','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-mask.jpg',1,1,1390.0000,0,0,CURRENT_DATE,200.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,56,0,0,0),
+(6,'T-002','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black.jpg',2,1,1190.0000,0,0,CURRENT_DATE,88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,24,0,0,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3185,7 +2665,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_discount` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_discount` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_discount` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_discount` VALUES
-(3,2,1,2,0,399.0000,'0000-00-00','2017-05-31');
+(3,2,1,2,0,399.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_discount` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3199,15 +2679,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_filter` (
   `filter_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`filter_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}product_filter`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}product_filter` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_filter` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_filter` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}product_image`
@@ -3297,14 +2768,14 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_option_value` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_option_value` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_option_value` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_option_value` VALUES
-(3,1,1,1,4,9999,0,1000.0000,'+',0,'+',1250.00000000,'+',0,0,'&lt;h2&gt;Упаковка&lt;/h2&gt;\r\n&lt;p&gt;\r\nОгромная бутылка объемом 1500 мл - выбор настоящих профессионалов.\r\n&lt;/p&gt;','','-1500',0),
-(2,1,1,1,3,9999,0,500.0000,'+',0,'+',250.00000000,'+',0,0,'&lt;h2&gt;Упаковка&lt;/h2&gt;\r\n&lt;p&gt;\r\nБольшая бутылка объемом 500 мл - выбор для экономных.\r\n&lt;/p&gt;','','-500',0),
-(1,1,1,1,2,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'&lt;h2&gt;Упаковка&lt;/h2&gt;\r\n&lt;p&gt;Маленькая бутылка объемом 250 мл - выбор для дома.&lt;/p&gt;','','-250',1),
-(4,2,2,1,2,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','-250',1),
-(5,2,2,1,4,9999,0,1000.0000,'+',0,'+',1250.00000000,'+',0,0,'','','-1500',0),
-(8,5,5,2,5,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','-black-purple',1),
-(7,4,4,1,1,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','-200',1),
-(9,5,5,2,6,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','-black-green',0);
+(3,1,1,1,4,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Огромная бутылка объемом 1500 мл - выбор настоящих профессионалов.','','',0),
+(2,1,1,1,3,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Большая бутылка объемом 500 мл - выбор для экономных.','','',0),
+(1,1,1,1,2,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Маленькая бутылка объемом 250 мл - выбор для дома.','','',1),
+(4,2,2,1,2,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
+(5,2,2,1,4,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',0),
+(8,5,5,2,5,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
+(7,4,4,1,1,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
+(9,5,5,2,6,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_option_value` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3401,8 +2872,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_special` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_special` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_special` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_special` VALUES
-(10,1,1,0,999.0000,'0000-00-00','2018-06-30'),
-(7,4,1,0,1090.0000,'0000-00-00','2017-05-31');
+(18,6,1,0,999.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR),
+(14,4,1,0,1090.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_special` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3459,15 +2930,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}product_to_download`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}product_to_download` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_download` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}product_to_layout`
 --
 
@@ -3478,15 +2940,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`product_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}product_to_layout`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}product_to_layout` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_layout` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}product_to_store`
@@ -3556,15 +3009,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}rate_review` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}rate_review`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}rate_review` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}rate_review` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}rate_review` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}record`
 --
 
@@ -3584,7 +3028,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}record` (
   `comment_status_reg` tinyint(1) NOT NULL,
   `comment_status_now` tinyint(1) NOT NULL,
   `date_available` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `date_end` datetime NOT NULL DEFAULT '2033-03-03 00:00:00',
+  `date_end` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_added` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `viewed` int(5) NOT NULL DEFAULT '0',
@@ -3599,9 +3043,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}record` (
 LOCK TABLES `{{ ocstore_db_prefix }}record` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}record` VALUES
-(1,2,'data/blog/articles/otzyvy-pokupatelej.jpg',1,1,0,0,'','index,follow','a:8:{s:6:\"status\";s:1:\"1\";s:10:\"status_reg\";s:1:\"1\";s:10:\"status_now\";s:1:\"1\";s:6:\"rating\";s:1:\"1\";s:6:\"signer\";s:1:\"1\";s:5:\"order\";s:4:\"date\";s:8:\"order_ad\";s:4:\"desc\";s:10:\"rating_num\";s:0:\"\";}',0,0,0,'2017-05-31 19:27:51','2033-11-11 00:00:00','2017-05-31 19:28:58','2017-10-24 14:59:24',144),
-(2,1,'data/blog/articles/kak-pravilno-myt-golovu.jpg',1,1,0,0,'','index,follow','a:8:{s:6:\"status\";s:1:\"1\";s:10:\"status_reg\";s:1:\"1\";s:10:\"status_now\";s:1:\"1\";s:6:\"rating\";s:1:\"1\";s:6:\"signer\";s:1:\"1\";s:5:\"order\";s:4:\"date\";s:8:\"order_ad\";s:4:\"desc\";s:10:\"rating_num\";s:0:\"\";}',0,0,0,'2017-05-31 19:32:38','2033-11-11 00:00:00','2017-05-31 19:37:55','2017-10-24 15:09:41',163),
-(3,1,'data/blog/articles/professionalnaja-kosmetika-dlja-volos-zachem-ona-nuzhna.jpg',2,1,0,0,'','index,follow','a:8:{s:6:\"status\";s:1:\"1\";s:10:\"status_reg\";s:1:\"1\";s:10:\"status_now\";s:1:\"1\";s:6:\"rating\";s:1:\"1\";s:6:\"signer\";s:1:\"1\";s:5:\"order\";s:4:\"date\";s:8:\"order_ad\";s:4:\"desc\";s:10:\"rating_num\";s:0:\"\";}',0,0,0,'2017-05-31 19:54:09','2033-11-11 00:00:00','2017-05-31 20:01:10','2017-10-24 15:02:41',41);
+(1,2,'data/blog/articles/otzyvy-pokupatelej.jpg',1,1,0,0,'','index,follow','a:8:{s:6:\"status\";s:1:\"1\";s:10:\"status_reg\";s:1:\"1\";s:10:\"status_now\";s:1:\"1\";s:6:\"rating\";s:1:\"1\";s:6:\"signer\";s:1:\"1\";s:5:\"order\";s:4:\"date\";s:8:\"order_ad\";s:4:\"desc\";s:10:\"rating_num\";s:0:\"\";}',0,0,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP + INTERVAL 30 YEAR,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,144),
+(2,1,'data/blog/articles/kak-pravilno-myt-golovu.jpg',1,1,0,0,'','index,follow','a:8:{s:6:\"status\";s:1:\"1\";s:10:\"status_reg\";s:1:\"1\";s:10:\"status_now\";s:1:\"1\";s:6:\"rating\";s:1:\"1\";s:6:\"signer\";s:1:\"1\";s:5:\"order\";s:4:\"date\";s:8:\"order_ad\";s:4:\"desc\";s:10:\"rating_num\";s:0:\"\";}',0,0,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP + INTERVAL 30 YEAR,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,163),
+(3,1,'data/blog/articles/professionalnaja-kosmetika-dlja-volos-zachem-ona-nuzhna.jpg',2,1,0,0,'','index,follow','a:8:{s:6:\"status\";s:1:\"1\";s:10:\"status_reg\";s:1:\"1\";s:10:\"status_now\";s:1:\"1\";s:6:\"rating\";s:1:\"1\";s:6:\"signer\";s:1:\"1\";s:5:\"order\";s:4:\"date\";s:8:\"order_ad\";s:4:\"desc\";s:10:\"rating_num\";s:0:\"\";}',0,0,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP + INTERVAL 30 YEAR,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,41);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3651,15 +3095,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_attribute` (
   `text` text NOT NULL,
   PRIMARY KEY (`record_id`,`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}record_attribute`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}record_attribute` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_attribute` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_attribute` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}record_description`
@@ -3735,15 +3170,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_product_related` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}record_product_related`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}record_product_related` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_product_related` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_product_related` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}record_related`
 --
 
@@ -3793,15 +3219,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_tag` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}record_tag`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}record_tag` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_tag` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_tag` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}record_to_blog`
 --
 
@@ -3837,15 +3254,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_to_download` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}record_to_download`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}record_to_download` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_to_download` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_to_download` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}record_to_layout`
 --
 
@@ -3856,15 +3264,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}record_to_layout` (
   `layout_id` int(11) NOT NULL,
   PRIMARY KEY (`record_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}record_to_layout`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}record_to_layout` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_to_layout` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_to_layout` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}record_to_store`
@@ -3888,6 +3287,208 @@ INSERT INTO `{{ ocstore_db_prefix }}record_to_store` VALUES
 (2,0),
 (3,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}record_to_store` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions` (
+  `relatedoptions_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(4) NOT NULL,
+  `price` decimal(15,4) NOT NULL,
+  `model` varchar(64) NOT NULL,
+  `sku` varchar(64) NOT NULL,
+  `upc` varchar(12) NOT NULL,
+  `location` varchar(128) NOT NULL,
+  `defaultselect` tinyint(11) NOT NULL,
+  `defaultselectpriority` int(11) NOT NULL,
+  `weight` decimal(15,8) NOT NULL,
+  `weight_prefix` varchar(1) NOT NULL,
+  `description` text NOT NULL,
+  PRIMARY KEY (`relatedoptions_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions` VALUES
+(1,1,9999,1599.0000,'L-001-250','','','',0,1,250.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Маленькая бутылка объемом 250 мл - выбор для дома.&lt;/p&gt;'),
+(2,1,9999,2099.0000,'L-001-500','','','',0,2,500.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Большая бутылка объемом 500 мл - выбор для экономных.&lt;/p&gt;'),
+(3,1,9999,2599.0000,'L-001-1500','','','',0,3,1500.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Огромная бутылка объемом 1500 мл - выбор настоящих профессионалов.&lt;/p&gt;'),
+(4,5,9999,1290.0000,'T-001-BLACK-PURPLE','','','',0,0,88.00000000,'=',''),
+(5,5,9999,1290.0000,'T-001-BLACK-GREEN','','','',0,0,88.00000000,'=',''),
+(6,2,9999,599.0000,'L-002-250','','','',0,0,250.00000000,'=',''),
+(7,2,9999,1599.0000,'L-002-1500','','','',0,0,1500.00000000,'=',''),
+(8,4,9999,1390.0000,'L-003-200','','','',0,0,200.00000000,'=','');
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_discount`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_discount`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_discount` (
+  `relatedoptions_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `quantity` int(4) NOT NULL,
+  `priority` int(5) NOT NULL,
+  `price` decimal(15,4) NOT NULL,
+  KEY `relatedoptions_id` (`relatedoptions_id`),
+  KEY `customer_group_id` (`customer_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_option`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_option`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_option` (
+  `relatedoptions_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  `option_value_id` int(11) NOT NULL,
+  KEY `relatedoptions_id` (`relatedoptions_id`),
+  KEY `option_value_id` (`option_value_id`),
+  KEY `option_id` (`option_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_option`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_option` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_option` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_option` VALUES
+(3,1,1,4),
+(2,1,1,3),
+(1,1,1,2),
+(4,5,2,5),
+(5,5,2,6),
+(6,2,1,2),
+(7,2,1,4),
+(8,4,1,1);
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_option` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_special`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_special`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_special` (
+  `relatedoptions_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `priority` int(5) NOT NULL,
+  `price` decimal(15,4) NOT NULL,
+  KEY `relatedoptions_id` (`relatedoptions_id`),
+  KEY `customer_group_id` (`customer_group_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_special`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_special` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_special` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_special` VALUES
+(1,1,0,999.0000);
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_special` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_to_char`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_to_char`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_to_char` (
+  `relatedoptions_id` int(11) NOT NULL,
+  `char_id` varchar(255) NOT NULL,
+  KEY `relatedoptions_id` (`relatedoptions_id`),
+  KEY `char_id` (`char_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_variant`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_variant`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_variant` (
+  `relatedoptions_variant_id` int(11) NOT NULL AUTO_INCREMENT,
+  `relatedoptions_variant_name` char(255) NOT NULL,
+  PRIMARY KEY (`relatedoptions_variant_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_variant`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_variant` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_variant` VALUES
+(1,'Объём'),
+(2,'Цвет');
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_variant_option`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_variant_option`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_option` (
+  `relatedoptions_variant_id` int(11) NOT NULL,
+  `option_id` int(11) NOT NULL,
+  KEY `option_id` (`option_id`),
+  KEY `relatedoptions_variant_id` (`relatedoptions_variant_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_variant_option`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_variant_option` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_option` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_variant_option` VALUES
+(1,1),
+(2,2);
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_option` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_variant_product`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}relatedoptions_variant_product`;
+CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_product` (
+  `relatedoptions_variant_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `relatedoptions_use` tinyint(1) NOT NULL,
+  KEY `product_id` (`product_id`),
+  KEY `relatedoptions_variant_id` (`relatedoptions_variant_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_variant_product`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_variant_product` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_product` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_variant_product` VALUES
+(1,1,1),
+(2,5,1),
+(1,2,1),
+(1,4,1),
+(0,6,0);
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -3916,22 +3517,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}return` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`return_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}return`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}return` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}return` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}return` VALUES
-(1,31,0,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,0,2,0,2,'','2017-06-11','2017-06-11 05:38:16','2017-06-11 05:38:16'),
-(2,32,0,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,1,1,0,2,'Все помято','2017-06-11','2017-06-11 11:24:20','2017-06-11 11:24:20'),
-(3,33,0,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,0,2,0,2,'','2017-06-11','2017-06-11 11:26:39','2017-06-11 11:26:39'),
-(4,33,0,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,0,2,0,2,'','2017-06-11','2017-06-11 11:26:39','2017-06-11 11:26:39'),
-(5,32,0,1,'Наталья Николаевна','Позднякова','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','Расческа для волос Tangle Teezer Salon Elite Black','T-002',1,1,2,0,2,'','2017-06-11','2017-06-11 11:38:55','2017-06-11 11:38:55');
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}return` ENABLE KEYS */;
-UNLOCK TABLES;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}return_action`
@@ -3975,15 +3561,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}return_history` (
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`return_history_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}return_history`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}return_history` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}return_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}return_history` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}return_reason`
@@ -4070,7 +3647,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}review` (
   KEY `rating_mark` (`rating_mark`),
   KEY `rating` (`rating`),
   KEY `type_id` (`type_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}review`
@@ -4079,8 +3656,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}review` (
 LOCK TABLES `{{ ocstore_db_prefix }}review` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}review` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}review` VALUES
-(1,1,0,0,1,'Наталья Николаевна Позднякова','Шампунь просто чудо, цвет остается как был, не изменяется. Волосы просто сияют, рекомендую!',5,0,1,1,1,2,'2017-05-31 15:53:58',CURRENT_TIMESTAMP),
-(2,1,0,1,6,'Лев Александрович Капитман','Шампунь - бомба, особенно круто, что есть фасовка по полтора литра. Спасибо. Цена - супер!',5,0,1,1,1,2,'2017-06-01 15:16:29',CURRENT_TIMESTAMP);
+(1,1,0,0,1,'Наталья Николаевна Позднякова','Шампунь просто чудо, цвет остается как был, не изменяется. Волосы просто сияют, рекомендую!',5,0,1,1,1,2,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+(2,1,0,1,6,'Лев Александрович Капитман','Шампунь - бомба, особенно круто, что есть фасовка по полтора литра. Спасибо. Цена - супер!',5,0,1,1,1,2,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4096,15 +3673,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}review_fields` (
   KEY `review_id` (`review_id`),
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}review_fields`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}review_fields` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}review_fields` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}review_fields` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}setting`
@@ -4813,15 +4381,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}simple_cart` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}simple_cart`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}simple_cart` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}simple_cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}simple_cart` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}stock_status`
 --
 
@@ -4865,15 +4424,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}store` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}store`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}store` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}store` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}subscription`
 --
 
@@ -4885,15 +4435,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}subscription` (
   PRIMARY KEY (`subscription_id`),
   KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}subscription`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}subscription` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}subscription` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}subscription` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier`
@@ -4928,15 +4469,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_attribute`
 --
 
@@ -4948,15 +4480,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_attribute` (
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`supplier_attribute_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_attribute`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_attribute` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_attribute` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_attribute` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_description`
@@ -4971,15 +4494,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_description` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_job_clon`
 --
 
@@ -4989,15 +4503,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_clon` (
   `supplier_product_id` int(11) NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_clon`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_job_clon` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_clon` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_clon` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_job_refresh`
@@ -5010,15 +4515,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_refresh` (
   `iterator_state` text NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_refresh`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_job_refresh` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_refresh` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_refresh` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_job_refresh_product`
@@ -5038,15 +4534,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_refresh_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_refresh_product`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_job_refresh_product` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_refresh_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_refresh_product` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_job_sync`
 --
 
@@ -5056,15 +4543,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_job_sync` (
   `supplier_product_id` int(11) NOT NULL,
   PRIMARY KEY (`batch_id`,`supplier_product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_job_sync`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_job_sync` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_sync` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_job_sync` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_manufacturer`
@@ -5078,15 +4556,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_manufacturer` (
   `url` text NOT NULL,
   PRIMARY KEY (`supplier_manufacturer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_manufacturer`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_manufacturer` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_manufacturer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_manufacturer` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_manufacturer_image`
@@ -5103,15 +4572,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_manufacturer_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_manufacturer_image`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_manufacturer_image` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_manufacturer_image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_manufacturer_image` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_option`
 --
 
@@ -5124,15 +4584,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_option` (
   `name` varchar(128) NOT NULL,
   PRIMARY KEY (`supplier_option_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_option`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_option` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_option` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_option` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_option_value`
@@ -5150,15 +4601,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_option_value` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_option_value`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_option_value` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_option_value` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_option_value` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_option_value_image`
 --
 
@@ -5171,15 +4613,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_option_value_image` (
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`supplier_option_value_image_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_option_value_image`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_option_value_image` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_option_value_image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_option_value_image` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_product`
@@ -5211,15 +4644,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_product`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_product` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_product` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_product_image`
 --
 
@@ -5234,15 +4658,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_product_image` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_product_image`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_product_image` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_product_image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_product_image` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}supplier_to_store`
 --
 
@@ -5252,15 +4667,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}supplier_to_store` (
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`supplier_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}supplier_to_store`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}supplier_to_store` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_to_store` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}supplier_to_store` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}tax_class`
@@ -5275,15 +4681,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_class` (
   `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`tax_class_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}tax_class`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}tax_class` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_class` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_class` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}tax_rate`
@@ -5302,15 +4699,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_rate` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}tax_rate`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}tax_rate` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_rate` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_rate` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}tax_rate_to_customer_group`
 --
 
@@ -5320,15 +4708,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_rate_to_customer_group` (
   `customer_group_id` int(11) NOT NULL,
   PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}tax_rate_to_customer_group`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}tax_rate_to_customer_group` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_rate_to_customer_group` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_rate_to_customer_group` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}tax_rule`
@@ -5343,15 +4722,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}tax_rule` (
   `priority` int(5) NOT NULL DEFAULT '1',
   PRIMARY KEY (`tax_rule_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}tax_rule`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}tax_rule` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_rule` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}tax_rule` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}url_alias`
@@ -5511,7 +4881,7 @@ LOCK TABLES `{{ ocstore_db_prefix }}user` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}user` DISABLE KEYS */;
 SET @SALT = SUBSTR(MD5(DATE_FORMAT(DATE_ADD(SYSDATE(), INTERVAL FLOOR( 1 + (RAND() * 998)) MICROSECOND), "%Y%m%d%H%i%s%f")), 1, 9);
 INSERT INTO `{{ ocstore_db_prefix }}user` VALUES
-(1,1,'{{ ocstore_admin_login }}',SHA1(CONCAT(@SALT,SHA1(CONCAT(@SALT,SHA1('{{ ocstore_admin_password }}'))))),@SALT,'','','{{ ocstore_admin_email }}','','127.0.0.1',1,NOW());
+(1,1,'{{ ocstore_admin_login }}',SHA1(CONCAT(@SALT,SHA1(CONCAT(@SALT,SHA1('{{ ocstore_admin_password }}'))))),@SALT,'','','{{ ocstore_admin_email }}','','127.0.0.1',1,CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5560,15 +4930,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}voucher`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}voucher` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}voucher_history`
 --
 
@@ -5583,15 +4944,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher_history` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Dumping data for table `{{ ocstore_db_prefix }}voucher_history`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}voucher_history` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher_history` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher_history` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `{{ ocstore_db_prefix }}voucher_theme`
 --
 
@@ -5601,15 +4953,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher_theme` (
   `image` varchar(255) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}voucher_theme`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}voucher_theme` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher_theme` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher_theme` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}voucher_theme_description`
@@ -5622,15 +4965,6 @@ CREATE TABLE `{{ ocstore_db_prefix }}voucher_theme_description` (
   `name` varchar(32) NOT NULL,
   PRIMARY KEY (`voucher_theme_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `{{ ocstore_db_prefix }}voucher_theme_description`
---
-
-LOCK TABLES `{{ ocstore_db_prefix }}voucher_theme_description` WRITE;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher_theme_description` DISABLE KEYS */;
-/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}voucher_theme_description` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}weight_class`
