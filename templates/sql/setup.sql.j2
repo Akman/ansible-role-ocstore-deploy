@@ -1950,7 +1950,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option` (
   `type` varchar(32) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option`
@@ -1960,7 +1960,9 @@ LOCK TABLES `{{ ocstore_db_prefix }}option` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}option` VALUES
 (1,'image',0),
-(2,'image',0);
+(2,'image',0),
+(3,'image',1),
+(4,'radio',2);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1984,7 +1986,9 @@ LOCK TABLES `{{ ocstore_db_prefix }}option_description` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_description` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}option_description` VALUES
 (1,1,'Объём'),
-(2,1,'Цвет');
+(2,1,'Цвет'),
+(3,1,'Цвет футболки'),
+(4,1,'Размер футболки');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2023,7 +2027,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_value` (
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`option_value_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}option_value`
@@ -2037,7 +2041,13 @@ INSERT INTO `{{ ocstore_db_prefix }}option_value` VALUES
 (3,1,'',3),
 (4,1,'',4),
 (5,2,'',1),
-(6,2,'',2);
+(6,2,'',2),
+(7,3,'',1),
+(8,3,'',2),
+(9,3,'',3),
+(10,4,'',1),
+(11,4,'',2),
+(12,4,'',3);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_value` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2066,7 +2076,13 @@ INSERT INTO `{{ ocstore_db_prefix }}option_value_description` VALUES
 (3,1,1,'500 мл'),
 (4,1,1,'1500 мл'),
 (5,1,2,'Чёрный - Пурпурный'),
-(6,1,2,'Чёрный - Салатовый');
+(6,1,2,'Чёрный - Салатовый'),
+(7,1,3,'Красный'),
+(8,1,3,'Желтый'),
+(9,1,3,'Зеленый'),
+(10,1,4,'S'),
+(11,1,4,'M'),
+(12,1,4,'L');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_value_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2422,7 +2438,9 @@ LOCK TABLES `{{ ocstore_db_prefix }}poip_main_option_settings` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}poip_main_option_settings` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}poip_main_option_settings` VALUES
 (1,0,0,0,0,0,0,0,0,0,0,0,0),
-(2,0,0,0,0,0,0,0,0,0,0,0,0);
+(2,0,0,0,0,0,0,0,0,0,0,0,0),
+(3,0,0,0,0,0,0,0,0,0,0,0,0),
+(4,0,0,0,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}poip_main_option_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2449,22 +2467,25 @@ CREATE TABLE `{{ ocstore_db_prefix }}poip_option_image` (
 LOCK TABLES `{{ ocstore_db_prefix }}poip_option_image` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}poip_option_image` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}poip_option_image` VALUES
-(1,1,3,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-1500ml.jpg',1),
-(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-4.jpg',5),
-(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-3.jpg',4),
-(2,2,5,'data/products/loreal-professionnel-mythic-oil-shampoo-1500ml.jpg',1),
-(5,5,9,'data/products/tangle-teezer-elite-black-yellow.jpg',1),
-(4,4,7,'data/products/loreal-professionnel-vitamino-color-a-ox-mask.jpg',1),
-(5,5,8,'data/products/tangle-teezer-elite-black-red.jpg',1),
-(2,2,4,'data/products/loreal-professionnel-mythic-oil-shampoo-250ml.jpg',1),
-(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-2.jpg',3),
-(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-1.jpg',2),
-(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml.jpg',1),
 (1,1,1,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250ml-4.jpg',5),
 (1,1,1,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250ml-3.jpg',4),
 (1,1,1,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250ml-2.jpg',3),
 (1,1,1,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250ml-1.jpg',2),
-(1,1,1,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250ml.jpg',1);
+(1,1,1,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250ml.jpg',1),
+(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-4.jpg',5),
+(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-3.jpg',4),
+(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-2.jpg',3),
+(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml-1.jpg',2),
+(1,1,2,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-500ml.jpg',1),
+(1,1,3,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-1500ml.jpg',1),
+(2,2,4,'data/products/loreal-professionnel-mythic-oil-shampoo-250ml.jpg',1),
+(2,2,5,'data/products/loreal-professionnel-mythic-oil-shampoo-1500ml.jpg',1),
+(4,4,7,'data/products/loreal-professionnel-vitamino-color-a-ox-mask.jpg',1),
+(5,5,8,'data/products/tangle-teezer-elite-black-red.jpg',1),
+(5,5,9,'data/products/tangle-teezer-elite-black-yellow.jpg',1),
+(7,6,10,'data/products/tshirt-red.jpg',1),
+(7,6,11,'data/products/tshirt-yellow.jpg',1),
+(7,6,12,'data/products/tshirt-green.jpg',1);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}poip_option_image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2501,8 +2522,10 @@ LOCK TABLES `{{ ocstore_db_prefix }}poip_option_settings` WRITE;
 INSERT INTO `{{ ocstore_db_prefix }}poip_option_settings` VALUES
 (1,1,0,0,0,0,0,0,0,0,0,0,0,0),
 (2,2,0,0,0,0,0,0,0,0,0,0,0,0),
+(4,4,0,0,0,0,0,0,0,0,0,0,0,0),
 (5,5,0,0,0,0,0,0,0,0,0,0,0,0),
-(4,4,0,0,0,0,0,0,0,0,0,0,0,0);
+(7,6,0,0,0,0,0,0,0,0,0,0,0,0),
+(7,7,0,0,0,0,0,0,0,0,0,0,0,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}poip_option_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2547,7 +2570,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product` (
   `quantity_lock` tinyint(1) NOT NULL DEFAULT '0',
   `price_lock` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product`
@@ -2556,11 +2579,12 @@ CREATE TABLE `{{ ocstore_db_prefix }}product` (
 LOCK TABLES `{{ ocstore_db_prefix }}product` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product` VALUES
-(1,'L-001','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250-500-1500ml.jpg',1,1,1599.0000,0,0,CURRENT_DATE,250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,248,0,0,0),
-(2,'L-002','','','','','','','',9999,5,'data/products/loreal-professionnel-mythic-oil-shampoo-250ml.jpg',1,1,599.0000,0,0,CURRENT_DATE,250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,16,0,0,0),
-(5,'T-001','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black-red.jpg',2,1,1290.0000,0,0,CURRENT_DATE,88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,11,0,0,0),
-(4,'L-003','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-mask.jpg',1,1,1390.0000,0,0,CURRENT_DATE,200.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,56,0,0,0),
-(6,'T-002','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black.jpg',2,1,1190.0000,0,0,CURRENT_DATE,88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,24,0,0,0);
+(1,'L-001','','','','','','','',19998,5,'data/products/loreal-professionnel-vitamino-color-a-ox-shampoo-250-500-1500ml.jpg',1,1,1599.0000,0,0,'2018-01-24',250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,'2018-01-24 12:21:02','2018-01-24 19:45:37',262,0,0,0),
+(2,'L-002','','','','','','','',9999,5,'data/products/loreal-professionnel-mythic-oil-shampoo-250ml.jpg',1,1,599.0000,0,0,'2018-01-24',250.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,'2018-01-24 12:21:02','2018-01-24 12:21:02',16,0,0,0),
+(4,'L-003','','','','','','','',9999,5,'data/products/loreal-professionnel-vitamino-color-a-ox-mask.jpg',1,1,1390.0000,0,0,'2018-01-24',200.00000000,2,0.00000000,0.00000000,0.00000000,2,0,1,1,1,'2018-01-24 12:21:02','2018-01-24 12:21:02',56,0,0,0),
+(5,'T-001','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black-red.jpg',2,1,1290.0000,0,0,'2018-01-24',88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,'2018-01-24 12:21:02','2018-01-24 12:21:02',11,0,0,0),
+(6,'T-002','','','','','','','',9999,5,'data/products/tangle-teezer-elite-black.jpg',2,1,1190.0000,0,0,'2018-01-24',88.00000000,2,120.00000000,75.00000000,45.00000000,2,0,1,1,1,'2018-01-24 12:21:02','2018-01-24 12:21:02',24,0,0,0),
+(7,'T-003','','','','','','','',400,5,'data/products/tshirt.jpg',2,1,300.0000,0,0,'2018-01-23',200.00000000,2,60.00000000,40.00000000,5.00000000,2,0,1,1,1,'2018-01-24 15:15:04','2018-01-24 21:42:18',41,0,0,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2585,24 +2609,25 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_attribute` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_attribute` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_attribute` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_attribute` VALUES
-(1,3,1,'Неогесперидин, пантенол, токоферол'),
+(1,1,1,'Окрашенные'),
 (1,2,1,'Защита цвета, сияние и блеск'),
+(1,3,1,'Неогесперидин, пантенол, токоферол'),
+(1,4,1,'Vitamino Color A-OX'),
+(2,1,1,'Плотные, непослушные, сухие'),
 (2,2,1,'Питание, гладкость, блеск'),
 (2,3,1,'Натуральные масла'),
 (2,4,1,'Mythic Oil'),
-(6,2,1,'Безболезненное расчесывание'),
-(5,2,1,'Безболезненное расчесывание'),
+(4,1,1,'Окрашенные, ослабленные, сухие'),
 (4,2,1,'Восстановление и глянцевый блеск'),
 (4,3,1,'Неогесперидин, пантенол, токоферол'),
-(4,1,1,'Окрашенные, ослабленные, сухие'),
-(2,1,1,'Плотные, непослушные, сухие'),
-(5,1,1,'Мокрые,сухие,наращенные'),
-(5,4,1,'Salon Elite'),
-(6,4,1,'Salon Elite'),
 (4,4,1,'Vitamino Color A-OX'),
-(1,1,1,'Окрашенные'),
+(5,1,1,'Мокрые,сухие,наращенные'),
+(5,2,1,'Безболезненное расчесывание'),
+(5,4,1,'Salon Elite'),
 (6,1,1,'Мокрые,сухие,наращенные'),
-(1,4,1,'Vitamino Color A-OX');
+(6,2,1,'Безболезненное расчесывание'),
+(6,4,1,'Salon Elite'),
+(7,3,1,'Хлопок 100%');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_attribute` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2636,7 +2661,8 @@ INSERT INTO `{{ ocstore_db_prefix }}product_description` VALUES
 (2,1,'Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil','&lt;p&gt;\r\n	Питательный шампунь для плотных волос. Вдохновленный индийскими традициями масляных ванн, секрет роскошных волос, дисциплины и блеска от вашего стилиста. Шампунь бережно очищает волосы, а аргановое масло и экстракт мирры в составе позволяют дисциплинировать плотные волосы, оставляя их мягкими и увлажненными.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Протестированно под дерматологичесикм контролем. Без парабенов.&lt;/p&gt;\r\n&lt;p&gt;\r\n	АРГАНОВОЕ МАСЛО - добывается из легендарного марокканского арганового дерева. Этот ингредиент известен своими невероятными свойствами в области по уходу за волосами. Аргановое масло обогащено витамином Е, известным своими питательными и дисциплинирующими свойствами. Аргановое масло, содержащееся в продуктах серии Mythic Oil, добывается согласно этическим принципам. Мы поддерживаем биологическое разнообразие уникальных лесов Арганы на юге Марокко и местные поселения, которые занимаются его добычей с помощью принципов свободной торговли.&lt;/p&gt;\r\n&lt;p&gt;\r\n	ЭКСТРАКТ МИРРЫ - очень популярен в различных культурах древнего мира. Греки, китайцы, египтяне особенно ценили этот ингредиент за его целительные и восстанавливающие свойства.&lt;/p&gt;\r\n','Шампунь для плотных, непослушных и сухих волос L\'Oreal Professionnel Mythic Oil бережно очищает волосы, а аргановое масло и экстракт мирры в составе позволяют дисциплинировать плотные волосы, оставляя их мягкими и увлажненными','Шампунь для плотных, непослушных и сухих волос L\'Oreal Professionnel Mythic Oil с интенсивным питанием - отзывы, цена, фото, купить','Шампунь для плотных, непослушных и сухих волос L\'Oreal Professionnel Mythic Oil с интенсивным питанием - отзывы, цена, фото, купить','Шампунь для плотных волос L\'Oreal Professionnel Mythic Oil',''),
 (4,1,'Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX','&lt;p&gt;\r\n	Забудьте о сухих волосах! Питательная гель-маска L\'Oreal Professionnel Vitamino Color A-OX&amp;nbsp;заботится об ослабленных и поврежденных окрашенных волосах, формируя на их поверхности защитный слой, который препятствует неблагоприятному воздействию агрессивных факторов внешней среды. Окрашенные волосы мгновенно наполнены питанием и защищены всего за 1 минуту.&lt;/p&gt;\r\n','Маска-желе для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX воздействует на кутикулу волоса, восстанавливает и выравнивает его поверхность','Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX - отзывы, цена, фото, купить','Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX - отзывы, цена, фото, купить','Маска для окрашенных волос L\'Oreal Professionnel Vitamino Color A-OX',''),
 (5,1,'Расческа для волос Tangle Teezer Salon Elite Highlighter Collection','&lt;p&gt;\r\n	Расческа TANGLE TEEZER Salon Elite была разработана специально для профессионального использования. Размер щетки, небольшой, не превышают размеры женской ладошки. Идеально подходят для всех типов волос. Оригинальная форма зубчиков обеспечивает двойное действие и позволяет быстро, бережно и безболезненно расчесать влажные и сухие волосы за считанные секунды. У расчески Salon Elite уникальный вогнутый дизайн, позволяющий расчесывать волосы от корней до кончиков одним движением. Благодаря такому дизайну, расческу удобно держать в руках, не опасаясь выскальзывания.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Особенности расчески TANGLE TEEZER Salon Elite:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Подходит для всех типов волос&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Не ломает, не цепляет, не тянет, не выдирает волосы&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Небольшие размеры и вес, легко помещается в дамскую сумочку&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Удобный, эргономичный дизайн&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Выполнена из высококачественного экологически чистого пластика&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Долгий срок службы&lt;/li&gt;\r\n&lt;/ul&gt;\r\n','Расческа для волос Tangle Teezer Salon Elite Highlighter Collection позволяет быстро, бережно и безболезненно расчесать влажные и сухие волосы за считанные секунды','Расческа для волос Tangle Teezer Salon Elite Highlighter Collection - отзывы, цена, фото, купить','Расческа для волос Tangle Teezer Salon Elite Highlighter Collection - отзывы, цена, фото, купить','Расческа для волос Tangle Teezer Salon Elite Highlighter Collection',''),
-(6,1,'Расческа для волос Tangle Teezer Salon Elite Black','&lt;p&gt;\r\n	Расческа TANGLE TEEZER Salon Elite&amp;nbsp;Black была разработана специально для профессионального использования. Размер щетки, небольшой, не превышают размеры женской ладошки. Идеально подходят для всех типов волос. Оригинальная форма зубчиков обеспечивает двойное действие и позволяет быстро, бережно и безболезненно расчесать влажные и сухие волосы за считанные секунды. У расчески Salon Elite уникальный вогнутый дизайн, позволяющий расчесывать волосы от корней до кончиков одним движением. Благодаря такому дизайну, расческу удобно держать в руках, не опасаясь выскальзывания.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Особенности расчески TANGLE TEEZER Salon Elite Black:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Подходит для всех типов волос&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Не ломает, не цепляет, не тянет, не выдирает волосы&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Небольшие размеры и вес, легко помещается в дамскую сумочку&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Удобный, эргономичный дизайн&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Выполнена из высококачественного экологически чистого пластика&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Долгий срок службы&lt;/li&gt;\r\n&lt;/ul&gt;\r\n','Расческа для волос Tangle Teezer Salon Elite Black позволяет быстро, бережно и безболезненно расчесать влажные и сухие волосы за считанные секунды','Расческа для волос Tangle Teezer Salon Elite Black - отзывы, цена, фото, купить','Расческа для волос Tangle Teezer Salon Elite Black - отзывы, цена, фото, купить','Расческа для волос Tangle Teezer Salon Elite Black','');
+(6,1,'Расческа для волос Tangle Teezer Salon Elite Black','&lt;p&gt;\r\n	Расческа TANGLE TEEZER Salon Elite&amp;nbsp;Black была разработана специально для профессионального использования. Размер щетки, небольшой, не превышают размеры женской ладошки. Идеально подходят для всех типов волос. Оригинальная форма зубчиков обеспечивает двойное действие и позволяет быстро, бережно и безболезненно расчесать влажные и сухие волосы за считанные секунды. У расчески Salon Elite уникальный вогнутый дизайн, позволяющий расчесывать волосы от корней до кончиков одним движением. Благодаря такому дизайну, расческу удобно держать в руках, не опасаясь выскальзывания.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Особенности расчески TANGLE TEEZER Salon Elite Black:&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Подходит для всех типов волос&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Не ломает, не цепляет, не тянет, не выдирает волосы&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Небольшие размеры и вес, легко помещается в дамскую сумочку&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Удобный, эргономичный дизайн&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Выполнена из высококачественного экологически чистого пластика&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Долгий срок службы&lt;/li&gt;\r\n&lt;/ul&gt;\r\n','Расческа для волос Tangle Teezer Salon Elite Black позволяет быстро, бережно и безболезненно расчесать влажные и сухие волосы за считанные секунды','Расческа для волос Tangle Teezer Salon Elite Black - отзывы, цена, фото, купить','Расческа для волос Tangle Teezer Salon Elite Black - отзывы, цена, фото, купить','Расческа для волос Tangle Teezer Salon Elite Black',''),
+(7,1,'Футболка Tangle Teezer с логотипом компании','&lt;p&gt;Футболка TANGLE TEEZER была разработана специально для фанатов марки. Качественный хлопок и безупречный крой удовлетворят самых взыскательных покупателей. Идеально сочетается&amp;nbsp; с любой одеждой. Оригинальный принт обеспечивает вау эффект. У футболки уникальный дизайн и крой, позволяющий создать неповторимый и запоминающийся образ.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Особенности футболки&amp;nbsp;TANGLE TEEZER:&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n  &lt;li&gt;Подходит для всех&lt;/li&gt;\r\n  &lt;li&gt;Не колется, приятна к телу&lt;/li&gt;\r\n  &lt;li&gt;Небольшие размеры и вес&lt;/li&gt;\r\n  &lt;li&gt;Удобный, эргономичный и запоминающийся дизайн&lt;/li&gt;\r\n  &lt;li&gt;Выполнена из высококачественного экологически чистого хлопка&lt;/li&gt;\r\n  &lt;li&gt;Долгий срок службы&lt;/li&gt;\r\n&lt;/ul&gt;\r\n','Футболка Tangle Teezer с логотипом компании выделит любого как фаната марки и придаст неповторимый запоминающийся образ','Футболка Tangle Teezer с логотипом компании - отзывы, цена, фото, купить','Футболка Tangle Teezer с логотипом компании - отзывы, цена, фото, купить','Футболка Tangle Teezer с логотипом компании','Промо,Принт');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2691,7 +2717,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_image` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_image_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_image`
@@ -2715,7 +2741,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_option` (
   `option_value` text NOT NULL,
   `required` tinyint(1) NOT NULL,
   PRIMARY KEY (`product_option_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_option`
@@ -2726,8 +2752,10 @@ LOCK TABLES `{{ ocstore_db_prefix }}product_option` WRITE;
 INSERT INTO `{{ ocstore_db_prefix }}product_option` VALUES
 (1,1,1,'',1),
 (2,2,1,'',1),
+(4,4,1,'',1),
 (5,5,2,'',1),
-(4,4,1,'',1);
+(6,7,3,'',1),
+(7,7,4,'',1);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2759,7 +2787,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_option_value` (
   PRIMARY KEY (`product_option_value_id`),
   KEY `option_value_id` (`option_value_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_option_value`
@@ -2768,14 +2796,20 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_option_value` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_option_value` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_option_value` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_option_value` VALUES
-(3,1,1,1,4,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Огромная бутылка объемом 1500 мл - выбор настоящих профессионалов.','','',0),
+(1,1,1,1,2,0,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Маленькая бутылка объемом 250 мл - выбор для дома.','','',1),
 (2,1,1,1,3,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Большая бутылка объемом 500 мл - выбор для экономных.','','',0),
-(1,1,1,1,2,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Маленькая бутылка объемом 250 мл - выбор для дома.','','',1),
+(3,1,1,1,4,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Огромная бутылка объемом 1500 мл - выбор настоящих профессионалов.','','',0),
 (4,2,2,1,2,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
 (5,2,2,1,4,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',0),
-(8,5,5,2,5,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
 (7,4,4,1,1,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
-(9,5,5,2,6,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',0);
+(8,5,5,2,5,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',1),
+(9,5,5,2,6,9999,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'','','',0),
+(10,6,7,3,7,0,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Яркий красный цвет','','',0),
+(11,6,7,3,8,200,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Ядовитый желтый цвет','','',0),
+(12,6,7,3,9,200,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Сочный зеленый цвет. И дальше идет очень длинное описание этой опции. Не просто длинное, а просто длиннющее. Да, длиннющее описание, такое длинное, что не умещается в одну строку, да какую одну строку, даже в две или в три строки.','','',0),
+(13,7,7,4,10,200,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Размер соответствует 44-46','','',0),
+(14,7,7,4,11,0,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Размер соответствует 46-48','','',0),
+(15,7,7,4,12,200,0,0.0000,'+',0,'+',0.00000000,'+',0,0,'Размер соответствует 48-50','','',0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_option_value` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2813,10 +2847,14 @@ INSERT INTO `{{ ocstore_db_prefix }}product_related` VALUES
 (5,2),
 (5,4),
 (5,6),
+(5,7),
 (6,1),
 (6,2),
 (6,4),
-(6,5);
+(6,5),
+(6,7),
+(7,5),
+(7,6);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_related` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2831,7 +2869,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_reward` (
   `customer_group_id` int(11) NOT NULL DEFAULT '0',
   `points` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`product_reward_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_reward`
@@ -2840,11 +2878,12 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_reward` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_reward` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_reward` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_reward` VALUES
-(21,1,1,0),
-(17,2,1,0),
-(13,5,1,0),
-(15,4,1,0),
-(20,6,1,0);
+(1,1,1,0),
+(2,2,1,0),
+(3,4,1,0),
+(4,5,1,0),
+(5,6,1,0),
+(6,7,1,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_reward` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2863,7 +2902,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00',
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}product_special`
@@ -2872,8 +2911,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_special` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_special` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_special` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_special` VALUES
-(18,6,1,0,999.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR),
-(14,4,1,0,1090.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR);
+(1,4,1,0,1090.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR),
+(2,6,1,0,999.0000,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_special` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2897,24 +2936,27 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_to_category` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_to_category` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_category` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_to_category` VALUES
-(1,9,1),
-(1,5,0),
-(1,4,0),
 (1,1,0),
+(1,4,0),
+(1,5,0),
+(1,9,1),
 (2,1,0),
 (2,3,0),
 (2,5,0),
 (2,9,1),
-(6,8,1),
-(5,8,1),
-(5,2,0),
-(5,5,0),
 (4,1,0),
 (4,4,0),
 (4,5,0),
 (4,10,1),
+(5,2,0),
+(5,5,0),
+(5,8,1),
+(6,2,0),
 (6,5,0),
-(6,2,0);
+(6,8,1),
+(7,2,0),
+(7,5,0),
+(7,8,1);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2963,7 +3005,8 @@ INSERT INTO `{{ ocstore_db_prefix }}product_to_store` VALUES
 (2,0),
 (4,0),
 (5,0),
-(6,0);
+(6,0),
+(7,0);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_to_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3310,7 +3353,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions` (
   `description` text NOT NULL,
   PRIMARY KEY (`relatedoptions_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions`
@@ -3319,14 +3362,23 @@ CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions` (
 LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}relatedoptions` VALUES
-(1,1,9999,1599.0000,'L-001-250','','','',0,1,250.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Маленькая бутылка объемом 250 мл - выбор для дома.&lt;/p&gt;'),
+(1,1,0,1599.0000,'L-001-250','','','',0,1,250.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Маленькая бутылка объемом 250 мл - выбор для дома.&lt;/p&gt;'),
 (2,1,9999,2099.0000,'L-001-500','','','',0,2,500.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Большая бутылка объемом 500 мл - выбор для экономных.&lt;/p&gt;'),
 (3,1,9999,2599.0000,'L-001-1500','','','',0,3,1500.00000000,'=','&lt;h2&gt;Объём&lt;/h2&gt;\r\n&lt;p&gt;Огромная бутылка объемом 1500 мл - выбор настоящих профессионалов.&lt;/p&gt;'),
 (4,5,9999,1290.0000,'T-001-BLACK-PURPLE','','','',0,0,88.00000000,'=',''),
 (5,5,9999,1290.0000,'T-001-BLACK-GREEN','','','',0,0,88.00000000,'=',''),
 (6,2,9999,599.0000,'L-002-250','','','',0,0,250.00000000,'=',''),
 (7,2,9999,1599.0000,'L-002-1500','','','',0,0,1500.00000000,'=',''),
-(8,4,9999,1390.0000,'L-003-200','','','',0,0,200.00000000,'=','');
+(8,4,9999,1390.0000,'L-003-200','','','',0,0,200.00000000,'=',''),
+(9,7,0,0.0000,'T-003-R-S','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nКрасный - S'),
+(10,7,0,499.0000,'T-003-R-M','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nКрасный - M'),
+(11,7,0,0.0000,'T-003-R-L','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nКрасный - L'),
+(12,7,100,297.0000,'T-003-Y-S','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nЖелтый - S'),
+(13,7,0,0.0000,'T-003-Y-M','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nЖелтый - M'),
+(14,7,100,298.0000,'T-003-Y-L','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nЖелтый - L'),
+(15,7,100,0.0000,'T-003-G-S','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nЗеленый - S'),
+(16,7,0,0.0000,'T-003-G-M','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nЗеленый - M'),
+(17,7,100,299.0000,'T-003-G-L','','','',0,0,0.00000000,'=','&lt;h2&gt;Цвет и размер&lt;/h2&gt;\r\nЗеленый - L');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3346,6 +3398,20 @@ CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_discount` (
   KEY `relatedoptions_id` (`relatedoptions_id`),
   KEY `customer_group_id` (`customer_group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_discount`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_discount` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_discount` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_discount` VALUES
+(17,1,'0000-00-00','0000-00-00',2,0,249.0000),
+(11,1,'0000-00-00','0000-00-00',5,0,209.0000),
+(11,1,'0000-00-00','0000-00-00',3,0,239.0000),
+(11,1,'0000-00-00','0000-00-00',2,0,249.0000);
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_discount` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `{{ ocstore_db_prefix }}relatedoptions_option`
@@ -3370,14 +3436,32 @@ CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_option` (
 LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_option` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_option` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_option` VALUES
-(3,1,1,4),
-(2,1,1,3),
 (1,1,1,2),
+(2,1,1,3),
+(3,1,1,4),
 (4,5,2,5),
 (5,5,2,6),
 (6,2,1,2),
 (7,2,1,4),
-(8,4,1,1);
+(8,4,1,1),
+(9,7,4,10),
+(9,7,3,7),
+(10,7,4,11),
+(10,7,3,7),
+(11,7,4,12),
+(11,7,3,7),
+(12,7,4,10),
+(12,7,3,8),
+(13,7,4,11),
+(13,7,3,8),
+(14,7,4,12),
+(14,7,3,8),
+(15,7,4,10),
+(15,7,3,9),
+(16,7,4,11),
+(16,7,3,9),
+(17,7,4,12),
+(17,7,3,9);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3404,7 +3488,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_special` (
 LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_special` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_special` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_special` VALUES
-(1,1,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR,0,999.0000);
+(1,1,'0000-00-00',CURRENT_DATE + INTERVAL 1 YEAR,0,999.0000),
+(12,1,'0000-00-00','0000-00-00',0,197.0000),
+(14,1,'0000-00-00','0000-00-00',0,198.0000),
+(17,1,'0000-00-00','0000-00-00',0,199.0000);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_special` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3429,7 +3516,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}relatedoptions_variant` (
   `relatedoptions_variant_id` int(11) NOT NULL AUTO_INCREMENT,
   `relatedoptions_variant_name` char(255) NOT NULL,
   PRIMARY KEY (`relatedoptions_variant_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}relatedoptions_variant`
@@ -3439,7 +3526,8 @@ LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_variant` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_variant` VALUES
 (1,'Объём'),
-(2,'Цвет');
+(2,'Цвет'),
+(3,'Цвет и размер футболки');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3463,7 +3551,9 @@ LOCK TABLES `{{ ocstore_db_prefix }}relatedoptions_variant_option` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_option` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_variant_option` VALUES
 (1,1),
-(2,2);
+(2,2),
+(3,3),
+(3,4);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_option` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3491,7 +3581,8 @@ INSERT INTO `{{ ocstore_db_prefix }}relatedoptions_variant_product` VALUES
 (2,5,1),
 (1,2,1),
 (1,4,1),
-(0,6,0);
+(0,6,0),
+(3,7,1);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}relatedoptions_variant_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3836,7 +3927,7 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (134,0,'voucher','voucher_status','1',0),
 (135,0,'google_base','google_base_status','1',0),
 (136,0,'featured','product','',0),
-(137,0,'featured','featured_product','1,4,2,5,6',0),
+(137,0,'featured','featured_product','1,4,2,5,6,7',0),
 (138,0,'featured','featured_module','a:3:{i:0;a:7:{s:5:\"limit\";s:2:\"16\";s:11:\"image_width\";s:3:\"354\";s:12:\"image_height\";s:3:\"236\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:1;a:7:{s:5:\"limit\";s:2:\"16\";s:11:\"image_width\";s:3:\"354\";s:12:\"image_height\";s:3:\"236\";s:9:\"layout_id\";s:2:\"13\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}i:2;a:7:{s:5:\"limit\";s:2:\"16\";s:11:\"image_width\";s:3:\"354\";s:12:\"image_height\";s:3:\"236\";s:9:\"layout_id\";s:2:\"12\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";}}',1),
 (139,0,'viewed','viewed_count','16',0),
 (140,0,'viewed','show_on_product','1',0),
@@ -4738,7 +4829,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}url_alias` (
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`(64))
-) ENGINE=MyISAM AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}url_alias`
@@ -4747,81 +4838,82 @@ CREATE TABLE `{{ ocstore_db_prefix }}url_alias` (
 LOCK TABLES `{{ ocstore_db_prefix }}url_alias` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}url_alias` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}url_alias` VALUES
-(810,'account/voucher','vouchers'),
-(809,'account/wishlist','wishlist'),
-(808,'account/account','my-account'),
-(807,'checkout/cart','cart'),
-(806,'checkout/checkout','checkout'),
-(805,'account/login','login'),
-(804,'account/logout','logout'),
-(803,'account/order','order-history'),
-(802,'account/newsletter','newsletter'),
-(801,'product/special','specials'),
-(800,'affiliate/account','affiliates'),
-(799,'checkout/voucher','gift-vouchers'),
-(798,'product/manufacturer','brands'),
-(797,'information/contact','contact-us'),
-(796,'account/return/insert','return-insert'),
-(795,'information/sitemap','map-of-site'),
-(794,'account/forgotten','forgot-password'),
-(793,'account/download','downloads'),
-(792,'account/return','return-history'),
-(791,'account/transaction','transactions'),
-(790,'account/register','create-account'),
-(789,'product/compare','compare-products'),
-(788,'product/search','search'),
-(787,'account/edit','edit-account'),
-(786,'account/password','change-password'),
-(785,'account/address','address-book'),
-(784,'account/reward','reward-points'),
-(783,'affiliate/edit','edit-affiliate-account'),
-(782,'affiliate/password','change-affiliate-password'),
-(781,'affiliate/payment','affiliate-payment-options'),
-(780,'affiliate/tracking','affiliate-tracking-code'),
-(779,'affiliate/transaction','affiliate-transactions'),
-(778,'affiliate/logout','affiliate-logout'),
-(777,'affiliate/forgotten','affiliate-forgot-password'),
-(776,'affiliate/register','create-affiliate-account'),
-(775,'affiliate/login','affiliate-login'),
-(774,'common/home',''),
-(995,'information_id=4','about-us'),
-(813,'category_id=1','loreal-professionnel'),
-(814,'category_id=2','tangle-teezer'),
-(815,'category_id=3','loreal-professionnel-mythic-oil'),
-(816,'category_id=4','loreal-professionnel-vitamino-color-a-ox'),
-(817,'category_id=5','new'),
-(818,'category_id=6','care'),
-(825,'category_id=7','styling'),
-(820,'category_id=8','accessories'),
-(858,'category_id=9','shampoo'),
-(859,'category_id=10','cure'),
-(962,'information_id=6','delivery-and-payment'),
-(971,'information_id=3','exchange-and-return'),
-(1002,'product_id=1','loreal-professionnel-vitamino-color-a-ox-shampoo'),
-(847,'product_id=2','loreal-professionnel-mythic-oil-shampoo'),
-(845,'product_id=4','loreal-professionnel-vitamino-color-a-ox-mask'),
-(843,'product_id=5','tangle-teezer-salon-elite-highlighter-collection-comb'),
-(915,'product_id=6','tangle-teezer-salon-elite-black-comb'),
-(848,'checkout/simplecheckout','simplecheckout'),
-(849,'account/simpleregister','simpleregister'),
-(850,'account/simpleedit','simpleedit'),
-(851,'account/simpleaddress/update','address-book-update'),
-(852,'account/simpleaddress/insert','address-book-insert'),
-(853,'account/address/delete','address-book-delete'),
-(854,'account/order/info','order-info'),
-(900,'record/google_sitemap_blog','feed-sitemap'),
-(901,'feed/google_base','feed-googlebase'),
-(902,'payment/payaftercheck/success','payaftercheck-success'),
-(1001,'information_id=9','advantages'),
-(972,'information_id=5','user-agreement'),
-(913,'error/not_found','error-not-found'),
-(917,'account/return/info','return-info'),
-(918,'account/return/success','return-success'),
-(935,'account/subscription','subscription'),
-(993,'information_id=11','advantage-low-price'),
-(1000,'information_id=12','advantage-quick-delivery'),
-(996,'information_id=13','advantage-plus-gift'),
-(1003,'information_id=14','maintenance');
+(1,'account/account','my-account'),
+(2,'account/address','address-book'),
+(3,'account/address/delete','address-book-delete'),
+(4,'account/download','downloads'),
+(5,'account/edit','edit-account'),
+(6,'account/forgotten','forgot-password'),
+(7,'account/login','login'),
+(8,'account/logout','logout'),
+(9,'account/newsletter','newsletter'),
+(10,'account/order','order-history'),
+(11,'account/order/info','order-info'),
+(12,'account/password','change-password'),
+(13,'account/register','create-account'),
+(14,'account/return','return-history'),
+(15,'account/return/info','return-info'),
+(16,'account/return/insert','return-insert'),
+(17,'account/return/success','return-success'),
+(18,'account/reward','reward-points'),
+(19,'account/simpleaddress/insert','address-book-insert'),
+(20,'account/simpleaddress/update','address-book-update'),
+(21,'account/simpleedit','simpleedit'),
+(22,'account/simpleregister','simpleregister'),
+(23,'account/subscription','subscription'),
+(24,'account/transaction','transactions'),
+(25,'account/voucher','vouchers'),
+(26,'account/wishlist','wishlist'),
+(27,'affiliate/account','affiliates'),
+(28,'affiliate/edit','edit-affiliate-account'),
+(29,'affiliate/forgotten','affiliate-forgot-password'),
+(30,'affiliate/login','affiliate-login'),
+(31,'affiliate/logout','affiliate-logout'),
+(32,'affiliate/password','change-affiliate-password'),
+(33,'affiliate/payment','affiliate-payment-options'),
+(34,'affiliate/register','create-affiliate-account'),
+(35,'affiliate/tracking','affiliate-tracking-code'),
+(36,'affiliate/transaction','affiliate-transactions'),
+(37,'checkout/cart','cart'),
+(38,'checkout/checkout','checkout'),
+(39,'checkout/simplecheckout','simplecheckout'),
+(40,'checkout/voucher','gift-vouchers'),
+(41,'common/home',''),
+(42,'error/not_found','error-not-found'),
+(43,'information/contact','contact-us'),
+(44,'information/sitemap','map-of-site'),
+(45,'payment/payaftercheck/success','payaftercheck-success'),
+(46,'product/compare','compare-products'),
+(47,'product/manufacturer','brands'),
+(48,'product/search','search'),
+(49,'product/special','specials'),
+(50,'feed/google_base','feed-googlebase'),
+(51,'record/google_sitemap_blog','feed-sitemap'),
+(52,'information_id=3','exchange-and-return'),
+(53,'information_id=4','about-us'),
+(54,'information_id=5','user-agreement'),
+(55,'information_id=6','delivery-and-payment'),
+(56,'information_id=9','advantages'),
+(57,'information_id=11','advantage-low-price'),
+(58,'information_id=12','advantage-quick-delivery'),
+(59,'information_id=13','advantage-plus-gift'),
+(60,'information_id=14','maintenance'),
+(61,'category_id=1','loreal-professionnel'),
+(62,'category_id=2','tangle-teezer'),
+(63,'category_id=3','loreal-professionnel-mythic-oil'),
+(64,'category_id=4','loreal-professionnel-vitamino-color-a-ox'),
+(65,'category_id=5','new'),
+(66,'category_id=6','care'),
+(67,'category_id=7','styling'),
+(68,'category_id=8','accessories'),
+(69,'category_id=9','shampoo'),
+(70,'category_id=10','cure'),
+(71,'product_id=1','loreal-professionnel-vitamino-color-a-ox-shampoo'),
+(72,'product_id=2','loreal-professionnel-mythic-oil-shampoo'),
+(73,'product_id=4','loreal-professionnel-vitamino-color-a-ox-mask'),
+(74,'product_id=5','tangle-teezer-salon-elite-highlighter-collection-comb'),
+(75,'product_id=6','tangle-teezer-salon-elite-black-comb'),
+(76,'product_id=7','tangle-teezer-t-shirt-promo');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}url_alias` ENABLE KEYS */;
 UNLOCK TABLES;
 
