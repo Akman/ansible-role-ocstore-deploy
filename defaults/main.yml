@@ -109,8 +109,8 @@ ocstore_shared_symlinks:
   - { path: "image/data/favicon.ico",    dest: "favicon.ico" }
   - { path: "image/data/no_image.jpg",   dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
 
-ocstore_release_copy_files:
-  - { path: "system/license/filterpro.lic", mode: "660" }
+ocstore_release_copy_files: []
+#  - { path: "public/system/license/license.lic", mode: "660" }
 
 ocstore_public_template_files:
   - { path: ".htaccess" }
