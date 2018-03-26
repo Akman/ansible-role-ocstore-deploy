@@ -1519,7 +1519,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter` (
   `filter_group_id` int(11) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filter`
@@ -1528,10 +1528,29 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter` (
 LOCK TABLES `{{ ocstore_db_prefix }}filter` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}filter` VALUES
-(1,1,1),
-(2,1,2),
-(3,2,1),
-(4,2,2);
+(9,4,1),
+(10,4,2),
+(11,5,6),
+(12,5,7),
+(15,7,1),
+(16,8,1),
+(22,5,5),
+(23,5,4),
+(24,5,3),
+(25,5,2),
+(26,5,1),
+(27,4,3),
+(28,4,4),
+(29,4,5),
+(30,4,6),
+(31,4,7),
+(32,8,2),
+(33,8,3),
+(34,8,4),
+(35,8,5),
+(36,7,2),
+(37,7,3),
+(38,5,8);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1555,10 +1574,29 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_description` (
 LOCK TABLES `{{ ocstore_db_prefix }}filter_description` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_description` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}filter_description` VALUES
-(1,1,1,'Есть'),
-(2,1,1,'Нет'),
-(3,1,2,'Розница'),
-(4,1,2,'Салон');
+(9,1,4,'Восстановление и глянцевый блеск'),
+(10,1,4,'Безболезненное расчесывание'),
+(11,1,5,'Сухие'),
+(12,1,5,'Мокрые'),
+(15,1,7,'Vitamino Color AOX'),
+(16,1,8,'Неогесперидин'),
+(22,1,5,'Жирные'),
+(23,1,5,'Наращенные'),
+(24,1,5,'Окрашенные'),
+(25,1,5,'Ослабленные'),
+(26,1,5,'Непослушные'),
+(27,1,4,'Защита цвета'),
+(28,1,4,'Сияние и блеск'),
+(29,1,4,'Питание'),
+(30,1,4,'Гладкость'),
+(31,1,4,'Блеск'),
+(32,1,8,'Натуральные масла'),
+(33,1,8,'Пантенол'),
+(34,1,8,'Токоферол'),
+(35,1,8,'Хлопок 100%'),
+(36,1,7,'Mythic Oil'),
+(37,1,7,'Salon Elite'),
+(38,1,5,'Плотные');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1571,7 +1609,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`filter_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}filter_group`
@@ -1580,8 +1618,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group` (
 LOCK TABLES `{{ ocstore_db_prefix }}filter_group` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}filter_group` VALUES
-(1,1),
-(2,1);
+(4,2),
+(5,3),
+(7,1),
+(8,4);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1604,8 +1644,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}filter_group_description` (
 LOCK TABLES `{{ ocstore_db_prefix }}filter_group_description` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group_description` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}filter_group_description` VALUES
-(1,1,'Гарантия'),
-(2,1,'Упаковка');
+(4,1,'Результат'),
+(5,1,'Тип волос'),
+(7,1,'Серия'),
+(8,1,'Состав');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1829,7 +1871,6 @@ INSERT INTO `{{ ocstore_db_prefix }}layout` VALUES
 (11,'Информация'),
 (12,'Страница не найдена'),
 (13,'Поиск'),
-(14,'Фильтр'),
 (16,'Блог'),
 (17,'Статья');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}layout` ENABLE KEYS */;
@@ -1867,7 +1908,6 @@ INSERT INTO `{{ ocstore_db_prefix }}layout_route` VALUES
 (32,9,0,'information/sitemap'),
 (33,12,0,'error/not_found'),
 (34,13,0,'product/search'),
-(41,14,0,'product/filter'),
 (39,16,0,'record/blog'),
 (40,17,0,'record/record');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}layout_route` ENABLE KEYS */;
@@ -2776,14 +2816,40 @@ CREATE TABLE `{{ ocstore_db_prefix }}product_filter` (
 LOCK TABLES `{{ ocstore_db_prefix }}product_filter` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_filter` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}product_filter` VALUES
-(5,1),
-(6,1),
-(1,2),
-(2,2),
-(4,2),
-(2,3),
-(1,4),
-(4,4);
+(1,15),
+(1,16),
+(1,24),
+(1,27),
+(1,28),
+(1,33),
+(1,34),
+(2,11),
+(2,26),
+(2,29),
+(2,30),
+(2,31),
+(2,32),
+(2,36),
+(2,38),
+(4,9),
+(4,11),
+(4,15),
+(4,16),
+(4,24),
+(4,25),
+(4,33),
+(4,34),
+(5,10),
+(5,11),
+(5,12),
+(5,23),
+(5,37),
+(6,10),
+(6,11),
+(6,12),
+(6,23),
+(6,37),
+(7,35);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}product_filter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4245,8 +4311,8 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (368,0,'improvedoptions','improvedoptions_settings','a:4:{s:15:\"sku_for_options\";s:1:\"0\";s:17:\"model_for_options\";s:1:\"1\";s:23:\"description_for_options\";s:2:\"on\";s:14:\"auto_selection\";s:1:\"2\";}',1),
 (369,0,'poip_module','poip_module','a:7:{s:22:\"img_main_to_additional\";s:1:\"1\";s:7:\"img_gal\";s:1:\"1\";s:10:\"img_change\";s:1:\"1\";s:7:\"img_use\";s:1:\"2\";s:12:\"img_category\";s:1:\"1\";s:9:\"img_first\";s:1:\"1\";s:8:\"img_cart\";s:1:\"1\";}',1),
 (370,0,'liveprice','liveprice_settings','a:1:{s:17:\"discount_quantity\";s:1:\"2\";}',1),
-(371,0,'filterpro','filterpro_module','a:4:{i:0;a:5:{s:4:\"type\";s:1:\"0\";s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:1;a:5:{s:4:\"type\";s:1:\"0\";s:9:\"layout_id\";s:2:\"13\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:2;a:5:{s:4:\"type\";s:1:\"0\";s:9:\"layout_id\";s:1:\"4\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:3;a:5:{s:4:\"type\";s:1:\"0\";s:9:\"layout_id\";s:1:\"5\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}}',1),
-(372,0,'filterpro','filterpro_setting','a:42:{s:12:\"price_slider\";s:1:\"1\";s:14:\"display_filter\";s:8:\"checkbox\";s:15:\"expanded_filter\";s:2:\"on\";s:20:\"display_manufacturer\";s:8:\"checkbox\";s:21:\"expanded_manufacturer\";s:2:\"on\";s:18:\"display_categories\";s:8:\"checkbox\";s:19:\"expanded_categories\";s:2:\"on\";s:12:\"display_tags\";s:4:\"none\";s:14:\"display_option\";a:4:{i:1;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:2;s:8:\"checkbox\";i:3;s:5:\"image\";}s:17:\"expanded_option_1\";s:2:\"on\";s:17:\"expanded_option_4\";s:2:\"on\";s:17:\"expanded_option_2\";s:2:\"on\";s:17:\"expanded_option_3\";s:2:\"on\";s:17:\"display_attribute\";a:4:{i:2;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:3;s:8:\"checkbox\";i:1;s:8:\"checkbox\";}s:20:\"expanded_attribute_2\";s:2:\"on\";s:20:\"expanded_attribute_4\";s:2:\"on\";s:20:\"expanded_attribute_3\";s:2:\"on\";s:20:\"expanded_attribute_1\";s:2:\"on\";s:15:\"instock_checked\";s:2:\"on\";s:11:\"option_mode\";s:3:\"and\";s:14:\"attribute_mode\";s:3:\"and\";s:14:\"attr_delimeter\";s:12:\"&lt;br /&gt;\";s:3:\"tax\";s:1:\"0\";s:20:\"attribute_value_mode\";s:2:\"or\";s:10:\"attr_group\";s:1:\"0\";s:10:\"theme_name\";s:7:\"default\";s:13:\"subcategories\";s:2:\"on\";s:12:\"hide_options\";s:2:\"on\";s:12:\"disable_mask\";s:2:\"on\";s:16:\"hide_window_hash\";s:2:\"on\";s:13:\"filter_onload\";s:2:\"on\";s:15:\"option_images_w\";s:2:\"80\";s:15:\"option_images_h\";s:2:\"53\";s:19:\"filterpro_container\";s:59:\".pos-9 .row.products, .pos-5 #mmr_fp_container.row.products\";s:14:\"filterpro_name\";s:9:\"FilterPro\";s:19:\"filterpro_afterload\";s:0:\"\";s:22:\"sort_by_quantity_first\";s:2:\"on\";s:19:\"enable_touch_screen\";s:2:\"on\";s:13:\"filer_special\";s:2:\"on\";s:9:\"news_days\";s:2:\"30\";s:10:\"filer_news\";s:2:\"on\";s:14:\"always_instock\";s:2:\"on\";}',1),
+(371,0,'filterpro','filterpro_module','a:4:{i:0;a:4:{s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:1;a:4:{s:9:\"layout_id\";s:2:\"13\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:2;a:4:{s:9:\"layout_id\";s:1:\"4\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:3;a:4:{s:9:\"layout_id\";s:1:\"5\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}}',1),
+(372,0,'filterpro','filterpro_setting','a:44:{s:12:\"price_slider\";s:1:\"1\";s:14:\"display_filter\";s:8:\"checkbox\";s:15:\"expanded_filter\";s:2:\"on\";s:20:\"display_manufacturer\";s:8:\"checkbox\";s:21:\"expanded_manufacturer\";s:2:\"on\";s:18:\"display_categories\";s:8:\"checkbox\";s:19:\"expanded_categories\";s:2:\"on\";s:12:\"display_tags\";s:4:\"none\";s:14:\"display_option\";a:4:{i:1;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:2;s:8:\"checkbox\";i:3;s:5:\"image\";}s:17:\"expanded_option_1\";s:2:\"on\";s:17:\"expanded_option_4\";s:2:\"on\";s:17:\"expanded_option_2\";s:2:\"on\";s:17:\"expanded_option_3\";s:2:\"on\";s:17:\"display_attribute\";a:4:{i:2;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:3;s:8:\"checkbox\";i:1;s:8:\"checkbox\";}s:20:\"expanded_attribute_2\";s:2:\"on\";s:20:\"expanded_attribute_4\";s:2:\"on\";s:20:\"expanded_attribute_3\";s:2:\"on\";s:20:\"expanded_attribute_1\";s:2:\"on\";s:15:\"instock_checked\";s:2:\"on\";s:11:\"option_mode\";s:3:\"and\";s:14:\"attribute_mode\";s:3:\"and\";s:16:\"filterpro_groups\";a:2:{i:1;a:2:{s:10:\"categories\";a:1:{i:0;s:1:\"1\";}s:4:\"name\";a:1:{i:1;s:21:\"L\'Oreal Professionnel\";}}i:0;a:2:{s:10:\"categories\";a:5:{i:0;s:1:\"2\";i:1;s:1:\"5\";i:2;s:1:\"6\";i:3;s:1:\"7\";i:4;s:1:\"8\";}s:4:\"name\";a:1:{i:1;s:18:\"Категории\";}}}s:14:\"attr_delimeter\";s:2:\", \";s:3:\"tax\";s:1:\"0\";s:17:\"option_value_mode\";s:2:\"or\";s:17:\"filter_value_mode\";s:2:\"or\";s:20:\"attribute_value_mode\";s:2:\"or\";s:10:\"attr_group\";s:1:\"0\";s:13:\"subcategories\";s:2:\"on\";s:12:\"hide_options\";s:2:\"on\";s:12:\"disable_mask\";s:2:\"on\";s:16:\"hide_window_hash\";s:2:\"on\";s:13:\"filter_onload\";s:2:\"on\";s:15:\"option_images_w\";s:2:\"80\";s:15:\"option_images_h\";s:2:\"53\";s:19:\"filterpro_container\";s:59:\".pos-9 .row.products, .pos-5 #mmr_fp_container.row.products\";s:14:\"filterpro_name\";s:9:\"FilterPro\";s:19:\"filterpro_afterload\";s:170:\"                                                                                                                                                                          \";s:22:\"sort_by_quantity_first\";s:2:\"on\";s:19:\"enable_touch_screen\";s:2:\"on\";s:13:\"filer_special\";s:2:\"on\";s:9:\"news_days\";s:2:\"30\";s:10:\"filer_news\";s:2:\"on\";s:14:\"always_instock\";s:2:\"on\";}',1),
 (373,0,'filterpro','attribute','a:4:{i:1;a:2:{s:17:\"attribute_tooltip\";s:0:\"\";s:12:\"attribute_id\";s:1:\"2\";}i:2;a:2:{s:17:\"attribute_tooltip\";s:0:\"\";s:12:\"attribute_id\";s:1:\"4\";}i:3;a:2:{s:17:\"attribute_tooltip\";s:0:\"\";s:12:\"attribute_id\";s:1:\"3\";}i:4;a:2:{s:17:\"attribute_tooltip\";s:0:\"\";s:12:\"attribute_id\";s:1:\"1\";}}',1),
 (374,0,'filterpro','attribute_group','a:1:{i:1;a:2:{s:23:\"attribute_group_tooltip\";s:0:\"\";s:18:\"attribute_group_id\";s:1:\"1\";}}',1),
 (375,0,'filterpro','option','a:4:{i:1;a:2:{s:7:\"tooltip\";s:0:\"\";s:9:\"option_id\";s:1:\"1\";}i:2;a:2:{s:7:\"tooltip\";s:0:\"\";s:9:\"option_id\";s:1:\"4\";}i:3;a:2:{s:7:\"tooltip\";s:0:\"\";s:9:\"option_id\";s:1:\"2\";}i:4;a:2:{s:7:\"tooltip\";s:0:\"\";s:9:\"option_id\";s:1:\"3\";}}',1),
