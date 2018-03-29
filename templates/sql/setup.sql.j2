@@ -255,7 +255,7 @@ DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}attribute_group_tooltip`;
 CREATE TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `tooltip` text NOT NULL,
+  `tooltip` text DEFAULT '',
   PRIMARY KEY (`attribute_group_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -265,7 +265,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` (
 
 LOCK TABLES `{{ ocstore_db_prefix }}attribute_group_tooltip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}attribute_group_tooltip` VALUES (1,1,'');
+INSERT INTO `{{ ocstore_db_prefix }}attribute_group_tooltip` VALUES
+(1,1,'Характеристики');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +278,7 @@ DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}attribute_tooltip`;
 CREATE TABLE `{{ ocstore_db_prefix }}attribute_tooltip` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `tooltip` text NOT NULL,
+  `tooltip` text DEFAULT '',
   PRIMARY KEY (`attribute_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -287,7 +288,11 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_tooltip` (
 
 LOCK TABLES `{{ ocstore_db_prefix }}attribute_tooltip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_tooltip` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}attribute_tooltip` VALUES (2,1,''),(3,1,''),(1,1,''),(4,1,'');
+INSERT INTO `{{ ocstore_db_prefix }}attribute_tooltip` VALUES
+(1,1,'Тип волос'),
+(2,1,'Результат'),
+(3,1,'Состав'),
+(4,1,'Серия');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_tooltip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2105,7 +2110,7 @@ DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}option_tooltip`;
 CREATE TABLE `{{ ocstore_db_prefix }}option_tooltip` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
-  `tooltip` text NOT NULL,
+  `tooltip` text DEFAULT '',
   PRIMARY KEY (`option_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -2116,8 +2121,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_tooltip` (
 LOCK TABLES `{{ ocstore_db_prefix }}option_tooltip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_tooltip` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}option_tooltip` VALUES
-(1,1,''),
-(2,1,'');
+(1,1,'Объём'),
+(2,1,'Цвет'),
+(3,1,'Цвет футболки'),
+(4,1,'Размер футболки');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_tooltip` ENABLE KEYS */;
 UNLOCK TABLES;
 
