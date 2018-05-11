@@ -272,8 +272,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` (
 LOCK TABLES `{{ ocstore_db_prefix }}attribute_group_tooltip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}attribute_group_tooltip` VALUES
-(1,1,'Характеристики'),
-(2,1,'Дополнительно');
+(1,1,'Группа атрибутов \"Характеристики\"'),
+(2,1,'Группа атрибутов \"Дополнительно\"');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_group_tooltip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -296,11 +296,11 @@ CREATE TABLE `{{ ocstore_db_prefix }}attribute_tooltip` (
 LOCK TABLES `{{ ocstore_db_prefix }}attribute_tooltip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_tooltip` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}attribute_tooltip` VALUES
-(1,1,'Тип волос'),
-(2,1,'Результат'),
-(3,1,'Состав'),
-(4,1,'Серия'),
-(5,1,'Слайдер');
+(1,1,'Атрибут \"Тип волос\"'),
+(2,1,'Атрибут \"Результат\"'),
+(3,1,'Атрибут \"Состав\"'),
+(4,1,'Атрибут \"Серия\"'),
+(5,1,'Атрибут \"Слайдер\"');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}attribute_tooltip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1665,6 +1665,32 @@ INSERT INTO `{{ ocstore_db_prefix }}filter_group_description` VALUES
 UNLOCK TABLES;
 
 --
+-- Table structure for table `{{ ocstore_db_prefix }}filter_group_tooltip`
+--
+
+DROP TABLE IF EXISTS `{{ ocstore_db_prefix }}filter_group_tooltip`;
+CREATE TABLE `{{ ocstore_db_prefix }}filter_group_tooltip` (
+  `filter_group_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `tooltip` text DEFAULT '',
+  PRIMARY KEY (`filter_group_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `{{ ocstore_db_prefix }}filter_group_tooltip`
+--
+
+LOCK TABLES `{{ ocstore_db_prefix }}filter_group_tooltip` WRITE;
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group_tooltip` DISABLE KEYS */;
+INSERT INTO `{{ ocstore_db_prefix }}filter_group_tooltip` VALUES
+(4,1,'Фильтр \"Результат\"'),
+(5,1,'Фильтр \"Тип волос\"'),
+(7,1,'Фильтр \"Серия\"'),
+(8,1,'Фильтр \"Состав\"');
+/*!40000 ALTER TABLE `{{ ocstore_db_prefix }}filter_group_tooltip` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `{{ ocstore_db_prefix }}filterpro_seo`
 --
 
@@ -2129,10 +2155,10 @@ CREATE TABLE `{{ ocstore_db_prefix }}option_tooltip` (
 LOCK TABLES `{{ ocstore_db_prefix }}option_tooltip` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_tooltip` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}option_tooltip` VALUES
-(1,1,'Объём'),
-(2,1,'Цвет'),
-(3,1,'Цвет футболки'),
-(4,1,'Размер футболки');
+(1,1,'Опция \"Объём\"'),
+(2,1,'Опция \"Цвет\"'),
+(3,1,'Опция \"Цвет футболки\"'),
+(4,1,'Опция \"Размер футболки\"');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}option_tooltip` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3953,7 +3979,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}setting` (
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=664 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=665 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}setting`
@@ -4333,10 +4359,11 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (369,0,'poip_module','poip_module','a:7:{s:22:\"img_main_to_additional\";s:1:\"1\";s:7:\"img_gal\";s:1:\"1\";s:10:\"img_change\";s:1:\"1\";s:7:\"img_use\";s:1:\"2\";s:12:\"img_category\";s:1:\"1\";s:9:\"img_first\";s:1:\"1\";s:8:\"img_cart\";s:1:\"1\";}',1),
 (370,0,'liveprice','liveprice_settings','a:1:{s:17:\"discount_quantity\";s:1:\"2\";}',1),
 (371,0,'filterpro','filterpro_module','a:4:{i:0;a:4:{s:9:\"layout_id\";s:1:\"3\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:1;a:4:{s:9:\"layout_id\";s:1:\"5\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:2;a:4:{s:9:\"layout_id\";s:2:\"14\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}i:3;a:4:{s:9:\"layout_id\";s:2:\"13\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:0:\"\";}}',1),
-(372,0,'filterpro','filterpro_setting','a:44:{s:12:\"price_slider\";s:1:\"1\";s:14:\"display_filter\";s:8:\"checkbox\";s:15:\"expanded_filter\";s:2:\"on\";s:20:\"display_manufacturer\";s:8:\"checkbox\";s:21:\"expanded_manufacturer\";s:2:\"on\";s:18:\"display_categories\";s:8:\"checkbox\";s:19:\"expanded_categories\";s:2:\"on\";s:12:\"display_tags\";s:4:\"none\";s:14:\"display_option\";a:4:{i:1;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:2;s:8:\"checkbox\";i:3;s:5:\"image\";}s:17:\"expanded_option_1\";s:2:\"on\";s:17:\"expanded_option_4\";s:2:\"on\";s:17:\"expanded_option_2\";s:2:\"on\";s:17:\"expanded_option_3\";s:2:\"on\";s:17:\"display_attribute\";a:5:{i:1;s:8:\"checkbox\";i:2;s:8:\"checkbox\";i:3;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:5;s:6:\"slider\";}s:20:\"expanded_attribute_1\";s:2:\"on\";s:20:\"expanded_attribute_2\";s:2:\"on\";s:20:\"expanded_attribute_3\";s:2:\"on\";s:20:\"expanded_attribute_4\";s:2:\"on\";s:20:\"expanded_attribute_5\";s:2:\"on\";s:15:\"instock_checked\";s:2:\"on\";s:11:\"option_mode\";s:3:\"and\";s:14:\"attribute_mode\";s:3:\"and\";s:16:\"filterpro_groups\";a:2:{i:1;a:2:{s:10:\"categories\";a:1:{i:0;s:1:\"1\";}s:4:\"name\";a:1:{i:1;s:21:\"L\'Oreal Professionnel\";}}i:0;a:2:{s:10:\"categories\";a:5:{i:0;s:1:\"2\";i:1;s:1:\"5\";i:2;s:1:\"6\";i:3;s:1:\"7\";i:4;s:1:\"8\";}s:4:\"name\";a:1:{i:1;s:18:\"Категории\";}}}s:14:\"attr_delimeter\";s:2:\", \";s:3:\"tax\";s:1:\"0\";s:17:\"option_value_mode\";s:2:\"or\";s:17:\"filter_value_mode\";s:2:\"or\";s:20:\"attribute_value_mode\";s:2:\"or\";s:10:\"attr_group\";s:2:\"on\";s:13:\"subcategories\";s:2:\"on\";s:15:\"option_images_w\";s:2:\"80\";s:15:\"option_images_h\";s:2:\"53\";s:19:\"filterpro_container\";s:35:\".pos-9 .row.products.product-{view}\";s:14:\"filterpro_name\";s:12:\"Фильтр\";s:19:\"filterpro_afterload\";s:0:\"\";s:22:\"sort_by_quantity_first\";s:2:\"on\";s:19:\"enable_touch_screen\";s:2:\"on\";s:12:\"enable_cache\";s:2:\"on\";s:23:\"enable_endless_scroller\";s:2:\"on\";s:13:\"filer_special\";s:2:\"on\";s:9:\"news_days\";s:2:\"30\";s:10:\"filer_news\";s:2:\"on\";s:14:\"filer_selected\";s:2:\"on\";s:14:\"always_instock\";s:2:\"on\";}',1),
-(373,0,'filterpro','attribute','a:5:{i:1;a:2:{s:17:\"attribute_tooltip\";s:17:\"Тип волос\";s:12:\"attribute_id\";s:1:\"1\";}i:2;a:2:{s:17:\"attribute_tooltip\";s:18:\"Результат\";s:12:\"attribute_id\";s:1:\"2\";}i:3;a:2:{s:17:\"attribute_tooltip\";s:12:\"Состав\";s:12:\"attribute_id\";s:1:\"3\";}i:4;a:2:{s:17:\"attribute_tooltip\";s:10:\"Серия\";s:12:\"attribute_id\";s:1:\"4\";}i:5;a:2:{s:17:\"attribute_tooltip\";s:14:\"Слайдер\";s:12:\"attribute_id\";s:1:\"5\";}}',1),
-(374,0,'filterpro','attribute_group','a:2:{i:1;a:2:{s:23:\"attribute_group_tooltip\";s:28:\"Характеристики\";s:18:\"attribute_group_id\";s:1:\"1\";}i:2;a:2:{s:23:\"attribute_group_tooltip\";s:26:\"Дополнительно\";s:18:\"attribute_group_id\";s:1:\"2\";}}',1),
-(375,0,'filterpro','option','a:4:{i:1;a:2:{s:7:\"tooltip\";s:10:\"Объём\";s:9:\"option_id\";s:1:\"1\";}i:2;a:2:{s:7:\"tooltip\";s:29:\"Размер футболки\";s:9:\"option_id\";s:1:\"4\";}i:3;a:2:{s:7:\"tooltip\";s:8:\"Цвет\";s:9:\"option_id\";s:1:\"2\";}i:4;a:2:{s:7:\"tooltip\";s:25:\"Цвет футболки\";s:9:\"option_id\";s:1:\"3\";}}',1),
+(372,0,'filterpro','filterpro_setting','a:44:{s:14:\"filterpro_name\";s:12:\"Фильтр\";s:15:\"instock_checked\";s:2:\"on\";s:13:\"filer_special\";s:2:\"on\";s:10:\"filer_news\";s:2:\"on\";s:9:\"news_days\";s:2:\"30\";s:19:\"filterpro_container\";s:35:\".pos-9 .row.products.product-{view}\";s:17:\"products_template\";s:12:\"featured.tpl\";s:17:\"products_selector\";s:19:\".row.products > div\";s:12:\"enable_cache\";s:2:\"on\";s:12:\"disable_mask\";s:2:\"on\";s:23:\"enable_endless_scroller\";s:2:\"on\";s:12:\"price_slider\";s:2:\"on\";s:14:\"filer_selected\";s:2:\"on\";s:22:\"sort_by_quantity_first\";s:2:\"on\";s:13:\"subcategories\";s:2:\"on\";s:16:\"filterpro_groups\";a:4:{i:1;a:6:{s:10:\"categories\";a:1:{i:0;s:1:\"1\";}s:7:\"display\";s:8:\"checkbox\";s:15:\"exclude_parents\";s:2:\"on\";s:11:\"is_expanded\";s:2:\"on\";s:4:\"name\";a:1:{i:1;s:21:\"L\'Oreal Professionnel\";}s:7:\"tooltip\";a:1:{i:1;s:32:\"Серии L\'Oreal Professionnel\";}}i:2;a:6:{s:10:\"categories\";a:1:{i:0;s:1:\"2\";}s:7:\"display\";s:4:\"none\";s:15:\"exclude_parents\";s:2:\"on\";s:11:\"is_expanded\";s:2:\"on\";s:4:\"name\";a:1:{i:1;s:13:\"Tangle Teezer\";}s:7:\"tooltip\";a:1:{i:1;s:24:\"Серии Tangle Teezer\";}}i:3;a:4:{s:10:\"categories\";a:1:{i:0;s:1:\"5\";}s:7:\"display\";s:4:\"none\";s:4:\"name\";a:1:{i:1;s:14:\"Скрытые\";}s:7:\"tooltip\";a:1:{i:1;s:33:\"Скрытые категории\";}}i:0;a:5:{s:10:\"categories\";a:3:{i:0;s:1:\"6\";i:1;s:1:\"7\";i:2;s:1:\"8\";}s:7:\"display\";s:8:\"checkbox\";s:11:\"is_expanded\";s:2:\"on\";s:4:\"name\";a:1:{i:1;s:18:\"Категории\";}s:7:\"tooltip\";a:1:{i:1;s:35:\"Основные категории\";}}}s:17:\"filter_value_mode\";s:2:\"or\";s:20:\"display_filter_group\";a:4:{i:7;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:5;s:8:\"checkbox\";i:8;s:8:\"checkbox\";}s:23:\"expanded_filter_group_7\";s:2:\"on\";s:23:\"expanded_filter_group_4\";s:2:\"on\";s:23:\"expanded_filter_group_5\";s:2:\"on\";s:23:\"expanded_filter_group_8\";s:2:\"on\";s:17:\"option_value_mode\";s:2:\"or\";s:15:\"option_images_w\";s:2:\"80\";s:15:\"option_images_h\";s:2:\"53\";s:14:\"display_option\";a:4:{i:1;s:8:\"checkbox\";i:2;s:8:\"checkbox\";i:3;s:5:\"image\";i:4;s:8:\"checkbox\";}s:17:\"expanded_option_1\";s:2:\"on\";s:17:\"expanded_option_2\";s:2:\"on\";s:17:\"expanded_option_3\";s:2:\"on\";s:17:\"expanded_option_4\";s:2:\"on\";s:20:\"attribute_value_mode\";s:2:\"or\";s:10:\"attr_group\";s:2:\"on\";s:14:\"attr_delimeter\";s:2:\", \";s:26:\"expanded_attribute_group_1\";s:2:\"on\";s:17:\"display_attribute\";a:5:{i:1;s:8:\"checkbox\";i:2;s:8:\"checkbox\";i:3;s:8:\"checkbox\";i:4;s:8:\"checkbox\";i:5;s:6:\"slider\";}s:20:\"expanded_attribute_1\";s:2:\"on\";s:20:\"expanded_attribute_2\";s:2:\"on\";s:20:\"expanded_attribute_3\";s:2:\"on\";s:20:\"expanded_attribute_4\";s:2:\"on\";s:26:\"expanded_attribute_group_2\";s:2:\"on\";s:20:\"expanded_attribute_5\";s:2:\"on\";s:20:\"display_manufacturer\";s:8:\"checkbox\";s:21:\"expanded_manufacturer\";s:2:\"on\";s:19:\"filterpro_afterload\";s:0:\"\";}',1),
+(373,0,'filterpro','attribute','a:5:{i:1;a:2:{s:12:\"attribute_id\";s:1:\"1\";s:17:\"attribute_tooltip\";a:1:{i:1;s:34:\"Атрибут \"Тип волос\"\";}}i:2;a:2:{s:12:\"attribute_id\";s:1:\"2\";s:17:\"attribute_tooltip\";a:1:{i:1;s:35:\"Атрибут \"Результат\"\";}}i:3;a:2:{s:12:\"attribute_id\";s:1:\"3\";s:17:\"attribute_tooltip\";a:1:{i:1;s:29:\"Атрибут \"Состав\"\";}}i:4;a:2:{s:12:\"attribute_id\";s:1:\"4\";s:17:\"attribute_tooltip\";a:1:{i:1;s:27:\"Атрибут \"Серия\"\";}}i:5;a:2:{s:12:\"attribute_id\";s:1:\"5\";s:17:\"attribute_tooltip\";a:1:{i:1;s:31:\"Атрибут \"Слайдер\"\";}}}',1),
+(374,0,'filterpro','attribute_group','a:2:{i:1;a:2:{s:18:\"attribute_group_id\";s:1:\"1\";s:23:\"attribute_group_tooltip\";a:1:{i:1;s:62:\"Группа атрибутов \"Характеристики\"\";}}i:2;a:2:{s:18:\"attribute_group_id\";s:1:\"2\";s:23:\"attribute_group_tooltip\";a:1:{i:1;s:60:\"Группа атрибутов \"Дополнительно\"\";}}}',1),
+(375,0,'filterpro','option','a:4:{i:1;a:2:{s:9:\"option_id\";s:1:\"1\";s:7:\"tooltip\";a:1:{i:1;s:23:\"Опция \"Объём\"\";}}i:2;a:2:{s:9:\"option_id\";s:1:\"2\";s:7:\"tooltip\";a:1:{i:1;s:21:\"Опция \"Цвет\"\";}}i:3;a:2:{s:9:\"option_id\";s:1:\"3\";s:7:\"tooltip\";a:1:{i:1;s:38:\"Опция \"Цвет футболки\"\";}}i:4;a:2:{s:9:\"option_id\";s:1:\"4\";s:7:\"tooltip\";a:1:{i:1;s:42:\"Опция \"Размер футболки\"\";}}}',1),
+(664,0,'filterpro','filter_groups','a:4:{i:1;a:2:{s:15:\"filter_group_id\";s:1:\"7\";s:7:\"tooltip\";a:1:{i:1;s:25:\"Фильтр \"Серия\"\";}}i:2;a:2:{s:15:\"filter_group_id\";s:1:\"4\";s:7:\"tooltip\";a:1:{i:1;s:33:\"Фильтр \"Результат\"\";}}i:3;a:2:{s:15:\"filter_group_id\";s:1:\"5\";s:7:\"tooltip\";a:1:{i:1;s:32:\"Фильтр \"Тип волос\"\";}}i:4;a:2:{s:15:\"filter_group_id\";s:1:\"8\";s:7:\"tooltip\";a:1:{i:1;s:27:\"Фильтр \"Состав\"\";}}}',1),
 (376,0,'simple','simple_replace_register','1',0),
 (377,0,'simple','simple_replace_edit','1',0),
 (378,0,'simple','simple_replace_address','1',0),
