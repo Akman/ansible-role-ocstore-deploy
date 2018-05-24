@@ -26,9 +26,6 @@
     
     - import_tasks: symlinks.yml
 
-    - import_tasks: acme.yml
-      become: yes
-    
     - import_tasks: permissions.yml
       when: ocstore_environment != 'development'
       become: yes
