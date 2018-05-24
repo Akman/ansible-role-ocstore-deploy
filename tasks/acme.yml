@@ -1,0 +1,24 @@
+---
+# tasks/acme.yml
+
+- name: ocStore | Deploy | Ensure all ACME folders are exist
+  file:
+    state: directory
+    path: "{{ ocstore_www_root }}/.well-known/acme-challenge"
+    mode: "750"
+    owner: "{{ ocstore_www_owner_user }}"
+    group: "{{ ocstore_www_owner_group }}"
+
+- name: ocStore | Deploy | Ensure all ACME files are exist in a suitable folder
+  copy:
+    src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/acme/.well-known/acme-challenge/"
+    dest: "{{ ocstore_www_root }}/.well-known/acme-challenge"
+    mode: "640"
+    owner: "{{ ocstore_www_owner_user }}"
+    group: "{{ ocstore_www_owner_group }}"
+
+- name: ocStore | Deploy | Ensure a symlink for ACME folder presents in current release
+  file:
+    state: link
+    path: "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}/.well-known"
+    src: "{{ ocstore_current_release_dir }}/.well-known"
