@@ -5,9 +5,9 @@
     - name: ocStore | Deploy | Set list of sql scripts for import
       set_fact:
         ocstore_sql_scripts:
-          - "setup"
-          - "russianpost"
-          - "fias"
+          - "setup-1.5.5.1.2"
+          - "russianpost-1.5.5.1.2"
+          - "fias-1.5.5.1.2"
     - name: ocStore | Deploy | Ensure database schema is up to date '{{ db_item.item.name }}'
       template: >
         src="sql/{{ item }}.sql.j2"
