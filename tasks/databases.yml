@@ -18,6 +18,7 @@
     priv: "{{ item.priv | default('*.*:USAGE') }}"
     state: "{{ item.state | default('present') }}"
     append_privs: "{{ item.append_privs | default('no') }}"
+  no_log: true
   with_items: "{{ ocstore_mysql_users }}"
 
 - name: ocStore | Deploy | Iterate over newly created databases
