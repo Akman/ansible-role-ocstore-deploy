@@ -1,6 +1,15 @@
 ---
 # tasks/folders.yml
 
+- name: ocStore | Deploy | Ensure all base folders are exist
+  file:
+    state: directory
+    path: "{{ item.path }}"
+    owner: "{{ item.owner | default(omit) }}"
+    group: "{{ item.group | default(omit) }}"
+    mode: "{{ item.mode | default(omit) }}"
+  with_items: "{{ ocstore_directories }}"
+
 - name: ocStore | Deploy | Ensure all deploy folders are exist
   file:
     state: directory
@@ -12,3 +21,4 @@
     - { mode: "700", path: "{{ ocstore_www_root }}/{{ ocstore_repo_dir }}", group: "{{ ocstore_www_owner_user }}", owner: "{{ ocstore_www_owner_user }}" }
     - { mode: "750", path: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
     - { mode: "750", path: "{{ ocstore_www_root }}/{{ ocstore_releases_dir }}", group: "{{ ocstore_www_owner_group }}", owner: "{{ ocstore_www_owner_user }}" }
+  when: ocstore_environment != 'development'

@@ -3,18 +3,11 @@
 
 - import_tasks: setup.yml
 
-- import_tasks: vhosts.yml
-  become: yes
-
 - import_tasks: databases.yml
-  become: yes
-
-- import_tasks: data.yml
   become: yes
 
 - import_tasks: folders.yml
   become: yes
-  when: ocstore_environment != 'development'
 
 - block:
 

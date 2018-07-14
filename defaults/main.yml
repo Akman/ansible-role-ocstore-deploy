@@ -63,23 +63,6 @@ ocstore_directories:
     group: "{{ ocstore_tmp_root_group }}"
     mode: "770"
 
-ocstore_certificates:
-  - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.ca-bundle"
-    dest: "/etc/ssl/certs/{{ ocstore_hostname }}.ca-bundle"
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.crt"
-    dest: "/etc/ssl/certs/{{ ocstore_hostname }}.crt"
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  - src: "{{ playbook_dir }}/inventories/deploy/all/files/{{ inventory_hostname }}/certs/{{ ocstore_hostname }}.key"
-    dest: "/etc/ssl/private/{{ ocstore_hostname }}.key"
-    owner: "root"
-    group: "root"
-    mode: "0600"
-
 ocstore_keep_releases: 3
 ocstore_releases_dir: "releases"
 ocstore_current_dir: "current"
