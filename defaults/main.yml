@@ -115,3 +115,13 @@ ocstore_shared_stub_files:
 ocstore_admin_template_files:
   - { path: "config.php" }
   - { path: "php.ini" }
+
+ocstore_cron_jobs: []
+#  - file: "xyz"
+#    name: "{{ ocstore_hostname }} - name"
+#    minute: "0"
+#    hour: "3"
+#    day: "*"
+#    month: "*"
+#    weekday: "*"
+#    cmd: "/usr/bin/php script.php"
