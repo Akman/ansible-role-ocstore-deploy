@@ -1,3 +1,25 @@
+(179,0,'moneymaker','mmr_footer_socials_types','a:4:{
+i:1;s:2:\"vk\";
+i:2;s:9:\"instagram\";
+i:3;s:8:\"facebook\";
+i:4;s:7:\"twitter\";
+}',1),
+(180,0,'moneymaker','mmr_footer_socials_links','a:4:{
+i:1;s:{{ ocstore_hostname | length + 15 }}:\"https://vk.com/{{ ocstore_hostname }}\";
+i:2;s:{{ ocstore_hostname | length + 22 }}:\"https://instagram.com/{{ ocstore_hostname }}\";
+i:3;s:{{ ocstore_hostname | length + 28 }}:\"https://facebook.com/groups/{{ ocstore_hostname }}\";
+i:4;s:{{ ocstore_hostname | length + 20 }}:\"https://twitter.com/{{ ocstore_hostname }}\";
+}',1),
+(184,0,'moneymaker','mmr_footer_payments_types','a:3:{
+i:1;s:11:\"credit-card\";
+i:2;s:7:\"cc-visa\";
+i:3;s:13:\"cc-mastercard\";
+}',1),
+(185,0,'moneymaker','mmr_footer_payments_links','a:3:{
+i:1;s:1:\"0\";
+i:2;s:1:\"0\";
+i:3;s:1:\"0\";
+}',1),
 (253,0,'moneymaker','mmr_header_contacts','a:16:{
 i:1;a:5:{
 s:4:\"mode\";s:1:\"3\";
