@@ -1,6 +1,6 @@
 # Ansible Role: ocstore_deploy
 
-Deploys ocStore on Linux.
+Deploy ocStore on Linux.
 
 ## Requirements
 
