@@ -1,4 +1,4 @@
-# Ansible Role: ocstore-deploy
+# Ansible Role: ocstore_deploy
 
 Deploys ocStore on Linux.
 
@@ -113,7 +113,7 @@ None.
 
     - hosts: all
       roles:
-        - Akman.ocstore-deploy
+        - Akman.ocstore_deploy
 
 *Inside `vars/main.yml`*:
 
