@@ -4,6 +4,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: ocstore_deploy
   author: Akman
   description: ocStore Deployer for Linux
   license: "license (MIT)"
