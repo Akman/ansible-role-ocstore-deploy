@@ -3,17 +3,19 @@ i:1;s:2:\"vk\";
 i:2;s:9:\"instagram\";
 i:3;s:8:\"facebook\";
 i:4;s:7:\"twitter\";
-i:5;s:0:\"\";
+i:5;s:8:\"telegram\";
 i:6;s:0:\"\";
 }',1),
+
 (180,0,'moneymaker','mmr_footer_socials_links','a:6:{
-i:1;s:{{ ocstore_hostname | length + 15 }}:\"https://vk.com/{{ ocstore_hostname }}\";
-i:2;s:{{ ocstore_hostname | length + 22 }}:\"https://instagram.com/{{ ocstore_hostname }}\";
-i:3;s:{{ ocstore_hostname | length + 28 }}:\"https://facebook.com/groups/{{ ocstore_hostname }}\";
-i:4;s:{{ ocstore_hostname | length + 20 }}:\"https://twitter.com/{{ ocstore_hostname }}\";
-i:5;s:0:\"\";
+i:1;s:{{ ocstore_vk_link | length }}:\"{{ ocstore_vk_link }}\";
+i:2;s:{{ ocstore_instagram_link | length }}:\"{{ ocstore_instagram_link }}\";
+i:3;s:{{ ocstore_facebook_link | length }}:\"{{ ocstore_facebook_link }}\";
+i:4;s:{{ ocstore_twitter_link | length }}:\"{{ ocstore_twitter_link }}\";
+i:5;s:{{ ocstore_telegram_link | length }}:\"{{ ocstore_telegram_link }}\";
 i:6;s:0:\"\";
 }',1),
+
 (184,0,'moneymaker','mmr_footer_payments_types','a:6:{
 i:1;s:11:\"credit-card\";
 i:2;s:7:\"cc-visa\";
@@ -22,6 +24,7 @@ i:4;s:0:\"\";
 i:5;s:0:\"\";
 i:6;s:0:\"\";
 }',1),
+
 (185,0,'moneymaker','mmr_footer_payments_links','a:6:{
 i:1;s:1:\"0\";
 i:2;s:1:\"0\";
@@ -30,7 +33,8 @@ i:4;s:1:\"0\";
 i:5;s:1:\"0\";
 i:6;s:1:\"0\";
 }',1),
-(253,0,'moneymaker','mmr_header_contacts','a:17:{
+
+(253,0,'moneymaker','mmr_header_contacts','a:16:{
 i:1;a:6:{
 s:4:\"mode\";s:1:\"3\";
 s:11:\"mobile_icon\";s:1:\"0\";
@@ -75,19 +79,11 @@ i:6;a:6:{
 s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:5:\"phone\";
-s:4:\"text\";a:1:{i:1;s:18:\"+7 (921) 711 24 00\";}
-s:4:\"link\";s:16:\"tel:+79217112400\";
+s:4:\"text\";a:1:{i:1;s:{{ ocstore_phone | length }}:\"{{ ocstore_phone }}\";}
+s:4:\"link\";s:{{ ocstore_phone | regex_replace('[^\\d\\+]', '') | length + 4 }}:\"tel:{{ ocstore_phone | regex_replace('[^\\d\\+]', '') }}\";
 s:11:\"link_params\";s:0:\"\";
 }
 i:7;a:6:{
-s:4:\"mode\";s:1:\"2\";
-s:11:\"mobile_icon\";s:1:\"0\";
-s:4:\"icon\";s:5:\"skype\";
-s:4:\"text\";a:1:{i:1;s:5:\"Skype\";}
-s:4:\"link\";s:{{ ocstore_hostname | length + 11 }}:\"skype:{{ ocstore_hostname }}?call\";
-s:11:\"link_params\";s:0:\"\";
-}
-i:8;a:6:{
 s:4:\"mode\";s:1:\"4\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:6:\"adjust\";
@@ -95,7 +91,7 @@ s:4:\"text\";a:1:{i:1;s:0:\"\";}
 s:4:\"link\";s:0:\"\";
 s:11:\"link_params\";s:0:\"\";
 }
-i:9;a:6:{
+i:8;a:6:{
 s:4:\"mode\";s:1:\"3\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:6:\"adjust\";
@@ -103,7 +99,7 @@ s:4:\"text\";a:1:{i:1;s:33:\"Электронная почта\";}
 s:4:\"link\";s:0:\"\";
 s:11:\"link_params\";s:0:\"\";
 }
-i:10;a:6:{
+i:9;a:6:{
 s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:10:\"envelope-o\";
@@ -111,7 +107,7 @@ s:4:\"text\";a:1:{i:1;s:{{ ocstore_hostname | length + 5 }}:\"info@{{ ocstore_ho
 s:4:\"link\";s:{{ ocstore_hostname | length + 12 }}:\"mailto:info@{{ ocstore_hostname }}\";
 s:11:\"link_params\";s:0:\"\";
 }
-i:11;a:6:{
+i:10;a:6:{
 s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:8:\"envelope\";
@@ -119,7 +115,7 @@ s:4:\"text\";a:1:{i:1;s:23:\"Написать нам\";}
 s:4:\"link\";s:12:\"/contact-us/\";
 s:11:\"link_params\";s:0:\"\";
 }
-i:12;a:6:{
+i:11;a:6:{
 s:4:\"mode\";s:1:\"4\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:6:\"adjust\";
@@ -127,44 +123,44 @@ s:4:\"text\";a:1:{i:1;s:0:\"\";}
 s:4:\"link\";s:0:\"\";
 s:11:\"link_params\";s:0:\"\";
 }
-i:13;a:6:{
+i:12;a:6:{
 s:4:\"mode\";s:1:\"3\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:6:\"adjust\";
-s:4:\"text\";a:1:{i:1;s:18:\"Сообщение\";}
+s:4:\"text\";a:1:{i:1;s:22:\"Мессенджеры\";}
 s:4:\"link\";s:0:\"\";
+s:11:\"link_params\";s:0:\"\";
+}
+i:13;a:6:{
+s:4:\"mode\";s:1:\"2\";
+s:11:\"mobile_icon\";s:1:\"0\";
+s:4:\"icon\";s:12:\"telegram fab\";
+s:4:\"text\";a:1:{i:1;s:8:\"Telegram\";}
+s:4:\"link\";s:{{ ocstore_telegram_id | length + 20 }}:\"tg://resolve?domain={{ ocstore_telegram_id }}\";
 s:11:\"link_params\";s:0:\"\";
 }
 i:14;a:6:{
 s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
-s:4:\"icon\";s:12:\"telegram fab\";
-s:4:\"text\";a:1:{i:1;s:8:\"Telegram\";}
-s:4:\"link\";s:{{ ocstore_hostname | length + 20 }}:\"tg://resolve?domain={{ ocstore_hostname }}\";
+s:4:\"icon\";s:19:\"whatsapp-square fab\";
+s:4:\"text\";a:1:{i:1;s:8:\"Whatsapp\";}
+s:4:\"link\";s:{{ ocstore_whatsapp_id | length + 22 }}:\"whatsapp://send?phone={{ ocstore_whatsapp_id }}\";
 s:11:\"link_params\";s:0:\"\";
 }
 i:15;a:6:{
 s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
-s:4:\"icon\";s:19:\"whatsapp-square fab\";
-s:4:\"text\";a:1:{i:1;s:8:\"Whatsapp\";}
-s:4:\"link\";s:25:\"https://wa.me/79217112400\";
-s:11:\"link_params\";s:50:\"target=&quot;_blank&quot; rel=&quot;nofollow&quot;\";
+s:4:\"icon\";s:9:\"viber fab\";
+s:4:\"text\";a:1:{i:1;s:5:\"Viber\";}
+s:4:\"link\";s:{{ ocstore_viber_id | length + 20 }}:\"viber://chat?number={{ ocstore_viber_id }}\";
+s:11:\"link_params\";s:0:\"\";
 }
 i:16;a:6:{
 s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
-s:4:\"icon\";s:9:\"viber fab\";
-s:4:\"text\";a:1:{i:1;s:5:\"Viber\";}
-s:4:\"link\";s:{{ ocstore_hostname | length + 19 }}:\"viber://pa?chatURI={{ ocstore_hostname }}\";
-s:11:\"link_params\";s:0:\"\";
-}
-i:17;a:6:{
-s:4:\"mode\";s:1:\"2\";
-s:11:\"mobile_icon\";s:1:\"0\";
-s:4:\"icon\";s:2:\"vk\";
-s:4:\"text\";a:1:{i:1;s:18:\"ВКонтакте\";}
-s:4:\"link\";s:{{ ocstore_hostname | length + 11 }}:\"vk://vk.me/{{ ocstore_hostname }}\";
+s:4:\"icon\";s:5:\"skype\";
+s:4:\"text\";a:1:{i:1;s:5:\"Skype\";}
+s:4:\"link\";s:{{ ocstore_skype_id | length + 11 }}:\"skype:{{ ocstore_skype_id }}?chat\";
 s:11:\"link_params\";s:0:\"\";
 }
 }',1),
