@@ -72,7 +72,7 @@ s:4:\"mode\";s:1:\"2\";
 s:11:\"mobile_icon\";s:1:\"0\";
 s:4:\"icon\";s:3:\"tty\";
 s:4:\"text\";a:1:{i:1;s:29:\"Перезвоните мне\";}
-s:4:\"link\";s:38:\"javascript:$(\'.btn-callback\').click();\";
+s:4:\"link\";s:46:\"javascript:$(\'.btn-callback\').first().click();\";
 s:11:\"link_params\";s:0:\"\";
 }
 i:6;a:6:{
