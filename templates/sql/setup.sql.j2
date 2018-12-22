@@ -1199,9 +1199,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer` (
 LOCK TABLES `{{ ocstore_db_prefix }}customer` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}customer` VALUES
-(1,0,'Наталья Николаевна','Позднякова','data/avatars/300/1_9eebf20c4a.jpg','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','435099b201a966ad060f23326309e1f0400166b7','0f0624303','a:0:{}','a:1:{i:0;s:1:\"1\";}',1,1,1,'192.168.1.33',1,1,'',CURRENT_TIMESTAMP),
-(5,0,'Илья Александрович','Поздняков','data/avatars/300/5_12fb265fe2.jpg','drseal@list.ru','+7 (921) 261-87-24','','9a8a59522a3f1afd35296c5fe81423f1cc6daf78','1aaabef70','a:0:{}','',1,8,1,'192.168.33.1',1,1,'',CURRENT_TIMESTAMP),
-(6,0,'Лев Александрович','Капитман','data/avatars/300/6_lion-780780.jpg','lion.kapitman@gmail.com','+7 (921) 264-36-16','','fb743100fefc4ec412612f3584c360bfddf196a9','a4da2cb0f','a:0:{}','',1,9,1,'192.168.33.1',1,1,'',CURRENT_TIMESTAMP);
+(1,0,'Наталья Николаевна','Позднякова','data/avatars/300/1_9eebf20c4a.jpg','nataliya.pozdnyakova@gmail.com','+7 (921) 711-63-24','','435099b201a966ad060f23326309e1f0400166b7','0f0624303','a:0:{}','a:1:{i:0;s:1:\"1\";}',1,1,2,'192.168.1.33',1,1,'',CURRENT_TIMESTAMP),
+(5,0,'Илья Александрович','Поздняков','data/avatars/300/5_12fb265fe2.jpg','drseal@list.ru','+7 (921) 261-87-24','','9a8a59522a3f1afd35296c5fe81423f1cc6daf78','1aaabef70','a:0:{}','',1,8,2,'192.168.33.1',1,1,'',CURRENT_TIMESTAMP),
+(6,0,'Лев Александрович','Капитман','data/avatars/300/6_lion-780780.jpg','lion.kapitman@gmail.com','+7 (921) 264-36-16','','fb743100fefc4ec412612f3584c360bfddf196a9','a4da2cb0f','a:0:{}','',1,9,2,'192.168.33.1',1,1,'',CURRENT_TIMESTAMP);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1246,7 +1246,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_group` (
   `tax_id_required` int(1) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`customer_group_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}customer_group`
@@ -1254,7 +1254,9 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_group` (
 
 LOCK TABLES `{{ ocstore_db_prefix }}customer_group` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_group` DISABLE KEYS */;
-INSERT INTO `{{ ocstore_db_prefix }}customer_group` VALUES (1,0,1,0,0,1,1);
+INSERT INTO `{{ ocstore_db_prefix }}customer_group` VALUES
+(1,0,0,0,0,0,1),
+(2,0,0,0,0,0,2);
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1278,7 +1280,8 @@ CREATE TABLE `{{ ocstore_db_prefix }}customer_group_description` (
 LOCK TABLES `{{ ocstore_db_prefix }}customer_group_description` WRITE;
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_group_description` DISABLE KEYS */;
 INSERT INTO `{{ ocstore_db_prefix }}customer_group_description` VALUES
-(1,1,'По умолчанию','Группа покупателей по умолчанию');
+(1,1,'Гости','Группа покупателей по-умолчанию для не прошедших регистрацию'),
+(2,1,'Зарегистрированные','Группа покупателей по-умолчанию для прошедших регистрацию');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}customer_group_description` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4082,7 +4085,7 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (82,0,'config','config_checkout_id','0',0),
 (83,0,'config','config_account_id','5',0),
 (84,0,'config','config_customer_group_id','1',0),
-(85,0,'config','config_customer_group_display','a:1:{i:0;s:1:\"1\";}',1),
+(85,0,'config','config_customer_group_display','a:0:{}',1),
 (86,0,'config','config_customer_price','0',0),
 (87,0,'config','config_tax_customer','',0),
 (88,0,'config','config_customer_online','1',0),
@@ -4115,9 +4118,7 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (115,0,'config','config_address','{{ ocstore_address }}',0),
 (116,0,'config','config_name','{{ ocstore_hostname }}',0),
 (117,0,'config','config_mail_parameter','-finfo@{{ ocstore_hostname }}',0),
-(118,0,'shipping','shipping_sort_order','3',0),
-(119,0,'shipping','shipping_status','1',0),
-(120,0,'shipping','shipping_estimator','1',0),
+(118,0,'config','config_registered_group_id','2',0),
 (121,0,'sub_total','sub_total_sort_order','1',0),
 (122,0,'sub_total','sub_total_status','1',0),
 (123,0,'tax','tax_status','1',0),
@@ -4393,6 +4394,9 @@ INSERT INTO `{{ ocstore_db_prefix }}setting` VALUES
 (393,0,'moneymaker','mmr_catalog_contacts_details_code','a:1:{i:1;s:666:\"&lt;h3&gt;Наши реквизиты&lt;/h3&gt;\r\n&lt;p&gt;\r\n&lt;h4&gt;ООО «АКМАН»&lt;/h4&gt;\r\n&lt;ul style=&quot;padding: 0;&quot;&gt;\r\n  &lt;li style=&quot;list-style: none;&quot;&gt;ИНН 3904075855 / КПП 390601001&lt;/li&gt;\r\n  &lt;li style=&quot;list-style: none;&quot;&gt;ОГРН 1063905041298&lt;/li&gt;\r\n  &lt;li style=&quot;list-style: none;&quot;&gt;ОКПО 94033158&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;h4&gt;Юридический адрес&lt;/h4&gt;\r\n&lt;ul style=&quot;padding: 0;&quot;&gt;\r\n  &lt;li style=&quot;list-style: none;&quot;&gt;236019, г. Калининград, ул. Гавриленко, 17&lt;/li&gt;\r\n&lt;/ul&gt;\r\n&lt;/p&gt;\";}',1),
 (394,0,'mmr_html','mmr_html_module','a:4:{i:1;a:6:{s:5:\"title\";a:1:{i:1;s:0:\"\";}s:11:\"description\";a:1:{i:1;s:1856:\"&lt;div class=&quot;html-module box no-border&quot;&gt;\r\n&lt;div class=&quot;html-module box-heading&quot;&gt;Добро пожаловать&lt;/div&gt;\r\n\r\n&lt;div class=&quot;html-module box-content&quot;&gt;\r\n&lt;p class=&quot;first-letter&quot;&gt;Мы собрали для Вас самые лучшие средства для волос в мире. Профессиональная косметика для волос, которая сделает Ваши волосы красивыми и здоровыми, представлена крупнейшими мировыми брендами: L&amp;#39;Oreal Professionnel, Kerastase Paris, Tangle Tizzer и другими. Профессиональные средства для волос выгодно отличаются от продающихся на массовом рынке повышенным содержанием питательных веществ, которые являются основой комплексного и регулярного ухода за волосами. Естественный блеск, сила, насыщенный цвет волос, плотные, объёмные волосы - вот результат, который Вы получите, применяя профессиональную косметику для волос. Наш интернет-магазин приглашает за покупками не только профессиональных мастеров и салоны красоты, но и розничных покупателей, потому, что все, предлагаемые в нашем интернет-магазине товары, продаются в розницу по оптовым ценам. Приятных Вам покупок!&lt;/p&gt;\r\n&lt;/div&gt;\r\n&lt;/div&gt;\r\n\";}s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:2:\"20\";}i:2;a:6:{s:5:\"title\";a:1:{i:1;s:0:\"\";}s:11:\"description\";a:1:{i:1;s:188:\"&lt;div class=&quot;html-module box no-border&quot;&gt;\r\n&lt;div class=&quot;html-module box-heading&quot;&gt;Почему стоит покупать у нас&lt;/div&gt;\r\n&lt;/div&gt;\r\n\";}s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:2:\"30\";}i:3;a:6:{s:5:\"title\";a:1:{i:1;s:0:\"\";}s:11:\"description\";a:1:{i:1;s:177:\"&lt;div class=&quot;html-module box no-border&quot;&gt;\r\n&lt;div class=&quot;html-module box-heading&quot;&gt;Рекомендуемые товары&lt;/div&gt;\r\n&lt;/div&gt;\r\n\";}s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"0\";}i:4;a:6:{s:5:\"title\";a:1:{i:1;s:0:\"\";}s:11:\"description\";a:1:{i:1;s:697:\"&lt;div class=&quot;html-module box&quot;&gt;\r\n&lt;div class=&quot;html-module box-heading&quot;&gt;Оставайтесь на связи&lt;/div&gt;\r\n\r\n&lt;div class=&quot;html-module box-content&quot;&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;//vk.com/js/api/openapi.js?127&quot;&gt;&lt;/script&gt;\r\n&lt;div id=&quot;vk_groups&quot;&gt;&amp;nbsp;&lt;/div&gt;\r\n&lt;script type=&quot;text/javascript&quot;&gt;\r\n  VK.Widgets.Group(\r\n    &quot;vk_groups&quot;,\r\n    {\r\n      redesign: 1,\r\n      mode: 5,\r\n      height: &quot;280&quot;,\r\n      color1: \'FFFFFF\',\r\n      color2: \'428BCA\',\r\n      color3: \'428BCA\'\r\n    },\r\n    117941871\r\n  );\r\n&lt;/script&gt;&lt;/div&gt;\r\n&lt;/div&gt;\r\n\";}s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:14:\"content_bottom\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:2:\"99\";}}',1),
 (395,0,'mmr_owl_slideshow','mmr_owl_slideshow_module','a:5:{i:0;a:19:{s:9:\"banner_id\";s:1:\"1\";s:5:\"width\";s:4:\"1140\";s:6:\"height\";s:3:\"592\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"1\";s:10:\"sort_order\";s:1:\"1\";s:13:\"items_desktop\";s:1:\"1\";s:19:\"items_desktop_small\";s:1:\"1\";s:12:\"items_tablet\";s:1:\"1\";s:18:\"items_tablet_small\";s:1:\"1\";s:12:\"items_mobile\";s:1:\"1\";s:8:\"autoplay\";s:1:\"1\";s:5:\"delay\";s:1:\"3\";s:8:\"progress\";s:1:\"1\";s:10:\"navigation\";s:1:\"1\";s:16:\"css3_transitions\";s:1:\"1\";s:10:\"pagination\";s:1:\"1\";s:21:\"css3_transitions_type\";s:6:\"fadeUp\";}i:1;a:19:{s:9:\"banner_id\";s:1:\"3\";s:5:\"width\";s:3:\"800\";s:6:\"height\";s:3:\"590\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"1\";s:13:\"items_desktop\";s:1:\"1\";s:19:\"items_desktop_small\";s:1:\"1\";s:12:\"items_tablet\";s:1:\"1\";s:18:\"items_tablet_small\";s:1:\"1\";s:12:\"items_mobile\";s:1:\"1\";s:8:\"autoplay\";s:1:\"0\";s:5:\"delay\";s:1:\"3\";s:8:\"progress\";s:1:\"1\";s:10:\"navigation\";s:1:\"1\";s:16:\"css3_transitions\";s:1:\"1\";s:10:\"pagination\";s:1:\"1\";s:21:\"css3_transitions_type\";s:6:\"fadeUp\";}i:2;a:19:{s:9:\"banner_id\";s:1:\"4\";s:5:\"width\";s:3:\"400\";s:6:\"height\";s:3:\"590\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"1\";s:13:\"items_desktop\";s:1:\"1\";s:19:\"items_desktop_small\";s:1:\"1\";s:12:\"items_tablet\";s:1:\"1\";s:18:\"items_tablet_small\";s:1:\"1\";s:12:\"items_mobile\";s:1:\"1\";s:8:\"autoplay\";s:1:\"0\";s:5:\"delay\";s:1:\"3\";s:8:\"progress\";s:1:\"1\";s:10:\"navigation\";s:1:\"1\";s:16:\"css3_transitions\";s:1:\"1\";s:10:\"pagination\";s:1:\"1\";s:21:\"css3_transitions_type\";s:6:\"fadeUp\";}i:3;a:19:{s:9:\"banner_id\";s:1:\"2\";s:5:\"width\";s:4:\"1200\";s:6:\"height\";s:3:\"590\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"1\";s:13:\"items_desktop\";s:1:\"1\";s:19:\"items_desktop_small\";s:1:\"1\";s:12:\"items_tablet\";s:1:\"1\";s:18:\"items_tablet_small\";s:1:\"1\";s:12:\"items_mobile\";s:1:\"1\";s:8:\"autoplay\";s:1:\"0\";s:5:\"delay\";s:1:\"3\";s:8:\"progress\";s:1:\"1\";s:10:\"navigation\";s:1:\"1\";s:16:\"css3_transitions\";s:1:\"1\";s:10:\"pagination\";s:1:\"1\";s:21:\"css3_transitions_type\";s:6:\"fadeUp\";}i:4;a:19:{s:9:\"banner_id\";s:1:\"5\";s:5:\"width\";s:4:\"1200\";s:6:\"height\";s:3:\"590\";s:9:\"layout_id\";s:1:\"1\";s:8:\"position\";s:11:\"content_top\";s:6:\"status\";s:1:\"0\";s:10:\"sort_order\";s:1:\"1\";s:13:\"items_desktop\";s:1:\"1\";s:19:\"items_desktop_small\";s:1:\"1\";s:12:\"items_tablet\";s:1:\"1\";s:18:\"items_tablet_small\";s:1:\"1\";s:12:\"items_mobile\";s:1:\"1\";s:8:\"autoplay\";s:1:\"1\";s:5:\"delay\";s:1:\"3\";s:8:\"progress\";s:1:\"1\";s:10:\"navigation\";s:1:\"1\";s:16:\"css3_transitions\";s:1:\"1\";s:10:\"pagination\";s:1:\"1\";s:21:\"css3_transitions_type\";s:6:\"fadeUp\";}}',1),
+(396,0,'shipping','shipping_sort_order','3',0),
+(397,0,'shipping','shipping_status','1',0),
+(398,0,'shipping','shipping_estimator','1',0),
 (414,0,'google_sitemap','google_sitemap_status','1',0),
 (415,0,'simple','simple_cron_key','1da526c96c75ec218ec6d14900e34a2b',0),
 (416,0,'simple','simple_cron_time','',0),
@@ -5024,7 +5028,7 @@ CREATE TABLE `{{ ocstore_db_prefix }}url_alias` (
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`(64))
-) ENGINE=MyISAM AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `{{ ocstore_db_prefix }}url_alias`
@@ -5072,8 +5076,8 @@ INSERT INTO `{{ ocstore_db_prefix }}url_alias` VALUES
 (37,'checkout/cart','cart'),
 (38,'checkout/checkout','checkout'),
 (39,'checkout/simplecheckout','simplecheckout'),
-(40,'checkout/voucher','gift-vouchers'),
-(41,'common/home',''),
+(40,'checkout/voucher','checkout-voucher'),
+(41,'checkout/success','checkout-success'),
 (42,'error/not_found','error-not-found'),
 (43,'information/contact','contact-us'),
 (44,'information/sitemap','map-of-site'),
@@ -5084,32 +5088,33 @@ INSERT INTO `{{ ocstore_db_prefix }}url_alias` VALUES
 (49,'product/special','specials'),
 (50,'feed/google_base','feed-googlebase'),
 (51,'feed/google_sitemap','feed-sitemap'),
-(52,'information_id=3','exchange-and-return'),
-(53,'information_id=4','about-us'),
-(54,'information_id=5','user-agreement'),
-(55,'information_id=6','delivery-and-payment'),
-(56,'information_id=9','advantages'),
-(57,'information_id=11','advantage-low-price'),
-(58,'information_id=12','advantage-quick-delivery'),
-(59,'information_id=13','advantage-plus-gift'),
-(60,'information_id=14','maintenance'),
-(61,'category_id=1','loreal-professionnel'),
-(62,'category_id=2','tangle-teezer'),
-(63,'category_id=3','loreal-professionnel-mythic-oil'),
-(64,'category_id=4','loreal-professionnel-vitamino-color-a-ox'),
-(65,'category_id=5','new'),
-(66,'category_id=6','care'),
-(67,'category_id=7','styling'),
-(68,'category_id=8','accessories'),
-(69,'category_id=9','shampoo'),
-(70,'category_id=10','cure'),
-(71,'product_id=1','loreal-professionnel-vitamino-color-a-ox-shampoo'),
-(72,'product_id=2','loreal-professionnel-mythic-oil-shampoo'),
-(73,'product_id=4','loreal-professionnel-vitamino-color-a-ox-mask'),
-(74,'product_id=5','tangle-teezer-salon-elite-highlighter-collection-comb'),
-(75,'product_id=6','tangle-teezer-salon-elite-black-comb'),
-(76,'product_id=7','tangle-teezer-t-shirt-promo'),
-(77,'filter_id=1','colored');
+(52,'common/home',''),
+(53,'information_id=3','exchange-and-return'),
+(54,'information_id=4','about-us'),
+(55,'information_id=5','user-agreement'),
+(56,'information_id=6','delivery-and-payment'),
+(57,'information_id=9','advantages'),
+(58,'information_id=11','advantage-low-price'),
+(59,'information_id=12','advantage-quick-delivery'),
+(60,'information_id=13','advantage-plus-gift'),
+(61,'information_id=14','maintenance'),
+(62,'category_id=1','loreal-professionnel'),
+(63,'category_id=2','tangle-teezer'),
+(64,'category_id=3','loreal-professionnel-mythic-oil'),
+(65,'category_id=4','loreal-professionnel-vitamino-color-a-ox'),
+(66,'category_id=5','new'),
+(67,'category_id=6','care'),
+(68,'category_id=7','styling'),
+(69,'category_id=8','accessories'),
+(70,'category_id=9','shampoo'),
+(71,'category_id=10','cure'),
+(72,'product_id=1','loreal-professionnel-vitamino-color-a-ox-shampoo'),
+(73,'product_id=2','loreal-professionnel-mythic-oil-shampoo'),
+(74,'product_id=4','loreal-professionnel-vitamino-color-a-ox-mask'),
+(75,'product_id=5','tangle-teezer-salon-elite-highlighter-collection-comb'),
+(76,'product_id=6','tangle-teezer-salon-elite-black-comb'),
+(77,'product_id=7','tangle-teezer-t-shirt-promo'),
+(78,'filter_id=1','colored');
 /*!40000 ALTER TABLE `{{ ocstore_db_prefix }}url_alias` ENABLE KEYS */;
 UNLOCK TABLES;
 
