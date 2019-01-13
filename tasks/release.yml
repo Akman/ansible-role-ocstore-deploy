@@ -13,6 +13,7 @@
 
 - name: ocStore | Deploy | Ensure current symlink source is new release
   shell: ln -s "{{ ocstore_current_release_dir }}/{{ ocstore_public_dir }}" "{{ ocstore_www_root }}/{{ ocstore_current_dir }}_tmp" && mv -Tf "{{ ocstore_www_root }}/{{ ocstore_current_dir }}_tmp" "{{ ocstore_www_root }}/{{ ocstore_current_dir }}"
+  warn=False
 
 #- name: ocStore | Deploy | Ensure current symlink source is new release
 #  file:
