@@ -9,6 +9,8 @@
 
 - name: ocStore | Deploy | Ensure repo and release folders have valid owner and group
   shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+chown ', ';chown ') | trim }}"
+  args:
+    warn: false
   changed_when: false
 
 - name: ocStore | Deploy | Build command list for setup repo folders and files permissions
@@ -49,6 +51,8 @@
 
 - name: ocStore | Deploy | Ensure shared folder have valid owner and group
   shell: "{{ ocstore_permissions_cmd | regex_replace(';\\s+chown ', ';chown ') | trim }}"
+  args:
+    warn: false
   changed_when: false
   when: ocstore_shared_path.stat.isdir is not defined or not ocstore_shared_path.stat.isdir
   
