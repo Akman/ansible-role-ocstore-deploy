@@ -36,6 +36,8 @@ RewriteRule ^([^?]*) index.php?_route_=$1 [L,QSA]
 RewriteRule ^$ - [L]
 RewriteRule ^admin(.*)/$ - [L]
 
+RewriteRule ^\.well-known\/acme-challenge\/ - [L]
+
 {% if ocstore_environment == 'development' %}
 RewriteRule ^test/$ - [L]
 {% endif %}

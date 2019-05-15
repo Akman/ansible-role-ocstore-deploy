@@ -83,14 +83,15 @@ ocstore_git_tree_admin: "www/{{ ocstore_admin_dir }}"
 # 'path' is relative always with 'ocstore_shared_dir' as base
 # 'dest' can be 1) absolute 2) relative with 'ocstore_current_release_dir' as base
 ocstore_shared_symlinks:
-  - { path: "download",                  dest: "download" }
-  - { path: "system/logs",               dest: "system/logs" }
-  - { path: "vqmod/logs",                dest: "vqmod/logs" }
-  - { path: "css/moneymaker-custom.css", dest: "catalog/view/theme/moneymaker/stylesheet/moneymaker-custom.css" }
-  - { path: "css/custom.css",            dest: "catalog/view/theme/moneymaker/stylesheet/custom.css" }
-  - { path: "image",                     dest: "image" }
-  - { path: "image/data/favicon.ico",    dest: "favicon.ico" }
-  - { path: "image/data/no_image.jpg",   dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
+  - { path: ".well-known",                dest: ".well-known" }
+  - { path: "download",                   dest: "download" }
+  - { path: "system/logs",                dest: "system/logs" }
+  - { path: "vqmod/logs",                 dest: "vqmod/logs" }
+  - { path: "css/moneymaker-custom.css",  dest: "catalog/view/theme/moneymaker/stylesheet/moneymaker-custom.css" }
+  - { path: "css/custom.css",             dest: "catalog/view/theme/moneymaker/stylesheet/custom.css" }
+  - { path: "image",                      dest: "image" }
+  - { path: "image/data/favicon.ico",     dest: "favicon.ico" }
+  - { path: "image/data/no_image.jpg",    dest: "{{ ocstore_www_root }}/{{ ocstore_shared_dir }}/image/no_image.jpg" }
 
 ocstore_release_copy_files: []
 #  - { path: "public/system/license/license.lic", mode: "660" }
@@ -102,8 +103,8 @@ ocstore_public_template_files:
   - { path: "config.php" }
   - { path: "php.ini" }
   - { path: "vqmod/pathReplaces.php" }
-  
-ocstore_shared_template_files:  
+
+ocstore_shared_template_files:
   - { path: "css/.htaccess" }
   - { path: "download/.htaccess" }
   - { path: "image/.htaccess" }
