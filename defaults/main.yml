@@ -83,7 +83,6 @@ ocstore_git_tree_admin: "www/{{ ocstore_admin_dir }}"
 # 'path' is relative always with 'ocstore_shared_dir' as base
 # 'dest' can be 1) absolute 2) relative with 'ocstore_current_release_dir' as base
 ocstore_shared_symlinks:
-  - { path: ".well-known",                dest: ".well-known" }
   - { path: "download",                   dest: "download" }
   - { path: "system/logs",                dest: "system/logs" }
   - { path: "vqmod/logs",                 dest: "vqmod/logs" }
